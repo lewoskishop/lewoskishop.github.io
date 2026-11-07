@@ -2,8 +2,8 @@
  * Datos de contacto de la tienda (los que se editan en el panel).
  *
  * En "Ajustes de la tienda" el usuario escribe el Instagram y el Facebook
- * como le queda cómodo: la URL completa, el usuario pelado ("maskotita") o
- * con arroba ("@maskotita"). Estas funciones lo normalizan a una URL que se
+ * como le queda cómodo: la URL completa, el usuario pelado ("lewoskishop") o
+ * con arroba ("@lewoskishop"). Estas funciones lo normalizan a una URL que se
  * pueda abrir, y devuelven null cuando el campo está vacío (para que el
  * sitio no muestre un link roto).
  */
@@ -18,8 +18,8 @@ const SOCIAL_BASE: Record<SocialNetwork, string> = {
 
 /**
  * Convierte el valor guardado en el panel en una URL.
- * Acepta la URL completa ("https://instagram.com/maskotita") o sólo el
- * usuario ("maskotita" o "@maskotita").
+ * Acepta la URL completa ("https://instagram.com/lewoskishop") o sólo el
+ * usuario ("lewoskishop" o "@lewoskishop").
  */
 export function socialUrl(network: SocialNetwork, value: string): string | null {
   const raw = (value ?? '').trim();

@@ -11,7 +11,7 @@
 set -euo pipefail
 
 REMOTE="${REMOTE:-fsosa@192.168.1.51}"
-DEST="${DEST:-/home/fsosa/maskotita}"
+DEST="${DEST:-/home/fsosa/lewoskishop}"
 URL="${URL:-http://192.168.1.51:4321}"
 APP_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 

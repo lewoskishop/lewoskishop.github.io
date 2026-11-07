@@ -6,7 +6,7 @@ ajustes de la tienda **desde el navegador**, sin tocar código.
 El panel vive en:
 
 ```
-https://maskotita.github.io/admin
+https://lewoskishop.github.io/admin
 ```
 
 Es un panel *git-based*: cada vez que guardás, hace un commit al repositorio de GitHub
@@ -60,7 +60,7 @@ git push origin main
 ```
 
 El workflow `.github/workflows/deploy.yml` compila con Astro y publica en
-`https://maskotita.github.io/`. Tarda ~1 minuto.
+`https://lewoskishop.github.io/`. Tarda ~1 minuto.
 
 > Antes de publicar, el workflow corre los tests y el verificador de links
 > internos: si algo falla, el sitio **no** se publica y queda la versión anterior.
@@ -84,17 +84,17 @@ GitHub → **Settings** → **Developer settings** → **Personal access tokens*
 
 | Campo | Valor |
 |---|---|
-| Resource owner | `maskotita` (tu cuenta) |
+| Resource owner | `lewoskishop` (tu cuenta) |
 | Token name | `Maskotita Admin` |
 | Expiration | 1 año |
-| Repository access | Only select repositories → `maskotita/maskotita.github.io` |
+| Repository access | Only select repositories → `lewoskishop/lewoskishop.github.io` |
 | Repository permissions → **Contents** | **Read and write** |
 | Repository permissions → **Pull requests** | Read and write (sólo si vas a usar Editorial Workflow) |
 
 Copiá el token. **Aparece una sola vez**: guardalo en el gestor de contraseñas.
 
 > **Importante:** el token es de **tu usuario de GitHub** (el que es dueño o
-> colaborador con escritura del repo `maskotita/maskotita.github.io`). Si no tenés
+> colaborador con escritura del repo `lewoskishop/lewoskishop.github.io`). Si no tenés
 > rol Write ahí, el token no va a poder guardar nada.
 
 **Verificar el token antes de pegarlo** (opcional pero recomendado):
@@ -130,7 +130,7 @@ horas, así los siguientes push no vuelven a preguntar nada.
 
 ### Paso 3 — Entrar al panel
 
-1. Abrí `https://maskotita.github.io/admin`
+1. Abrí `https://lewoskishop.github.io/admin`
 2. Presioná **Sign In Using Access Token**
 3. Pegá el token y confirmá
 
@@ -203,7 +203,7 @@ optimizadas:
 - **WhatsApp:** Ajustes de la tienda → *WhatsApp* (solo números, sin `+` ni espacios).
 - **Email y redes:** Ajustes de la tienda → *Email*, *Instagram* y *Facebook*
   aparecen en el pie de página. Se pueden dejar vacíos (se ocultan) y el
-  Instagram/Facebook aceptan el usuario pelado (`maskotita`) o la URL completa.
+  Instagram/Facebook aceptan el usuario pelado (`lewoskishop`) o la URL completa.
 - **Borrar:** cada entrada tiene *Delete* (queda en el historial de Git y se puede recuperar).
 
 Los cambios tardan **~1 minuto** en verse (GitHub Actions reconstruye el sitio).

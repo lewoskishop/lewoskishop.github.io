@@ -10,7 +10,7 @@
  */
 import { readFileSync } from 'node:fs';
 
-const REPO = 'maskotita/maskotita.github.io';
+const REPO = 'lewoskishop/lewoskishop.github.io';
 const API = 'https://api.github.com';
 const token = (process.argv[2] ?? readFileSync(0, 'utf8')).trim();
 
@@ -38,7 +38,7 @@ const headers = {
   Authorization: `Bearer ${token}`,
   Accept: 'application/vnd.github+json',
   'X-GitHub-Api-Version': '2022-11-28',
-  'User-Agent': 'maskotita-token-check',
+  'User-Agent': 'lewoskishop-token-check',
 };
 
 const get = async (url) => {
@@ -132,7 +132,7 @@ if (pr.status === 200) {
 console.log();
 if (canPush) {
   ok('\x1b[1mLISTO. Copiá el token y pegalo en el panel:\x1b[0m');
-  console.log('  https://maskotita.github.io/admin  →  "Sign In Using Access Token"');
+  console.log('  https://lewoskishop.github.io/admin  →  "Sign In Using Access Token"');
 } else {
   bad('\x1b[1mEl token NO sirve para editar. Corregí los permisos y volvé a probar.\x1b[0m');
   process.exit(1);

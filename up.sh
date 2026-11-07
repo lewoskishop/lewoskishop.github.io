@@ -15,9 +15,9 @@
 set -euo pipefail
 
 APP_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-REPO_SLUG="maskotita/maskotita.github.io"
+REPO_SLUG="lewoskishop/lewoskishop.github.io"
 REPO_URL="https://github.com/${REPO_SLUG}.git"
-GIT_USER="maskotita"
+GIT_USER="lewoskishop"
 # GitHub autentica sólo por el token cuando el usuario es "x-access-token".
 # Así el push no depende de con qué cuenta se creó el token.
 AUTH_USER="x-access-token"
@@ -154,14 +154,14 @@ case "${1:-up}" in
       log "Listo. Ahora en GitHub:"
       dim "  1. Settings → Pages → Source: GitHub Actions"
       dim "  2. Esperá a que el workflow termine (pestaña Actions)"
-      dim "  3. Tu sitio: https://maskotita.github.io/"
+      dim "  3. Tu sitio: https://lewoskishop.github.io/"
     else
       warn "Falló el push con el usuario '${AUTH_USER}'. Reintento con '${GIT_USER}'…"
       TOKEN_SAVED="$(printf 'protocol=https\nhost=github.com\n\n' | GIT_TERMINAL_PROMPT=0 git credential fill 2>/dev/null | sed -n 's/^password=//p' || true)"
       if [ -n "$TOKEN_SAVED" ]; then
         save_credentials "$TOKEN_SAVED" "$GIT_USER"
         if git push -u origin main; then
-          log "Listo. Tu sitio: https://maskotita.github.io/"
+          log "Listo. Tu sitio: https://lewoskishop.github.io/"
           exit 0
         fi
       fi

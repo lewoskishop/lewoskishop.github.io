@@ -3,11 +3,11 @@ import { mailto, socialUrl, socialLinks } from './contact';
 
 describe('mailto', () => {
   it('arma el mailto con el email', () => {
-    expect(mailto('hola@maskotita.com.ar')).toBe('mailto:hola@maskotita.com.ar');
+    expect(mailto('hola@lewoskishop.com.ar')).toBe('mailto:hola@lewoskishop.com.ar');
   });
 
   it('no duplica el prefijo mailto:', () => {
-    expect(mailto('mailto:hola@maskotita.com.ar')).toBe('mailto:hola@maskotita.com.ar');
+    expect(mailto('mailto:hola@lewoskishop.com.ar')).toBe('mailto:hola@lewoskishop.com.ar');
   });
 
   it('devuelve null si el email está vacío', () => {
@@ -18,19 +18,19 @@ describe('mailto', () => {
 
 describe('socialUrl', () => {
   it('arma la URL con el usuario pelado', () => {
-    expect(socialUrl('instagram', 'maskotita')).toBe('https://www.instagram.com/maskotita');
-    expect(socialUrl('facebook', 'maskotita')).toBe('https://www.facebook.com/maskotita');
+    expect(socialUrl('instagram', 'lewoskishop')).toBe('https://www.instagram.com/lewoskishop');
+    expect(socialUrl('facebook', 'lewoskishop')).toBe('https://www.facebook.com/lewoskishop');
   });
 
   it('acepta el usuario con arroba', () => {
-    expect(socialUrl('instagram', '@maskotita')).toBe('https://www.instagram.com/maskotita');
+    expect(socialUrl('instagram', '@lewoskishop')).toBe('https://www.instagram.com/lewoskishop');
   });
 
   it('respeta la URL completa si ya es una URL', () => {
-    expect(socialUrl('instagram', 'https://instagram.com/maskotita')).toBe(
-      'https://instagram.com/maskotita',
+    expect(socialUrl('instagram', 'https://instagram.com/lewoskishop')).toBe(
+      'https://instagram.com/lewoskishop',
     );
-    expect(socialUrl('facebook', 'http://fb.com/maskotita')).toBe('http://fb.com/maskotita');
+    expect(socialUrl('facebook', 'http://fb.com/lewoskishop')).toBe('http://fb.com/lewoskishop');
   });
 
   it('devuelve null si el campo está vacío', () => {
@@ -42,11 +42,11 @@ describe('socialUrl', () => {
 
 describe('socialLinks', () => {
   it('devuelve sólo las redes que están cargadas', () => {
-    expect(socialLinks({ instagram: 'maskotita', facebook: '' })).toEqual([
+    expect(socialLinks({ instagram: 'lewoskishop', facebook: '' })).toEqual([
       {
         network: 'instagram',
         label: 'Instagram',
-        href: 'https://www.instagram.com/maskotita',
+        href: 'https://www.instagram.com/lewoskishop',
       },
     ]);
   });
