@@ -1,0 +1,25 @@
+---
+/**
+ * LOGOTIPO — logotipo oficial de LewoskiShop.
+ *
+ * El archivo original (1536×1024) se descargó del servidor de la tienda y se
+ * recortó/optimizó en public/images/logo-lewoski.webp.
+ */
+interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+---
+
+<a href="/" class="flex shrink-0 items-center" aria-label="LewoskiShop">
+  <img
+    src="/images/logo-lewoski.webp"
+    alt="LewoskiShop"
+    class={`logo-slot object-contain ${className}`}
+    width="466"
+    height="320"
+    decoding="async"
+    data-logo
+  />
+</a>

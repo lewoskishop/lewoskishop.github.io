@@ -1,0 +1,16 @@
+{
+  "name": "LewoskiShop",
+  "tagline": "Insumos para emprendedores",
+  "description": "LewoskiShop: insumos para emprendedores. Ceras, moldes, esencias, envases y materias primas para crear velas, jabones y cosmética artesanal. Pedidos por WhatsApp y envíos a todo el país.",
+  "city": "Mendoza",
+  "address": "Mendoza, Argentina",
+  "whatsappPhone": "542613005703",
+  "whatsappGreeting": "¡Hola {store}! Quiero hacer el siguiente pedido:",
+  "currency": "ARS",
+  "locale": "es-AR",
+  "email": "hola@lewoskishop.com.ar",
+  "instagram": "lewoskishop",
+  "facebook": "",
+  "shippingNote": "Coordinamos el envío por WhatsApp. Hacemos envíos a todo el país y retiro en Mendoza.",
+  "discountCodes": []
+}

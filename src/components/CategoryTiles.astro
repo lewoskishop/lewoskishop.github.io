@@ -1,0 +1,34 @@
+---
+const tiles = [
+  {
+    title: 'Velas',
+    subtitle: 'Ceras · Pabilos · Moldes · Esencias',
+    image: '/images/categories/velas.webp',
+    href: '/velas',
+  },
+  {
+    title: 'Jabones',
+    subtitle: 'Jabones · Aceites · Arcillas · Mantecas',
+    image: '/images/categories/jabones.webp',
+    href: '/jabones',
+  },
+];
+---
+
+<section class="container-page py-10">
+  <div class="grid gap-4 sm:grid-cols-2">
+    {
+      tiles.map((tile) => (
+        <a href={tile.href} class="group relative flex aspect-[720/406] items-center overflow-hidden rounded-[var(--radius-xl)]">
+          <img src={tile.image} alt={tile.title} class="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105" width="720" height="406" loading="lazy" decoding="async" />
+          <div class="absolute inset-0 bg-gradient-to-r from-foreground/80 via-foreground/35 to-transparent"></div>
+          <div class="relative px-7">
+            <h2 class="text-3xl font-extrabold tracking-tight text-white">{tile.title}</h2>
+            <p class="mt-1 text-sm text-white/85">{tile.subtitle}</p>
+            <span class="btn-aqua mt-4 w-fit">Ver productos</span>
+          </div>
+        </a>
+      ))
+    }
+  </div>
+</section>

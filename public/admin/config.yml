@@ -1,0 +1,287 @@
+# ============================================================================
+#  LewoskiShop — Panel de administración
+#  https://lewoskishop.com.ar/admin
+#
+#  Este archivo define QUÉ se puede editar desde el panel y DÓNDE se guarda.
+#  Cada vez que guardás un cambio, el panel hace un "commit" al repositorio de
+#  GitHub y el sitio se vuelve a publicar solo (GitHub Actions, ~1 minuto).
+#
+#  Motor: Sveltia CMS (sucesor mantenido de Netlify/Decap CMS).
+#  Login: Personal Access Token de GitHub. Sin OAuth App, sin client_secret,
+#  sin proxy y sin ningún servidor extra.
+# ============================================================================
+
+backend:
+  name: github
+  repo: lewoskishop/lewoskishop.github.io
+  branch: main
+
+  # ------------------------------------------------------------------
+  #  AUTENTICACIÓN POR TOKEN
+  #
+  #  El panel muestra el botón "Sign In with Token": generás un Personal
+  #  Access Token en GitHub y lo pegás. El token queda en el localStorage
+  #  del navegador y se usa para hablar con la API de GitHub.
+  #
+  #  Eso evita por completo el flujo OAuth: GitHub exige el client_secret
+  #  para canjear el código por un token, y eso obliga a tener un servidor
+  #  extra (proxy) — que es lo que ninguna tienda necesita.
+  #
+  #  El token necesita:
+  #    - alcance al repo lewoskishop/lewoskishop.github.io
+  #    - permiso "Contents: Read and write" (si usás Editorial Workflow,
+  #      también "Pull requests: Read and write")
+  #    - un token clásico con el scope "repo" también sirve
+  #
+  #  ⚠️  Si algún día querés el login con "Sign In with GitHub" (OAuth),
+  #     sacá esta línea y sumá base_url + auth_endpoint apuntando a un
+  #     cliente OAuth (Sveltia CMS Authenticator, Netlify, etc.).
+  # ------------------------------------------------------------------
+  auth_methods: [token]
+
+# Publish mode: "simple" guarda y publica directo. "editorial_workflow" crea
+# borradores que hay que aprobar antes de publicar. Descomentá si lo querés:
+# publish_mode: editorial_workflow
+
+# Los campos opcionales que quedan vacíos NO se escriben en el JSON.
+# Es lo que espera el schema Zod del sitio (src/lib/product-schema.ts).
+output:
+  omit_empty_optional_fields: true
+
+# ---------------------------------------------------------------------------
+#  Imágenes
+#
+#  POR DEFECTO: las fotos se guardan en el repositorio, en
+#  public/images/uploads y el sitio las muestra desde /images/uploads/…
+#
+#  RECOMENDADO (Cloudinary, gratis): así las fotos NO inflan el repositorio y
+#  Cloudinary te las entrega optimizadas y livianas.
+#    1. Creá una cuenta gratis en https://cloudinary.com
+#    2. En el panel de Cloudinary copiá "Cloud name" y "API key"
+#    3. Descomentá los dos bloques de abajo y pegá tus datos
+#    4. Volvé a guardar este archivo (el cambio se publica solo)
+# ---------------------------------------------------------------------------
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+# --- Cloudinary: pegá acá tus datos y descomentá el bloque (Decap CMS) ---
+# media_library:
+#   name: cloudinary
+#   config:
+#     cloud_name: TU_CLOUD_NAME
+#     api_key: TU_API_KEY
+
+# --- Cloudinary si algún día usás Sveltia CMS en lugar de Decap ---
+# media_libraries:
+#   cloudinary:
+#     config:
+#       cloud_name: TU_CLOUD_NAME
+#       api_key: TU_API_KEY
+
+# Idioma del panel. Sveltia usa el idioma del navegador automáticamente.
+# locale: es
+
+# ============================================================================
+#  PRODUCTOS
+# ============================================================================
+collections:
+  - name: products
+    label: Productos
+    label_singular: Producto
+    folder: src/content/products
+    create: true
+    delete: true
+    extension: json
+    format: json
+    identifier_field: name
+    summary: "{{name}} · {{category}} · ${{price}}"
+    sortable_fields: [name, price, category]
+    view_filters:
+      - label: Destacados
+        field: featured
+        pattern: true
+      - label: Sin stock
+        field: inStock
+        pattern: false
+      - label: En liquidación
+        field: tags
+        pattern: liquidacion
+    fields:
+      - label: Nombre del producto
+        name: name
+        widget: string
+
+      - label: Descripción corta
+        name: description
+        widget: text
+        hint: "Una o dos líneas. Se muestra en la tarjeta del catálogo."
+
+      - label: Descripción larga
+        name: longDescription
+        widget: text
+        required: false
+        hint: "Opcional. Se muestra en la página del producto. Podés usar listas con '-'."
+
+      - label: Precio
+        name: price
+        widget: number
+        value_type: int
+        min: 1
+        hint: "Número sin puntos ni símbolos. Ej: 25000"
+
+      - label: Precio anterior (para mostrar el % de descuento)
+        name: compareAtPrice
+        widget: number
+        value_type: int
+        min: 1
+        required: false
+        hint: "Opcional. Si lo cargás, la etiqueta '-15% OFF' se calcula sola. Tiene que ser MAYOR que el precio."
+
+      - label: Categoría
+        name: category
+        widget: string
+        default: General
+        hint: "Ej: Ceras, Pabilos, Moldes, Esencias, Envases, Herramientas, Jabones y Cosmética"
+
+      - label: Marca
+        name: brand
+        widget: string
+        hint: "Ej: LewoskiShop"
+
+      - label: Grupo
+        name: grupo
+        widget: select
+        options:
+          - { label: Velas, value: velas }
+          - { label: Jabones, value: jabones }
+          - { label: Velas y jabones, value: ambos }
+
+      - label: Presentaciones / variantes
+        name: variants
+        widget: list
+        required: false
+        collapsed: true
+        label_singular: Presentación
+        summary: "{{fields.label}} · ${{fields.price}}"
+        hint: "Opcional. Usalo cuando el producto se venda en varias presentaciones (ej: 100 ml, 250 ml, 1 kg). Si tiene un solo precio, dejalo vacío."
+        fields:
+          - { label: Presentación, name: label, widget: string, hint: "Ej: 100 ml, 250 ml, 1 kg, x12" }
+          - { label: Precio, name: price, widget: number, value_type: int, min: 1 }
+          - { label: Precio anterior, name: compareAtPrice, widget: number, value_type: int, min: 1, required: false }
+          - { label: Stock (unidades), name: stock, widget: number, value_type: int, min: 0 }
+          - { label: Foto de esta presentación, name: image, widget: image, required: false, hint: "Opcional. Si la cargás, la foto cambia al elegir la presentación." }
+
+      - label: Imágenes (de 1 a 3)
+        name: images
+        widget: list
+        min: 1
+        max: 3
+        label_singular: Imagen
+        field: { label: Imagen, name: image, widget: image }
+        hint: "La primera es la que se ve en el catálogo."
+
+      - label: Destacado en la home
+        name: featured
+        widget: boolean
+        default: false
+
+      - label: Disponible
+        name: inStock
+        widget: boolean
+        default: true
+        hint: "Si lo apagás, el producto se muestra como 'Sin stock'."
+
+      - label: Stock (producto simple)
+        name: stock
+        widget: number
+        value_type: int
+        min: 0
+        required: false
+        hint: "Sólo si NO usás presentaciones/variantes."
+
+      - label: Etiqueta sobre la imagen
+        name: badge
+        widget: string
+        required: false
+        hint: 'Opcional. Ej: "Nuevo". Dejalo vacío si no querés etiqueta.'
+
+      - label: Colecciones / tags
+        name: tags
+        widget: select
+        multiple: true
+        required: false
+        options:
+          - { label: Top ventas, value: top-ventas }
+          - { label: Novedad, value: novedad }
+          - { label: Liquidación, value: liquidacion }
+        hint: "Definen si el producto aparece en las colecciones de la home."
+
+  # ==========================================================================
+  #  PREGUNTAS FRECUENTES
+  # ==========================================================================
+  - name: faqs
+    label: Preguntas frecuentes
+    label_singular: Pregunta
+    folder: src/content/faqs
+    create: true
+    delete: true
+    extension: json
+    format: json
+    identifier_field: id
+    summary: "{{question}}"
+    sortable_fields: [order, question]
+    fields:
+      - label: Identificador
+        name: id
+        widget: string
+        hint: "Sin espacios ni acentos. Define el enlace directo /#faq-IDENTIFICADOR. NO lo cambies en las preguntas existentes."
+      - label: Orden
+        name: order
+        widget: number
+        value_type: int
+        min: 0
+        default: 10
+        hint: "Número de posición. Menor = aparece más arriba."
+      - label: Pregunta
+        name: question
+        widget: string
+      - label: Respuesta
+        name: answer
+        widget: text
+
+  # ==========================================================================
+  #  AJUSTES DE LA TIENDA (archivo único)
+  # ==========================================================================
+  - name: settings
+    label: Ajustes de la tienda
+    files:
+      - name: store
+        label: Datos generales
+        file: src/content/settings/store.json
+        fields:
+          - { label: Nombre de la tienda, name: name, widget: string }
+          - { label: Frase corta, name: tagline, widget: string, hint: "Ej: Insumos para emprendedores" }
+          - { label: Descripción (SEO), name: description, widget: text }
+          - { label: Ciudad, name: city, widget: string, hint: "Aparece en 'Estás en …'" }
+          - { label: Dirección, name: address, widget: string }
+          - label: WhatsApp
+            name: whatsappPhone
+            widget: string
+            hint: "Código de país + área + número, SIN '+', espacios ni guiones. Ej: 5492615555555"
+          - label: Saludo del mensaje de WhatsApp
+            name: whatsappGreeting
+            widget: string
+            hint: "Usá {store} y el panel lo reemplaza por el nombre de la tienda."
+          - { label: Moneda, name: currency, widget: string, default: ARS, hint: "Código de 3 letras. Ej: ARS" }
+          - { label: Idioma de los precios, name: locale, widget: string, default: es-AR }
+          - { label: Email de contacto, name: email, widget: string, required: false, hint: "Vacío = se oculta." }
+          - { label: Instagram, name: instagram, widget: string, required: false, hint: "Vacío = se oculta." }
+          - { label: Facebook, name: facebook, widget: string, required: false, hint: "Vacío = se oculta." }
+          - { label: Nota de envío (carrito), name: shippingNote, widget: text }
+          - label: Códigos de descuento
+            name: discountCodes
+            widget: list
+            required: false
+            fields:
+              - { label: Código, name: code, widget: string, hint: "Ej: LEWOSKI10 (se guarda en mayúsculas)" }
+              - { label: Descuento, name: rate, widget: number, value_type: float, step: 0.01, min: 0, hint: "En decimal. 0.1 = 10%" }

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Administración · LewoskiShop</title>
+    <link rel="icon" href="/images/logo-lewoski.webp" />
+
+    <!--
+      Ruta ABSOLUTA del config. Sin esto, el panel resuelve "config.yml" de forma
+      relativa a la URL: entrando a /admin (sin la barra final) la buscaba en
+      /config.yml y daba "Failed to load config.yml (404)".
+    -->
+    <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url" />
+
+    <style>
+      /* Evita el parpadeo blanco mientras carga el panel. */
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+        background: #ffffff;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!--
+      Sveltia CMS: sucesor mantenido de Netlify/Decap CMS.
+
+      IMPORTANTE: el script va AL FINAL del <body> y SIN `type="module"`.
+      Sveltia hace auto-init al evaluarse y necesita que document.body ya exista;
+      si el <script> está en el <head> la página queda en blanco. Y Sveltia NO
+      es un módulo ES: con `type="module"` avisa por consola y se rompe.
+
+      El login es por Personal Access Token de GitHub (backend.auth_methods:
+      [token]), así que no hace falta OAuth App, ni client_secret, ni proxy.
+    -->
+    <script src="https://unpkg.com/@sveltia/cms@0.250.1/dist/sveltia-cms.js"></script>
+  </body>
+</html>

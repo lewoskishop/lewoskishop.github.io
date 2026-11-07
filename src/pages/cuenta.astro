@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { STORE } from '../config';
+---
+
+<BaseLayout title="Mi cuenta" description="Consultanos por WhatsApp para seguir el estado de tu pedido.">
+  <section class="container-page py-12">
+    <div class="mx-auto max-w-md">
+      <div class="card p-6">
+        <h1 class="text-2xl font-extrabold tracking-tight">Mi cuenta</h1>
+        <p class="mt-1 text-sm text-muted">Escribinos por WhatsApp para consultar el estado de tu pedido.</p>
+
+        <form class="mt-5 space-y-4" data-account-form>
+          <div>
+            <label for="account-email" class="mb-1 block text-sm font-medium">Email</label>
+            <input id="account-email" type="email" required autocomplete="email" class="input" placeholder="tucorreo@ejemplo.com" />
+          </div>
+          <button type="submit" class="btn-cta w-full py-3">Ingresar</button>
+          <p data-account-msg class="hidden rounded-[var(--radius)] bg-brand-secondary-tint px-3 py-2.5 text-xs text-brand-secondary">
+            Esta es una demo sin backend: tus pedidos se confirman por WhatsApp.
+          </p>
+        </form>
+      </div>
+
+      <div class="mt-4 flex items-center justify-between rounded-[var(--radius-xl)] border border-border bg-white p-4 text-sm">
+        <p class="text-muted">¿Necesitás ayuda con un pedido?</p>
+        <a href={`https://wa.me/${STORE.whatsappPhone}`} target="_blank" rel="noopener" class="font-semibold text-brand-secondary hover:underline">WhatsApp</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('[data-account-form]');
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    document.querySelector<HTMLElement>('[data-account-msg]')?.classList.remove('hidden');
+  });
+</script>

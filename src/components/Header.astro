@@ -1,0 +1,192 @@
+---
+import { getCollection } from 'astro:content';
+import { STORE } from '../config';
+import { buildNav } from '../lib/products';
+import Logo from './Logo.astro';
+
+const products = await getCollection('products');
+const nav = buildNav(products);
+const searchIndex = products.map((p) => ({
+  id: p.id,
+  name: p.data.name,
+  brand: p.data.brand,
+  category: p.data.category,
+  grupo: p.data.grupo,
+  foodType: p.data.foodType,
+  price: p.data.price,
+  compareAtPrice: p.data.compareAtPrice,
+  bonusKg: p.data.bonusKg,
+  tags: p.data.tags,
+  image: p.data.images[0],
+}));
+---
+
+<script is:inline type="application/json" data-search-index set:html={JSON.stringify(searchIndex)} />
+
+<header class="sticky top-0 z-30 border-b border-border bg-white/90 backdrop-blur">
+  <div class="container-page flex h-16 items-center gap-3">
+    <button
+      type="button"
+      data-menu-open
+      class="grid h-10 w-10 place-items-center rounded-full text-foreground transition-colors hover:bg-muted-bg lg:hidden"
+      aria-label="Abrir menú"
+    >
+      <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+    </button>
+
+    <div class="flex shrink-0 items-center">
+      <Logo />
+    </div>
+
+    <div class="pulse-soft hidden items-center gap-2 rounded-full border border-border bg-muted-bg px-3.5 py-1.5 text-xs lg:flex">
+      <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 text-brand-secondary" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.2-7-11a7 7 0 1 1 14 0c0 5.8-7 11-7 11Z" /><circle cx="12" cy="10" r="2.5" /></svg>
+      <span class="text-muted">Estás en</span>
+      <span class="font-bold text-foreground">{STORE.city}</span>
+    </div>
+
+    <div class="relative hidden flex-1 md:block" data-search>
+      <label class="sr-only" for="site-search">Buscar productos</label>
+      <div class="relative">
+        <svg viewBox="0 0 24 24" class="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7" /><path d="m21 21-4.3-4.3" /></svg>
+        <input
+          id="site-search"
+          type="search"
+          data-search-input
+          autocomplete="off"
+          placeholder="Buscar producto, categoría…"
+          class="input bg-muted-bg pl-10"
+        />
+      </div>
+      <div
+        data-search-results
+        class="absolute left-0 right-0 top-[calc(100%+0.5rem)] z-40 hidden overflow-hidden rounded-[var(--radius-lg)] border border-border bg-white py-1 shadow-xl"
+        role="listbox"
+        aria-label="Resultados de búsqueda"
+      ></div>
+    </div>
+
+    <a
+      href="/cuenta"
+      class="hidden h-10 w-10 place-items-center rounded-full text-foreground transition-colors hover:bg-muted-bg sm:grid"
+      aria-label="Mi cuenta"
+    >
+      <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4" /><path d="M4 21a8 8 0 0 1 16 0" /></svg>
+    </a>
+
+    <button
+      type="button"
+      data-cart-open
+      class="relative flex items-center gap-2 rounded-full border border-border bg-white px-3.5 py-2 text-sm font-semibold text-foreground transition-colors hover:border-foreground"
+      aria-label="Abrir carrito"
+    >
+      <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2l2.4 12.3a2 2 0 0 0 2 1.7h7.2a2 2 0 0 0 2-1.7L21 8H6" /><circle cx="9.5" cy="20" r="1.5" /><circle cx="18" cy="20" r="1.5" /></svg>
+      <span class="hidden sm:inline">Carrito</span>
+      <span data-cart-count class="absolute -right-1.5 -top-1.5 hidden min-w-5 rounded-full bg-brand-secondary px-1.5 text-center text-xs font-bold leading-5 text-white">0</span>
+    </button>
+  </div>
+
+  <nav class="hidden border-t border-border lg:block" aria-label="Categorías">
+    <div class="container-page flex items-center gap-1">
+      {
+        nav.map((item) => (
+          <div class="group relative">
+            <a
+              href={item.href}
+              class="flex items-center gap-1 px-3.5 py-3 text-sm font-semibold text-foreground transition-colors hover:text-brand-secondary"
+            >
+              {item.label}
+              {item.children && (
+                <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 text-muted transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6" /></svg>
+              )}
+            </a>
+            {item.children && (
+              <div class="invisible absolute left-0 top-full z-30 min-w-56 -translate-y-1 rounded-[var(--radius-lg)] border border-border bg-white p-2 opacity-0 shadow-xl transition-all duration-150 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
+                {item.children.map((child) => (
+                  <a href={child.href} class="block rounded-[var(--radius)] px-3 py-2 text-sm text-muted transition-colors hover:bg-muted-bg hover:text-foreground">
+                    {child.label}
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
+        ))
+      }
+    </div>
+  </nav>
+
+  <div class="container-page pb-3 md:hidden">
+    <div class="relative" data-search>
+      <label class="sr-only" for="site-search-mobile">Buscar productos</label>
+      <div class="relative">
+        <svg viewBox="0 0 24 24" class="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7" /><path d="m21 21-4.3-4.3" /></svg>
+        <input id="site-search-mobile" type="search" data-search-input autocomplete="off" placeholder="Buscar productos…" class="input bg-muted-bg pl-10" />
+      </div>
+      <div data-search-results class="absolute left-0 right-0 top-[calc(100%+0.5rem)] z-40 hidden overflow-hidden rounded-[var(--radius-lg)] border border-border bg-white py-1 shadow-xl" role="listbox"></div>
+    </div>
+  </div>
+</header>
+
+<div data-menu-overlay class="pointer-events-none fixed inset-0 z-40 bg-foreground/50 opacity-0 lg:hidden" aria-hidden="true"></div>
+
+<aside
+  data-mobile-menu
+  class="fixed left-0 top-0 z-50 flex h-full w-[85%] max-w-sm -translate-x-full flex-col bg-white shadow-2xl lg:hidden"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Menú"
+>
+  <div class="flex items-center justify-between border-b border-border px-5 py-4">
+    <Logo class="h-9" />
+    <button type="button" data-menu-close class="grid h-9 w-9 place-items-center rounded-full text-muted hover:bg-muted-bg hover:text-foreground" aria-label="Cerrar menú">
+      <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12" /></svg>
+    </button>
+  </div>
+
+  <div class="flex-1 overflow-y-auto px-3 py-3">
+    <div class="pulse-soft mb-3 flex items-center gap-2 rounded-[var(--radius)] bg-muted-bg px-3.5 py-2.5 text-xs">
+      <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 text-brand-secondary" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.2-7-11a7 7 0 1 1 14 0c0 5.8-7 11-7 11Z" /><circle cx="12" cy="10" r="2.5" /></svg>
+      <span class="text-muted">Estás en</span><span class="font-bold">{STORE.city}</span>
+    </div>
+
+    <nav aria-label="Menú principal">
+      {
+        nav.map((item) =>
+          item.children ? (
+            <details class="group border-b border-border">
+              <summary class="flex cursor-pointer list-none items-center justify-between px-3 py-3.5 text-sm font-semibold">
+                {item.label}
+                <svg viewBox="0 0 24 24" class="h-4 w-4 text-muted transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6" /></svg>
+              </summary>
+              <div class="pb-2">
+                <a href={item.href} class="block rounded-[var(--radius)] px-3 py-2 text-sm font-medium text-brand-secondary">
+                  Ver todo {item.label}
+                </a>
+                {item.children.map((child) => (
+                  <a href={child.href} class="block rounded-[var(--radius)] px-3 py-2 text-sm text-muted hover:bg-muted-bg hover:text-foreground">
+                    {child.label}
+                  </a>
+                ))}
+              </div>
+            </details>
+          ) : (
+            <a href={item.href} class="block border-b border-border px-3 py-3.5 text-sm font-semibold hover:text-brand-secondary">
+              {item.label}
+            </a>
+          ),
+        )
+      }
+    </nav>
+
+    <a href="/cuenta" class="mt-3 block rounded-[var(--radius)] bg-muted-bg px-3 py-3 text-sm font-semibold">Mi cuenta</a>
+    <a href={`https://wa.me/${STORE.whatsappPhone}`} target="_blank" rel="noopener" class="btn-whatsapp mt-3 w-full">
+      <svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Z" /></svg>
+      Escribinos por WhatsApp
+    </a>
+  </div>
+</aside>
+
+<script>
+  import { initSearch, initMobileMenu } from '../scripts/nav-ui';
+  initSearch();
+  initMobileMenu();
+</script>

@@ -1,0 +1,16 @@
+{
+  "name": "Pipetas Pasteur 3ml",
+  "description": "Pipetas Pasteur 3ml disponible en LewoskiShop.",
+  "longDescription": "Pipetas Pasteur 3ml disponible en LewoskiShop.\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
+  "price": 200,
+  "category": "Herramientas",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/pipetas-pasteur-3ml-1.webp"
+  ],
+  "featured": false,
+  "inStock": true,
+  "stock": 25,
+  "tags": []
+}

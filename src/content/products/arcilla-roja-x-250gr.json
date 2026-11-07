@@ -1,0 +1,16 @@
+{
+  "name": "Arcilla Roja x 250gr",
+  "description": "Uso cosmético.",
+  "longDescription": "Uso cosmético.\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
+  "price": 1500,
+  "category": "Jabones y Cosmética",
+  "brand": "LewoskiShop",
+  "grupo": "jabones",
+  "images": [
+    "/images/products/arcilla-roja-x-250gr-1.webp"
+  ],
+  "featured": false,
+  "inStock": true,
+  "stock": 25,
+  "tags": []
+}

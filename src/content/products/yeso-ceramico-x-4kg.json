@@ -1,0 +1,16 @@
+{
+  "name": "Yeso cerámico x 4Kg",
+  "description": "Yeso cerámico x 4Kg disponible en LewoskiShop.",
+  "longDescription": "Yeso cerámico x 4Kg disponible en LewoskiShop.\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
+  "price": 8000,
+  "category": "Materias Primas",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/yeso-ceramico-x-4kg-1.webp"
+  ],
+  "featured": false,
+  "inStock": true,
+  "stock": 25,
+  "tags": []
+}

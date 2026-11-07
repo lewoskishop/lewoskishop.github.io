@@ -1,0 +1,20 @@
+{
+  "name": "Cera de soja BPF REFICEN",
+  "description": "Cera de soja BPF REFICEN, ideal para velas en contenedor, con excelente retención de fragancia y un acabado suave.",
+  "longDescription": "Cera de soja BPF REFICEN, ideal para velas en contenedor, con excelente retención de fragancia y un acabado suave.\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
+  "price": 9000,
+  "category": "Ceras",
+  "brand": "LewoskiShop",
+  "grupo": "velas",
+  "images": [
+    "/images/products/cera-de-soja-bpf-reficen-1.webp",
+    "/images/products/cera-de-soja-bpf-reficen-2.webp",
+    "/images/products/cera-de-soja-bpf-reficen-3.webp"
+  ],
+  "featured": true,
+  "inStock": true,
+  "stock": 25,
+  "tags": [
+    "top-ventas"
+  ]
+}

@@ -1,0 +1,242 @@
+@import 'tailwindcss';
+
+/*
+ * ============================================================================
+ *  LEWOSKISHOP — Sistema de diseño
+ *  Estilo cálido, artesanal y prolijo, con la paleta de la tienda:
+ *    primary   #40251b  marrón oscuro — textos, títulos y CTA principal
+ *    secondary #ac7d59  marrón claro  — ofertas y acentos
+ *    accent    #e6d1b9  beige         — botón secundario y highlights
+ *    fondo     #fbf8f3  crema suave
+ * ============================================================================
+ */
+
+@theme {
+  /* ----- Paleta LewoskiShop ----- */
+  --color-brand-ink: #40251b; /* primary — texto, títulos y botón principal */
+  --color-brand-aqua: #e6d1b9; /* accent — botón secundario (texto marrón) */
+  --color-brand-orange: #40251b; /* primary — CTA principal (bg + texto blanco) */
+  --color-brand-coral: #ac7d59; /* secondary — ofertas y acentos */
+  --color-brand-purple: #ac7d59; /* secondary — detalles decorativos */
+  --color-brand-yellow: #e6d1b9; /* accent — badges */
+
+  /* ----- Tokens semánticos (remapeados a la marca) ----- */
+  --color-brand-primary: #40251b;
+  --color-brand-secondary: #8a5a3a; /* secondary oscurecido — hover y acentos */
+  --color-brand-secondary-tint: #f3e8dc;
+  --color-background: #fbf8f3; /* crema suave */
+  --color-foreground: #2a1a12; /* texto de cuerpo */
+  --color-muted: #6b5a4e; /* texto secundario */
+  --color-muted-bg: #f5f0e8; /* fondos suaves */
+  --color-border: #e7ddd1; /* bordes y separadores */
+  --color-success: #27ae60;
+  --color-danger: #c0392b;
+  --color-warning: #f39c12;
+  --color-gift: #ac7d59; /* badges de oferta */
+  --color-surface-dark: #2a1a12;
+
+  --color-brand-coral-tint: #f3e8dc;
+
+  --page-width: 1440px;
+
+  /* Esquinas redondeadas, cálidas y artesanales */
+  --radius-sm: 10px;
+  --radius: 14px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+
+  /* Tipografía geométrica y limpia */
+  --font-sans: 'Outfit', system-ui, -apple-system, sans-serif;
+  --font-display: 'Outfit', system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Títulos con la tipografía de la marca */
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.015em;
+  }
+
+  ::selection {
+    background-color: var(--color-brand-aqua);
+    color: var(--color-brand-ink);
+  }
+}
+
+@layer components {
+  .container-page {
+    width: min(100% - 2rem, var(--page-width));
+    margin-inline: auto;
+  }
+
+  .btn,
+  .btn-cta,
+  .btn-aqua,
+  .btn-yellow,
+  .btn-dark,
+  .btn-outline,
+  .btn-whatsapp {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold
+      transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-offset-2
+      focus-visible:outline-brand-secondary disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  /* Llamado a la acción principal: violeta de marca con texto blanco */
+  .btn-cta {
+    @apply bg-brand-orange text-white hover:bg-brand-secondary;
+  }
+
+  /* Acento: celeste de marca con texto violeta */
+  .btn-aqua,
+  .btn-yellow {
+    @apply bg-brand-aqua text-brand-ink hover:bg-brand-aqua/85;
+  }
+
+  .btn-dark {
+    @apply bg-surface-dark text-white hover:bg-foreground;
+  }
+
+  .btn-outline {
+    @apply border border-border bg-white text-foreground hover:border-foreground;
+  }
+
+  .btn-whatsapp {
+    @apply bg-[#25D366] text-white hover:bg-[#1ebe5a];
+  }
+
+  /* Tarjetas: blancas, 20px de radio y sombra muy sutil */
+  .card {
+    @apply rounded-[20px] border border-border bg-white;
+    box-shadow: 0 8px 22px -14px rgba(64, 37, 27, 0.18);
+  }
+
+  .input {
+    @apply w-full rounded-[var(--radius)] border border-border bg-white px-4 py-2.5 text-sm
+      placeholder:text-muted focus:border-brand-secondary focus:outline-none
+      focus:ring-2 focus:ring-brand-secondary/20;
+  }
+
+  .chip {
+    @apply inline-flex items-center rounded-full border border-border bg-white px-3.5 py-1.5
+      text-sm font-medium text-muted transition-colors hover:border-foreground hover:text-foreground;
+  }
+
+  .chip-active {
+    @apply border-brand-secondary bg-brand-secondary text-white hover:border-brand-secondary hover:text-white;
+  }
+
+  .pill {
+    @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-bold;
+  }
+
+  /* Logotipo: caja con espacio reservado para la imagen oficial */
+  .logo-slot {
+    @apply flex h-11 w-auto items-center rounded-[var(--radius)] px-1;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ----- Detalles decorativos flotando en el fondo ----- */
+.paw-decor {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.paw-float {
+  position: absolute;
+  color: var(--color-brand-purple);
+  opacity: 0.16;
+  animation: paw-float 7s ease-in-out infinite;
+}
+
+@keyframes paw-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(var(--paw-rot, 0deg));
+  }
+  50% {
+    transform: translateY(-16px) rotate(var(--paw-rot, 0deg));
+  }
+}
+
+/* ----- Pulsación suave ("Estás en <ciudad>") ----- */
+.pulse-soft {
+  animation: pulse-soft 2.8s ease-in-out infinite;
+  will-change: transform;
+}
+
+.pulse-soft svg {
+  animation: pulse-pin 2.8s ease-in-out infinite;
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(172, 125, 89, 0.35);
+  }
+  50% {
+    transform: scale(1.04);
+    box-shadow: 0 0 0 7px rgba(172, 125, 89, 0);
+  }
+}
+
+@keyframes pulse-pin {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.18);
+  }
+}
+
+[data-drawer-overlay],
+[data-menu-overlay] {
+  transition: opacity 0.25s ease;
+}
+[data-cart-drawer],
+[data-mobile-menu] {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .paw-float {
+    animation: none;
+  }
+  .pulse-soft,
+  .pulse-soft svg {
+    animation: none;
+  }
+  [data-cart-drawer],
+  [data-mobile-menu],
+  [data-drawer-overlay],
+  [data-menu-overlay] {
+    transition: none;
+  }
+}

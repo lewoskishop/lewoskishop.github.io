@@ -1,0 +1,18 @@
+---
+// src/pages/productos/index.astro
+// Catálogo completo. Reusa ProductGrid, que trae los filtros por grupo,
+// categoría y búsqueda, y lee los query params del menú: ?grupo=velas&cat=ceras
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProductGrid from '../../components/ProductGrid.astro';
+---
+
+<BaseLayout
+  title="Todos los productos"
+  description="Insumos para velas, jabones y cosmética artesanal. Filtrá por categoría y encontrá todo para tu emprendimiento."
+>
+  <ProductGrid
+    title="Todos los productos"
+    subtitle="Ceras, moldes, esencias, envases, jabones y mucho más. Filtrá por grupo o categoría."
+  />
+</BaseLayout>

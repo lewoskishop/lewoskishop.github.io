@@ -1,0 +1,57 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import { collectionEntries } from '../../lib/products';
+import { COLLECTIONS } from '../../lib/nav';
+
+export async function getStaticPaths() {
+  const products = await getCollection('products');
+  return COLLECTIONS.map((collection) => ({
+    params: { slug: collection.slug },
+    props: {
+      title: collection.title,
+      text: collection.text,
+      products: collectionEntries(products, collection.slug).sort((a, b) =>
+        a.data.name.localeCompare(b.data.name, 'es'),
+      ),
+    },
+  }));
+}
+
+interface Props {
+  title: string;
+  text: string;
+  products: CollectionEntry<'products'>[];
+}
+
+const { title, text, products } = Astro.props;
+---
+
+<BaseLayout title={title} description={text}>
+  <section class="container-page py-8">
+    <nav class="mb-6 flex items-center gap-1.5 text-sm text-muted" aria-label="Ruta">
+      <a href="/" class="hover:text-foreground">Inicio</a>
+      <span>/</span>
+      <span class="text-foreground">{title}</span>
+    </nav>
+
+    <div class="mb-6">
+      <h1 class="text-3xl font-extrabold tracking-tight">{title}</h1>
+      <p class="mt-1 text-sm text-muted">{text}</p>
+      <p class="mt-2 text-sm text-muted">{products.length} productos</p>
+    </div>
+
+    {
+      products.length > 0 ? (
+        <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+          {products.map((product) => <ProductCard product={product} />)}
+        </div>
+      ) : (
+        <p class="rounded-[var(--radius-xl)] border border-dashed border-border py-16 text-center text-muted">
+          Todavía no hay productos en esta colección.
+        </p>
+      )
+    }
+  </section>
+</BaseLayout>

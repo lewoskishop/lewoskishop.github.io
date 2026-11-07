@@ -1,0 +1,16 @@
+{
+  "name": "Cera en Perlas x 1 kilo",
+  "description": "Ideal para velas en contenedores ,velas flotantes",
+  "longDescription": "Ideal para velas en contenedores ,velas flotantes\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
+  "price": 20000,
+  "category": "Ceras",
+  "brand": "LewoskiShop",
+  "grupo": "velas",
+  "images": [
+    "/images/products/cera-en-perlas-x-1-kilo-1.webp"
+  ],
+  "featured": false,
+  "inStock": false,
+  "stock": 0,
+  "tags": []
+}

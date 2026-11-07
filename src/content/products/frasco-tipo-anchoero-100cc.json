@@ -1,0 +1,16 @@
+{
+  "name": "Frasco tipo Anchoero 100cc",
+  "description": "Tapa dorada, blanca o negra según stock.",
+  "longDescription": "Tapa dorada, blanca o negra según stock.\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
+  "price": 800,
+  "category": "Envases",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/frasco-tipo-anchoero-100cc-1.webp"
+  ],
+  "featured": false,
+  "inStock": true,
+  "stock": 25,
+  "tags": []
+}

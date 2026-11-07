@@ -1,0 +1,32 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import ProductCard from './ProductCard.astro';
+import { slugifyCategory } from '../lib/catalog';
+
+interface Props {
+  category: string;
+  products: CollectionEntry<'products'>[];
+}
+
+const { category, products } = Astro.props;
+const slug = slugifyCategory(category);
+---
+
+<section class="container-page py-10">
+  <div class="overflow-hidden rounded-[var(--radius-xl)] border border-border bg-white">
+    <div class="flex flex-col items-start justify-between gap-4 border-b border-border bg-surface-dark p-6 sm:flex-row sm:items-center">
+      <div class="flex items-center gap-4">
+        <span class="pill bg-brand-aqua px-4 py-2 text-base font-extrabold text-brand-ink">{category}</span>
+        <div>
+          <h2 class="text-xl font-extrabold tracking-tight text-white">Categoría destacada</h2>
+          <p class="text-sm text-white/70">Los favoritos de nuestros clientes para empezar a crear.</p>
+        </div>
+      </div>
+      <a href={`/productos/?cat=${slug}`} class="btn-aqua shrink-0">Ver todos</a>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4 p-4 sm:grid-cols-3 lg:grid-cols-5">
+      {products.map((product) => <ProductCard product={product} />)}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,18 @@
+{
+  "name": "Jabón glicerina Blanco x kilo",
+  "description": "jabón glicerina SPA en barra x 1 kilo, blanco y ambar",
+  "longDescription": "jabón glicerina SPA en barra x 1 kilo, blanco y ambar\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
+  "price": 12800,
+  "category": "Jabones y Cosmética",
+  "brand": "LewoskiShop",
+  "grupo": "jabones",
+  "images": [
+    "/images/products/jabon-glicerina-blanco-x-kilo-1.webp"
+  ],
+  "featured": true,
+  "inStock": true,
+  "stock": 25,
+  "tags": [
+    "top-ventas"
+  ]
+}

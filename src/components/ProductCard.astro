@@ -1,0 +1,249 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { formatPrice } from '../lib/format';
+import { resolveVariant, hasVariants } from '../lib/variants';
+
+interface Props {
+  product: CollectionEntry<'products'>;
+  eager?: boolean;
+}
+
+const { product, eager = false } = Astro.props;
+const data = product.data;
+const base = { id: product.id, ...data };
+const href = `/productos/${product.id}`;
+const multiVariant = hasVariants(base);
+const resolved = multiVariant
+  ? data.variants!.map((_, i) => resolveVariant(base, i))
+  : [resolveVariant(base)];
+const active = resolved.find((v) => v.inStock) ?? resolved[0];
+
+function stockState(stock: number): 'out' | 'low' | 'ok' {
+  if (stock <= 0) return 'out';
+  if (stock <= 10) return 'low';
+  return 'ok';
+}
+---
+
+<article
+  class="card group flex flex-col overflow-hidden transition-shadow hover:shadow-md"
+  data-card
+  data-variant-count={resolved.length}
+  data-name={data.name}
+>
+  <a href={href} class="relative block aspect-square overflow-hidden bg-muted-bg">
+    <img
+      src={active.image ?? data.images[0]}
+      alt={data.name}
+      width="600"
+      height="600"
+      loading={eager ? 'eager' : 'lazy'}
+      decoding="async"
+      class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+      data-card-image
+    />
+    <div class="absolute left-3 top-3 flex flex-col items-start gap-1.5">
+      <span
+        class="pill bg-gift text-foreground"
+        data-discount-badge
+        hidden={active.discount <= 0}
+      >-{active.discount}% OFF</span>
+      <span
+        class="pill bg-gift text-foreground"
+        data-gift-badge
+        hidden={active.bonusKg <= 0}
+      >+{active.bonusKg} kg de regalo</span>
+    </div>
+    <span
+      class="pill absolute right-3 top-3 bg-white/90 text-foreground"
+      data-out-badge
+      hidden={active.inStock}
+    >Sin stock</span>
+  </a>
+
+  <div class="flex flex-1 flex-col p-4">
+    <p class="text-xs font-semibold uppercase tracking-wide text-brand-secondary">{data.category}</p>
+    <h3 class="mt-1 text-sm font-semibold leading-snug">
+      <a href={href} class="hover:text-brand-secondary">{data.name}</a>
+    </h3>
+
+    <div class="mt-3 flex items-end gap-2">
+      <span class="text-lg font-extrabold tracking-tight tabular-nums" data-price>{formatPrice(active.price)}</span>
+      <span
+        class="text-sm text-muted line-through tabular-nums"
+        data-compare
+        hidden={!active.compareAtPrice}
+      >{active.compareAtPrice ? formatPrice(active.compareAtPrice) : ''}</span>
+    </div>
+
+    {
+      multiVariant && (
+        <div class="mt-3 flex flex-wrap gap-1.5" data-variant-switcher role="group" aria-label="Elegí la presentación">
+          {resolved.map((v) => (
+            <button
+              type="button"
+              class="variant-btn"
+              data-variant
+              data-active={v.index === active.index}
+              data-index={v.index}
+              data-price={v.price}
+              data-compare={v.compareAtPrice ?? ''}
+              data-discount={v.discount}
+              data-bonus={v.bonusKg}
+              data-stock={v.stockLabel}
+              data-stock-state={stockState(v.stock)}
+              data-in-stock={String(v.inStock)}
+              data-cart-id={v.cartId}
+              data-label={v.label ?? ''}
+              data-image={v.image ?? ''}
+              aria-pressed={v.index === active.index}
+            >{v.label}</button>
+          ))}
+        </div>
+      )
+    }
+
+    <p class="mt-3 text-xs font-semibold" data-stock data-state={stockState(active.stock)}>
+      {active.stockLabel}
+    </p>
+
+    <button
+      type="button"
+      class="btn-aqua mt-3 w-full"
+      data-add-to-cart
+      data-add-id={active.cartId}
+      data-add-name={data.name}
+      data-add-price={active.price}
+      data-add-image={active.image ?? data.images[0]}
+      data-add-variant={active.label ?? ''}
+      disabled={!active.inStock}
+      aria-label={`Agregar ${data.name} al carrito`}
+    >
+      {active.inStock ? 'Comprar' : 'Sin stock'}
+    </button>
+  </div>
+</article>
+
+<style>
+  .variant-btn {
+    border: 1px solid var(--color-border);
+    background: #fff;
+    color: var(--color-muted);
+    border-radius: 9999px;
+    padding: 0.25rem 0.65rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1.4;
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+  .variant-btn:hover {
+    border-color: var(--color-foreground);
+    color: var(--color-foreground);
+  }
+  .variant-btn[data-active='true'] {
+    border-color: var(--color-brand-secondary);
+    background: var(--color-brand-secondary-tint);
+    color: var(--color-brand-secondary);
+  }
+  [data-stock] {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+  }
+  [data-stock]::before {
+    content: '';
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 9999px;
+    background: var(--color-success);
+  }
+  [data-stock][data-state='out']::before {
+    background: var(--color-danger);
+  }
+  [data-stock][data-state='low']::before {
+    background: var(--color-warning);
+  }
+  [data-stock][data-state='ok']::before {
+    background: var(--color-success);
+  }
+</style>
+
+<script>
+  import { formatPrice } from '../lib/format';
+
+  function stateFor(stock: string): string {
+    const n = Number(stock);
+    if (n <= 0) return 'out';
+    if (n <= 10) return 'low';
+    return 'ok';
+  }
+
+  document.addEventListener('click', (e) => {
+    const btn = (e.target as HTMLElement).closest<HTMLElement>('[data-variant]');
+    if (!btn) return;
+    const card = btn.closest<HTMLElement>('[data-card]');
+    if (!card) return;
+
+    const price = Number(btn.dataset.price ?? 0);
+    const compare = Number(btn.dataset.compare || 0);
+    const discount = Number(btn.dataset.discount ?? 0);
+    const bonus = Number(btn.dataset.bonus ?? 0);
+    const inStock = btn.dataset.inStock === 'true';
+    const stockLabel = btn.dataset.stock ?? '';
+    const stockState = btn.dataset.stockState ?? 'ok';
+    const label = btn.dataset.label ?? '';
+
+    card.querySelectorAll<HTMLElement>('[data-variant]').forEach((b) => {
+      const isActive = b === btn;
+      b.dataset.active = String(isActive);
+      b.setAttribute('aria-pressed', String(isActive));
+    });
+
+    const priceEl = card.querySelector<HTMLElement>('[data-price]');
+    const compareEl = card.querySelector<HTMLElement>('[data-compare]');
+    const discountBadge = card.querySelector<HTMLElement>('[data-discount-badge]');
+    const giftBadge = card.querySelector<HTMLElement>('[data-gift-badge]');
+    const outBadge = card.querySelector<HTMLElement>('[data-out-badge]');
+    const stockEl = card.querySelector<HTMLElement>('[data-stock]');
+    const imgEl = card.querySelector<HTMLElement>('[data-card-image]');
+    const addBtn = card.querySelector<HTMLButtonElement>('[data-add-to-cart]');
+
+    if (priceEl) priceEl.textContent = formatPrice(price);
+    if (compareEl) {
+      compareEl.textContent = compare ? formatPrice(compare) : '';
+      compareEl.hidden = compare <= 0;
+    }
+    if (discountBadge) {
+      discountBadge.textContent = `-${discount}% OFF`;
+      discountBadge.hidden = discount <= 0;
+    }
+    if (giftBadge) {
+      giftBadge.textContent = `+${bonus} kg de regalo`;
+      giftBadge.hidden = bonus <= 0;
+    }
+    if (outBadge) outBadge.hidden = inStock;
+    if (stockEl) {
+      stockEl.textContent = stockLabel;
+      stockEl.dataset.state = stockState || stateFor(String(btn.dataset.stock));
+    }
+    const variantImage = btn.dataset.image || '';
+    if (addBtn) {
+      addBtn.dataset.addId = btn.dataset.cartId ?? '';
+      addBtn.dataset.addPrice = String(price);
+      addBtn.dataset.addVariant = label;
+      if (variantImage) addBtn.dataset.addImage = variantImage;
+      addBtn.disabled = !inStock;
+      addBtn.textContent = inStock ? 'Comprar' : 'Sin stock';
+    }
+    if (imgEl) {
+      if (variantImage) {
+        const img = imgEl as HTMLImageElement;
+        img.src = variantImage;
+        img.alt = btn.dataset.label
+          ? `${btn.dataset.label} · ${card.dataset.name ?? ''}`.trim()
+          : img.alt;
+      }
+      imgEl.classList.remove('hidden');
+    }
+  });
+</script>

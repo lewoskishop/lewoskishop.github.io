@@ -1,0 +1,18 @@
+{
+  "name": "Molde Nubecitas",
+  "description": "36 mini piezas. Silicona de exelente calidad",
+  "longDescription": "36 mini piezas. Silicona de exelente calidad\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
+  "price": 7500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-nubecitas-1.webp"
+  ],
+  "featured": true,
+  "inStock": true,
+  "stock": 25,
+  "tags": [
+    "novedad"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Molde de bandeja oval con flor",
+  "description": "Molde de bandeja oval con flor disponible en LewoskiShop.",
+  "longDescription": "Molde de bandeja oval con flor disponible en LewoskiShop.\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
+  "price": 11.5,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-de-bandeja-oval-con-flor-1.webp"
+  ],
+  "featured": false,
+  "inStock": true,
+  "stock": 25,
+  "tags": []
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Termómetro Digital",
+  "description": "Termómetro Digital disponible en LewoskiShop.",
+  "longDescription": "Termómetro Digital disponible en LewoskiShop.\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
+  "price": 8000,
+  "category": "Herramientas",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/termometro-digital-1.webp"
+  ],
+  "featured": false,
+  "inStock": true,
+  "stock": 25,
+  "tags": []
+}

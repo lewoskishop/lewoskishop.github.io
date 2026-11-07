@@ -1,0 +1,64 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import ProductCard from './ProductCard.astro';
+
+interface Props {
+  products: CollectionEntry<'products'>[];
+}
+
+const { products } = Astro.props;
+const tabs = [
+  { label: 'Todos', value: 'all' },
+  { label: 'Velas', value: 'velas' },
+  { label: 'Jabones', value: 'jabones' },
+];
+---
+
+<section class="container-page py-10">
+  <div class="mb-5 flex flex-wrap items-center justify-between gap-3">
+    <h2 class="text-2xl font-extrabold tracking-tight">Los más pedidos</h2>
+    <div class="flex gap-2" data-bestseller-tabs role="tablist">
+      {
+        tabs.map((tab, i) => (
+          <button type="button" data-tab={tab.value} class:list={['chip', i === 0 && 'chip-active']} role="tab" aria-selected={i === 0}>
+            {tab.label}
+          </button>
+        ))
+      }
+    </div>
+  </div>
+
+  <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4" data-bestseller-grid>
+    {
+      products.map((product) => (
+        <div data-tab-item data-grupo={product.data.grupo}>
+          <ProductCard product={product} />
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<script>
+  const root = document.querySelector('[data-bestseller-tabs]');
+  const grid = document.querySelector('[data-bestseller-grid]');
+  if (root && grid) {
+    const buttons = Array.from(root.querySelectorAll<HTMLElement>('[data-tab]'));
+    const items = Array.from(grid.querySelectorAll<HTMLElement>('[data-tab-item]'));
+
+    function apply(value: string): void {
+      buttons.forEach((b) => {
+        const active = b.dataset.tab === value;
+        b.classList.toggle('chip-active', active);
+        b.setAttribute('aria-selected', String(active));
+      });
+      items.forEach((item) => {
+        const grupo = item.dataset.grupo;
+        const show = value === 'all' || grupo === value || grupo === 'ambos';
+        item.classList.toggle('hidden', !show);
+      });
+    }
+
+    buttons.forEach((b) => b.addEventListener('click', () => apply(b.dataset.tab ?? 'all')));
+  }
+</script>

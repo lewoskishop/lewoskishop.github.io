@@ -1,0 +1,40 @@
+---
+import { STORE } from '../config';
+
+const promos = [
+  {
+    eyebrow: 'Categorías',
+    title: 'Encontrá todo por rubro',
+    text: 'Ceras, moldes, esencias, envases, herramientas y más.',
+    image: '/images/promos/cuotas.webp',
+    href: '/categorias',
+    cta: 'Ver categorías',
+  },
+  {
+    eyebrow: 'Asesoramiento',
+    title: '¿No sabés por dónde empezar?',
+    text: 'Escribinos por WhatsApp y te ayudamos a armar tu kit.',
+    image: '/images/promos/envios.webp',
+    href: `https://wa.me/${STORE.whatsappPhone}`,
+    cta: 'Hablar por WhatsApp',
+  },
+];
+---
+
+<section class="container-page py-4">
+  <div class="grid gap-4 md:grid-cols-2">
+    {
+      promos.map((promo) => (
+        <a href={promo.href} class="group flex items-center gap-4 overflow-hidden rounded-[var(--radius-xl)] border border-border bg-white p-3 transition-shadow hover:shadow-lg">
+          <img src={promo.image} alt="" class="h-28 w-28 shrink-0 rounded-[var(--radius-lg)] object-cover sm:h-32 sm:w-32" width="800" height="800" loading="lazy" />
+          <div class="pr-2">
+            <span class="pill bg-brand-aqua text-brand-ink">{promo.eyebrow}</span>
+            <h2 class="mt-2 text-lg font-extrabold leading-tight tracking-tight">{promo.title}</h2>
+            <p class="mt-1 text-sm text-muted">{promo.text}</p>
+            <span class="mt-2 inline-block text-sm font-semibold text-brand-secondary group-hover:underline">{promo.cta} →</span>
+          </div>
+        </a>
+      ))
+    }
+  </div>
+</section>

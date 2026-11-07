@@ -1,0 +1,16 @@
+{
+  "name": "Frasco morronero 200cc con tapa",
+  "description": "Frasco morronero 200cc con tapa dorada, blanca o negra según stock.",
+  "longDescription": "Frasco morronero 200cc con tapa dorada, blanca o negra según stock.\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
+  "price": 800,
+  "category": "Envases",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/frasco-morronero-200cc-con-tapa-1.webp"
+  ],
+  "featured": false,
+  "inStock": false,
+  "stock": 0,
+  "tags": []
+}

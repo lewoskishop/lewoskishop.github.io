@@ -1,0 +1,315 @@
+---
+// src/pages/productos/[slug].astro
+// Detalle de producto. Lee la colección "products" (src/content/products/),
+// que es la que edita el panel de administración y la que valida el schema Zod.
+//
+// El slug de la URL es el id de la entrada, que con el loader "glob" es el
+// nombre del archivo sin extensión (ej: agility-adulto-mediano).
+
+import { getCollection, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ImageGallery from '../../components/ImageGallery.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import { formatPrice } from '../../lib/format';
+import { hasVariants, resolveVariant } from '../../lib/variants';
+
+export async function getStaticPaths() {
+  const all = await getCollection('products');
+  const sorted = [...all].sort((a, b) => a.data.name.localeCompare(b.data.name, 'es'));
+
+  return sorted.map((product) => ({
+    params: { slug: product.id },
+    props: {
+      product,
+      related: sorted
+        .filter(
+          (p) =>
+            p.id !== product.id &&
+            (p.data.brand === product.data.brand || p.data.category === product.data.category),
+        )
+        .slice(0, 4),
+    },
+  }));
+}
+
+interface Props {
+  product: CollectionEntry<'products'>;
+  related: CollectionEntry<'products'>[];
+}
+
+const { product, related } = Astro.props;
+const data = product.data;
+
+// Base para resolver variantes (mismo contrato que ProductCard).
+const base = { id: product.id, ...data };
+const multiVariant = hasVariants(base);
+const resolved = multiVariant
+  ? data.variants!.map((_, i) => resolveVariant(base, i))
+  : [resolveVariant(base)];
+const active = resolved.find((v) => v.inStock) ?? resolved[0];
+
+const discount = Math.max(
+  0,
+  ...resolved.map((v) => v.discount),
+);
+const bonusKg = Math.max(0, ...resolved.map((v) => v.bonusKg));
+const outOfStock = !resolved.some((v) => v.inStock);
+
+const categoryHref = `/productos/?cat=${encodeURIComponent(data.category.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-'))}`;
+const tagLabels: Record<string, string> = { 'top-ventas': 'Más vendido', novedad: 'Novedad' };
+---
+
+<BaseLayout title={data.name} description={data.description}>
+  <section class="container-page py-8">
+    <nav class="mb-6 flex flex-wrap items-center gap-1.5 text-sm text-muted" aria-label="Ruta">
+      <a href="/" class="hover:text-foreground">Inicio</a>
+      <span>/</span>
+      <a href="/productos/" class="hover:text-foreground">Productos</a>
+      <span>/</span>
+      <a href={categoryHref} class="hover:text-foreground">{data.category}</a>
+      <span>/</span>
+      <span class="text-foreground">{data.name}</span>
+    </nav>
+
+    <div class="grid gap-8 lg:grid-cols-2 lg:gap-12" data-detail>
+      <!-- ============ GALERÍA ============ -->
+      <div>
+        <div class="mb-3 flex flex-wrap items-center gap-2">
+          <span class="pill bg-gift text-foreground" data-discount-badge hidden={discount <= 0}>
+            -{discount}% OFF
+          </span>
+          <span class="pill bg-gift text-foreground" data-gift-badge hidden={bonusKg <= 0}>
+            +{bonusKg} kg de regalo
+          </span>
+          <span class="pill bg-white/90 text-foreground" data-out-badge hidden={!outOfStock}>
+            Sin stock
+          </span>
+        </div>
+
+        <ImageGallery images={data.images} alt={data.name} badge={data.badge} />
+      </div>
+
+      <!-- ============ DATOS ============ -->
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-secondary">{data.category}</p>
+        <h1 class="mt-1 text-3xl font-extrabold tracking-tight sm:text-4xl">{data.name}</h1>
+
+        <div class="mt-4 flex flex-wrap items-baseline gap-3">
+          <span class="text-3xl font-extrabold tracking-tight tabular-nums" data-detail-price>
+            {formatPrice(active.price)}
+          </span>
+          <span class="text-lg text-muted line-through tabular-nums" data-detail-compare hidden={!active.compareAtPrice}>
+            {active.compareAtPrice ? formatPrice(active.compareAtPrice) : ''}
+          </span>
+        </div>
+
+        <p class="mt-3 text-sm font-semibold" data-detail-stock data-state={active.stock <= 0 ? 'out' : active.stock <= 10 ? 'low' : 'ok'}>
+          {active.stockLabel}
+        </p>
+
+        {
+          multiVariant && (
+            <div class="mt-6">
+              <p class="mb-2 text-sm font-semibold">Elegí la presentación</p>
+              <div class="flex flex-wrap gap-2" data-variant-switcher role="group" aria-label="Elegí la presentación">
+                {resolved.map((v) => (
+                  <button
+                    type="button"
+                    class="variant-btn"
+                    data-variant
+                    data-active={v.index === active.index}
+                    data-index={v.index}
+                    data-price={v.price}
+                    data-compare={v.compareAtPrice ?? ''}
+                    data-discount={v.discount}
+                    data-bonus={v.bonusKg}
+                    data-stock={v.stockLabel}
+                    data-stock-state={v.stock <= 0 ? 'out' : v.stock <= 10 ? 'low' : 'ok'}
+                    data-in-stock={String(v.inStock)}
+                    data-cart-id={v.cartId}
+                    data-label={v.label ?? ''}
+                    data-image={v.image ?? ''}
+                    aria-pressed={v.index === active.index}
+                  >
+                    {v.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )
+        }
+
+        <div class="mt-6 flex flex-wrap items-center gap-3">
+          <label class="sr-only" for="qty-detail">Cantidad</label>
+          <input
+            id="qty-detail"
+            type="number"
+            min="1"
+            max="99"
+            value="1"
+            class="input w-24 py-2.5 text-center"
+          />
+          <button
+            type="button"
+            class="btn-aqua flex-1 sm:flex-none sm:px-10"
+            data-add-to-cart
+            data-add-id={active.cartId}
+            data-add-name={data.name}
+            data-add-price={active.price}
+            data-add-image={active.image ?? data.images[0]}
+            data-add-variant={active.label ?? ''}
+            data-add-qty-target="#qty-detail"
+            disabled={!active.inStock}
+          >
+            {active.inStock ? 'Agregar al carrito' : 'Sin stock'}
+          </button>
+        </div>
+
+        <div class="mt-8 space-y-4 border-t border-border pt-6">
+          <p class="text-sm leading-relaxed text-muted">{data.description}</p>
+          {
+            data.longDescription && (
+              <div class="prose-detail text-sm leading-relaxed text-muted">
+                {data.longDescription.split('\n').map((line) => (
+                  <p class="mt-2">{line}</p>
+                ))}
+              </div>
+            )
+          }
+        </div>
+
+        {
+          data.tags.length > 0 && (
+            <ul class="mt-6 flex flex-wrap gap-2">
+              {data.tags.map((tag) => (
+                <li class="pill bg-muted-bg text-muted">{tagLabels[tag] ?? tag}</li>
+              ))}
+            </ul>
+          )
+        }
+      </div>
+    </div>
+
+    {
+      related.length > 0 && (
+        <section class="mt-14 border-t border-border pt-10">
+          <h2 class="text-xl font-extrabold tracking-tight">También te puede interesar</h2>
+          <div class="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+            {related.map((p) => (
+              <ProductCard product={p} />
+            ))}
+          </div>
+        </section>
+      )
+    }
+  </section>
+</BaseLayout>
+
+<style>
+  .variant-btn {
+    border: 1px solid var(--color-border);
+    background: #fff;
+    color: var(--color-muted);
+    border-radius: 9999px;
+    padding: 0.4rem 0.9rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.4;
+    transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+  }
+  .variant-btn:hover {
+    border-color: var(--color-foreground);
+    color: var(--color-foreground);
+  }
+  .variant-btn[data-active='true'] {
+    border-color: var(--color-brand-secondary);
+    background: var(--color-brand-secondary-tint);
+    color: var(--color-brand-secondary);
+  }
+  [data-detail-stock] {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+  }
+  [data-detail-stock]::before {
+    content: '';
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 9999px;
+    background: var(--color-success);
+  }
+  [data-detail-stock][data-state='out']::before {
+    background: var(--color-danger);
+  }
+  [data-detail-stock][data-state='low']::before {
+    background: var(--color-warning);
+  }
+</style>
+
+<script>
+  import { formatPrice } from '../../lib/format';
+
+  // Todo se consulta dentro de [data-detail] para no pisar las tarjetas de
+  // "También te puede interesar", que tienen sus propios data-*.
+  const detail = document.querySelector<HTMLElement>('[data-detail]');
+  const root = detail?.querySelector<HTMLElement>('[data-variant-switcher]');
+
+  if (root && detail) {
+    const priceEl = detail.querySelector<HTMLElement>('[data-detail-price]');
+    const compareEl = detail.querySelector<HTMLElement>('[data-detail-compare]');
+    const discountBadge = detail.querySelector<HTMLElement>('[data-discount-badge]');
+    const giftBadge = detail.querySelector<HTMLElement>('[data-gift-badge]');
+    const stockEl = detail.querySelector<HTMLElement>('[data-detail-stock]');
+    const addBtn = detail.querySelector<HTMLButtonElement>('[data-add-to-cart]');
+    const gallery = detail.querySelector<HTMLElement>('[data-gallery]');
+
+    root.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest<HTMLElement>('[data-variant]');
+      if (!btn) return;
+
+      root.querySelectorAll<HTMLElement>('[data-variant]').forEach((b) => {
+        const isActive = b === btn;
+        b.dataset.active = String(isActive);
+        b.setAttribute('aria-pressed', String(isActive));
+      });
+
+      const price = Number(btn.dataset.price ?? 0);
+      const compare = Number(btn.dataset.compare || 0);
+      const discount = Number(btn.dataset.discount ?? 0);
+      const bonus = Number(btn.dataset.bonus ?? 0);
+      const inStock = btn.dataset.inStock === 'true';
+      const label = btn.dataset.label ?? '';
+
+      const variantImage = btn.dataset.image || '';
+
+      if (variantImage) {
+        gallery?.dispatchEvent(new CustomEvent('gallery:set-image', { detail: variantImage }));
+      }
+      if (priceEl) priceEl.textContent = formatPrice(price);
+      if (compareEl) {
+        compareEl.textContent = compare ? formatPrice(compare) : '';
+        compareEl.hidden = compare <= 0;
+      }
+      if (discountBadge) {
+        discountBadge.textContent = `-${discount}% OFF`;
+        discountBadge.hidden = discount <= 0;
+      }
+      if (giftBadge) {
+        giftBadge.textContent = `+${bonus} kg de regalo`;
+        giftBadge.hidden = bonus <= 0;
+      }
+      if (stockEl) {
+        stockEl.textContent = btn.dataset.stock ?? '';
+        stockEl.dataset.state = btn.dataset.stockState ?? 'ok';
+      }
+      if (addBtn) {
+        addBtn.dataset.addId = btn.dataset.cartId ?? '';
+        addBtn.dataset.addPrice = String(price);
+        addBtn.dataset.addVariant = label;
+        if (variantImage) addBtn.dataset.addImage = variantImage;
+        addBtn.disabled = !inStock;
+        addBtn.textContent = inStock ? 'Agregar al carrito' : 'Sin stock';
+      }
+    });
+  }
+</script>

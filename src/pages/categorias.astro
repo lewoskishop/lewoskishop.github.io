@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { buildTaxonomy, toTaxable } from '../lib/taxonomy';
+
+const products = await getCollection('products');
+const categories = buildTaxonomy(products.map(toTaxable), 'category');
+const resumen = categories.map((c) => c.name).join(', ');
+---
+
+<BaseLayout title="Categorías" description={`Comprá por categoría: ${resumen}.`}>
+  <section class="container-page py-10">
+    <h1 class="text-3xl font-extrabold tracking-tight">Categorías</h1>
+    <p class="mt-1 text-sm text-muted">Elegí un rubro y filtrá el catálogo.</p>
+
+    <div class="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+      {
+        categories.map((category) => (
+          <a href={`/productos/?cat=${category.slug}`} class="group flex flex-col items-center justify-center gap-2 rounded-[var(--radius-xl)] border border-border bg-white px-4 py-8 text-center transition-colors hover:border-brand-secondary">
+            <span class="text-xl font-extrabold tracking-wide text-foreground transition-colors group-hover:text-brand-secondary">{category.name}</span>
+            <span class="text-xs text-muted">{category.count} productos</span>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

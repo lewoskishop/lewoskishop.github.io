@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+import { buildTaxonomy, toTaxable } from '../lib/taxonomy';
+
+const products = await getCollection('products');
+const categories = buildTaxonomy(products.map(toTaxable), 'category');
+---
+
+<section class="container-page py-10">
+  <div class="mb-5 flex items-end justify-between">
+    <h2 class="text-2xl font-extrabold tracking-tight">Comprá por categoría</h2>
+    <a href="/categorias" class="text-sm font-semibold text-brand-secondary hover:underline">Ver todas</a>
+  </div>
+
+  <div class="no-scrollbar -mx-1 flex snap-x gap-3 overflow-x-auto px-1 pb-1">
+    {
+      categories.map((category) => (
+        <a
+          href={`/productos/?cat=${category.slug}`}
+          class="flex h-20 w-40 shrink-0 snap-start items-center justify-center rounded-[var(--radius-lg)] border border-border bg-white px-4 text-center text-lg font-extrabold tracking-wide text-muted transition-colors hover:border-brand-secondary hover:text-brand-secondary"
+        >
+          {category.name}
+        </a>
+      ))
+    }
+  </div>
+</section>

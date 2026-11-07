@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { STORE } from '../config';
+---
+
+<BaseLayout title="Página no encontrada">
+  <div class="container-page flex min-h-[60vh] flex-col items-center justify-center py-20 text-center">
+    <p class="text-6xl font-extrabold tracking-tight text-brand-secondary">404</p>
+    <h1 class="mt-4 text-2xl font-extrabold tracking-tight">No encontramos esta página</h1>
+    <p class="mt-2 max-w-md text-muted">
+      El enlace puede estar roto o el producto ya no está disponible en {STORE.name}.
+    </p>
+    <div class="mt-8 flex gap-3">
+      <a href="/" class="btn-cta">Volver al inicio</a>
+      <a href="/productos/" class="btn-outline">Ver productos</a>
+    </div>
+  </div>
+</BaseLayout>
