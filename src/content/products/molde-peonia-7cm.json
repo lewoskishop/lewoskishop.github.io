@@ -1,16 +1,14 @@
 {
   "name": "Molde peonia 7cm",
   "description": "molde de silicona peonia chica 7cm para velas y jabones",
-  "longDescription": "molde de silicona peonia chica 7cm para velas y jabones\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
   "price": 8800,
   "category": "Moldes",
   "brand": "LewoskiShop",
   "grupo": "ambos",
   "images": [
-    "/images/products/molde-peonia-7cm-1.webp"
+    "/images/products/molde-peonia-7cm.jpg"
   ],
   "featured": false,
-  "inStock": false,
-  "stock": 0,
+  "inStock": true,
   "tags": []
 }

@@ -1,16 +1,14 @@
 {
   "name": "Pabilo algodón x metro",
   "description": "N°12, N° 18 y N° 27",
-  "longDescription": "N°12, N° 18 y N° 27\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
   "price": 700,
   "category": "Pabilos",
   "brand": "LewoskiShop",
   "grupo": "velas",
   "images": [
-    "/images/products/pabilo-algodon-x-metro-1.webp"
+    "/images/products/pabilo-algodon-x-metro.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "stock": 25,
   "tags": []
 }

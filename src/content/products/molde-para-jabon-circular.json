@@ -1,16 +1,14 @@
 {
   "name": "Molde para jabón circular",
   "description": "Molde de silicona para jabón circular",
-  "longDescription": "Molde de silicona para jabón circular\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
   "price": 7500,
   "category": "Moldes",
   "brand": "LewoskiShop",
-  "grupo": "jabones",
+  "grupo": "ambos",
   "images": [
-    "/images/products/molde-para-jabon-circular-1.webp"
+    "/images/products/molde-para-jabon-circular.jpg"
   ],
   "featured": false,
-  "inStock": false,
-  "stock": 0,
+  "inStock": true,
   "tags": []
 }

@@ -1,16 +1,14 @@
 {
   "name": "Manteca de Karité x 100gr",
   "description": "Uso cosmético",
-  "longDescription": "Uso cosmético\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
   "price": 5500,
-  "category": "Jabones y Cosmética",
+  "category": "Materias Primas",
   "brand": "LewoskiShop",
-  "grupo": "jabones",
+  "grupo": "ambos",
   "images": [
-    "/images/products/manteca-de-karite-x-100gr-1.webp"
+    "/images/products/manteca-de-karite-x-100gr.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "stock": 25,
   "tags": []
 }

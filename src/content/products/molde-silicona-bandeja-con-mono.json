@@ -1,16 +1,14 @@
 {
   "name": "Molde Silicona Bandeja con moño",
   "description": "Apto:Cemento, Resina, Yeso",
-  "longDescription": "Apto:Cemento, Resina, Yeso\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
   "price": 9500,
   "category": "Moldes",
   "brand": "LewoskiShop",
   "grupo": "ambos",
   "images": [
-    "/images/products/molde-silicona-bandeja-con-mono-1.webp"
+    "/images/products/molde-silicona-bandeja-con-mono.jpg"
   ],
   "featured": false,
-  "inStock": false,
-  "stock": 0,
+  "inStock": true,
   "tags": []
 }

@@ -1,16 +1,14 @@
 {
   "name": "Molde Silicona Conejo corazón Grande",
   "description": "Apto: Cera, Cemento, Resina, Yeso",
-  "longDescription": "Apto: Cera, Cemento, Resina, Yeso\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
   "price": 7500,
-  "category": "Moldes",
+  "category": "Ceras",
   "brand": "LewoskiShop",
-  "grupo": "ambos",
+  "grupo": "velas",
   "images": [
-    "/images/products/molde-silicona-conejo-corazon-grande-1.webp"
+    "/images/products/molde-silicona-conejo-corazon-grande.jpg"
   ],
   "featured": false,
-  "inStock": false,
-  "stock": 0,
+  "inStock": true,
   "tags": []
 }

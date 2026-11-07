@@ -1,18 +1,14 @@
 {
   "name": "Envase Spray ámbar 250 ml",
-  "description": "Envase Spray ámbar 250 ml disponible en LewoskiShop.",
-  "longDescription": "Envase Spray ámbar 250 ml disponible en LewoskiShop.\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
+  "description": "Envase Spray ámbar 250 ml",
   "price": 1500,
   "category": "Envases",
   "brand": "LewoskiShop",
   "grupo": "ambos",
   "images": [
-    "/images/products/envase-spray-ambar-250-ml-1.webp"
+    "/images/products/envase-spray-ambar-250-ml.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "stock": 25,
-  "tags": [
-    "novedad"
-  ]
+  "tags": []
 }

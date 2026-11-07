@@ -1,16 +1,14 @@
 {
   "name": "Molde elefante cuenco",
-  "description": "Molde elefante cuenco disponible en LewoskiShop.",
-  "longDescription": "Molde elefante cuenco disponible en LewoskiShop.\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
-  "price": 12.5,
+  "description": "Molde elefante cuenco",
+  "price": 12,
   "category": "Moldes",
   "brand": "LewoskiShop",
   "grupo": "ambos",
   "images": [
-    "/images/products/molde-elefante-cuenco-1.webp"
+    "/images/products/molde-elefante-cuenco.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "stock": 25,
   "tags": []
 }

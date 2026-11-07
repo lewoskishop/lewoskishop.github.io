@@ -1,16 +1,14 @@
 {
   "name": "Molde Silicona Niño",
   "description": "Apto: Cera, Yeso, Resina",
-  "longDescription": "Apto: Cera, Yeso, Resina\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
   "price": 4500,
-  "category": "Moldes",
+  "category": "Ceras",
   "brand": "LewoskiShop",
-  "grupo": "ambos",
+  "grupo": "velas",
   "images": [
-    "/images/products/molde-silicona-nino-1.webp"
+    "/images/products/molde-silicona-nino.jpg"
   ],
   "featured": false,
-  "inStock": false,
-  "stock": 0,
+  "inStock": true,
   "tags": []
 }

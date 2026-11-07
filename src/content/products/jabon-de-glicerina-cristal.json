@@ -1,16 +1,14 @@
 {
   "name": "Jabón de glicerina cristal",
   "description": "Jabón de glicerina cristal en barra de 1 kilo",
-  "longDescription": "Jabón de glicerina cristal en barra de 1 kilo\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
   "price": 14500,
   "category": "Jabones y Cosmética",
   "brand": "LewoskiShop",
   "grupo": "jabones",
   "images": [
-    "/images/products/jabon-de-glicerina-cristal-1.webp"
+    "/images/products/jabon-de-glicerina-cristal.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "stock": 25,
   "tags": []
 }

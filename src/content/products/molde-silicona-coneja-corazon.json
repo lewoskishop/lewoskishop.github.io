@@ -1,16 +1,14 @@
 {
   "name": "Molde silicona Coneja corazón",
-  "description": "Molde silicona Coneja corazón disponible en LewoskiShop.",
-  "longDescription": "Molde silicona Coneja corazón disponible en LewoskiShop.\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
+  "description": "Molde silicona Coneja corazón",
   "price": 8,
   "category": "Moldes",
   "brand": "LewoskiShop",
   "grupo": "ambos",
   "images": [
-    "/images/products/molde-silicona-coneja-corazon-1.webp"
+    "/images/products/molde-silicona-coneja-corazon.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "stock": 25,
   "tags": []
 }

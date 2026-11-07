@@ -1,16 +1,14 @@
 {
   "name": "Arcilla Blanca de Caolín x 250gr",
   "description": "Uso Cosmético",
-  "longDescription": "Uso Cosmético\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
   "price": 1500,
-  "category": "Jabones y Cosmética",
+  "category": "Materias Primas",
   "brand": "LewoskiShop",
-  "grupo": "jabones",
+  "grupo": "ambos",
   "images": [
-    "/images/products/arcilla-blanca-de-caolin-x-250gr-1.webp"
+    "/images/products/arcilla-blanca-de-caolin-x-250gr.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "stock": 25,
   "tags": []
 }

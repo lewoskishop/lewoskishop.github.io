@@ -1,18 +1,14 @@
 {
   "name": "Varillas de ratán x 10 unid.",
-  "description": "Varillas de ratán x 10 unid. disponible en LewoskiShop.",
-  "longDescription": "Varillas de ratán x 10 unid. disponible en LewoskiShop.\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
+  "description": "Varillas de ratán x 10 unid.",
   "price": 3000,
-  "category": "Herramientas",
+  "category": "Accesorios",
   "brand": "LewoskiShop",
   "grupo": "ambos",
   "images": [
-    "/images/products/varillas-de-ratan-x-10-unid-1.webp"
+    "/images/products/varillas-de-ratan-x-10-unid.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "stock": 25,
-  "tags": [
-    "novedad"
-  ]
+  "tags": []
 }

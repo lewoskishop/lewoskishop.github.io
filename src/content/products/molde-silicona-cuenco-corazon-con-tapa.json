@@ -1,16 +1,14 @@
 {
   "name": "Molde Silicona Cuenco corazón con tapa",
   "description": "Apto: Yeso, resina, cemento",
-  "longDescription": "Apto: Yeso, resina, cemento\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
   "price": 8500,
   "category": "Moldes",
   "brand": "LewoskiShop",
   "grupo": "ambos",
   "images": [
-    "/images/products/molde-silicona-cuenco-corazon-con-tapa-1.webp"
+    "/images/products/molde-silicona-cuenco-corazon-con-tapa.jpg"
   ],
   "featured": false,
-  "inStock": false,
-  "stock": 0,
+  "inStock": true,
   "tags": []
 }

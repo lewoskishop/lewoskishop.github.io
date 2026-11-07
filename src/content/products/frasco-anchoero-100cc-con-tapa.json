@@ -1,16 +1,14 @@
 {
   "name": "Frasco anchoero 100cc con tapa",
   "description": "Frasco anchoero 100cc con tapa",
-  "longDescription": "Frasco anchoero 100cc con tapa\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
   "price": 780,
   "category": "Envases",
   "brand": "LewoskiShop",
   "grupo": "ambos",
   "images": [
-    "/images/products/frasco-anchoero-100cc-con-tapa-1.webp"
+    "/images/products/frasco-anchoero-100cc-con-tapa.jpg"
   ],
   "featured": false,
-  "inStock": false,
-  "stock": 0,
+  "inStock": true,
   "tags": []
 }

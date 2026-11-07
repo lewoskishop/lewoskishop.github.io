@@ -1,16 +1,14 @@
 {
   "name": "Colorante para jabon x 30ml",
-  "description": "Colorante para jabon x 30ml\nazul, amarillo, verde, rojo, violeta, fucsia, marron, naranja",
-  "longDescription": "Colorante para jabon x 30ml\nazul, amarillo, verde, rojo, violeta, fucsia, marron, naranja\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
+  "description": "Colorante para jabon x 30ml azul, amarillo, verde, rojo, violeta, fucsia, marron, naranja",
   "price": 4500,
   "category": "Colorantes",
   "brand": "LewoskiShop",
-  "grupo": "jabones",
+  "grupo": "ambos",
   "images": [
-    "/images/products/colorante-para-jabon-x-30ml-1.webp"
+    "/images/products/colorante-para-jabon-x-30ml.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "stock": 25,
   "tags": []
 }

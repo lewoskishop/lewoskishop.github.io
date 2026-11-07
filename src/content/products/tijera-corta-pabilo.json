@@ -1,17 +1,14 @@
 {
   "name": "Tijera Corta Pabilo",
   "description": "Su diseño de punta permite cortes precisos a la altura ideal.",
-  "longDescription": "Su diseño de punta permite cortes precisos a la altura ideal.\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
   "price": 13000,
   "category": "Pabilos",
   "brand": "LewoskiShop",
   "grupo": "velas",
   "images": [
-    "/images/products/tijera-corta-pabilo-1.webp",
-    "/images/products/tijera-corta-pabilo-2.webp"
+    "/images/products/tijera-corta-pabilo.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "stock": 25,
   "tags": []
 }

@@ -1,16 +1,14 @@
 {
   "name": "Molde Silicona Gato",
   "description": "9 cm de alto. Apto: Cera, Cemento, Resina, Yeso",
-  "longDescription": "9 cm de alto. Apto: Cera, Cemento, Resina, Yeso\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
   "price": 8500,
-  "category": "Moldes",
+  "category": "Ceras",
   "brand": "LewoskiShop",
-  "grupo": "ambos",
+  "grupo": "velas",
   "images": [
-    "/images/products/molde-silicona-gato-1.webp"
+    "/images/products/molde-silicona-gato.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "stock": 25,
   "tags": []
 }

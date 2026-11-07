@@ -1,16 +1,14 @@
 {
   "name": "Frasco De Vidrio 40cc mini liso con tapa",
   "description": "Frasco De Vidrio 40cc mini liso con tapa",
-  "longDescription": "Frasco De Vidrio 40cc mini liso con tapa\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
   "price": 850,
   "category": "Envases",
   "brand": "LewoskiShop",
   "grupo": "ambos",
   "images": [
-    "/images/products/frasco-de-vidrio-40cc-mini-liso-con-tapa-1.webp"
+    "/images/products/frasco-de-vidrio-40cc-mini-liso-con-tapa.jpg"
   ],
   "featured": false,
-  "inStock": false,
-  "stock": 0,
+  "inStock": true,
   "tags": []
 }

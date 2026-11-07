@@ -1,16 +1,14 @@
 {
   "name": "Molde Mujer ojo bendados",
-  "description": "Molde Mujer ojo bendados disponible en LewoskiShop.",
-  "longDescription": "Molde Mujer ojo bendados disponible en LewoskiShop.\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
-  "price": 12.49,
+  "description": "Molde Mujer ojo bendados",
+  "price": 12,
   "category": "Moldes",
   "brand": "LewoskiShop",
   "grupo": "ambos",
   "images": [
-    "/images/products/molde-mujer-ojo-bendados-1.webp"
+    "/images/products/molde-mujer-ojo-bendados.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "stock": 25,
   "tags": []
 }

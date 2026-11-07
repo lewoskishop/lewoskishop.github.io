@@ -1,16 +1,14 @@
 {
   "name": "Frasco Almendra 290 cc",
   "description": "con tapa dorada, blanca o negra según stock",
-  "longDescription": "con tapa dorada, blanca o negra según stock\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
   "price": 800,
   "category": "Envases",
   "brand": "LewoskiShop",
   "grupo": "ambos",
   "images": [
-    "/images/products/frasco-almendra-290-cc-1.webp"
+    "/images/products/frasco-almendra-290-cc.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "stock": 25,
   "tags": []
 }

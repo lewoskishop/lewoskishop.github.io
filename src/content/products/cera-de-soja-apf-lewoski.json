@@ -1,19 +1,14 @@
 {
   "name": "Cera de soja APF Lewoski",
   "description": "Lista para usar! Exelente terminación y desmolde sin necesidad de aditivos. 100% Natural",
-  "longDescription": "Lista para usar! Exelente terminación y desmolde sin necesidad de aditivos. 100% Natural\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
   "price": 17000,
   "category": "Ceras",
   "brand": "LewoskiShop",
   "grupo": "velas",
   "images": [
-    "/images/products/cera-de-soja-apf-lewoski-1.webp"
+    "/images/products/cera-de-soja-apf-lewoski.jpg"
   ],
-  "featured": true,
+  "featured": false,
   "inStock": true,
-  "stock": 25,
-  "tags": [
-    "top-ventas",
-    "novedad"
-  ]
+  "tags": []
 }

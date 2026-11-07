@@ -1,16 +1,14 @@
 {
   "name": "Molde Bandeja estampa Flor",
   "description": "Apta Yeso,Resina",
-  "longDescription": "Apta Yeso,Resina\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
   "price": 10000,
   "category": "Moldes",
   "brand": "LewoskiShop",
   "grupo": "ambos",
   "images": [
-    "/images/products/molde-bandeja-estampa-flor-1.webp"
+    "/images/products/molde-bandeja-estampa-flor.jpg"
   ],
   "featured": false,
-  "inStock": false,
-  "stock": 0,
+  "inStock": true,
   "tags": []
 }

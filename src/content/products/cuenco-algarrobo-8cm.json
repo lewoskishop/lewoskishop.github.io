@@ -1,16 +1,14 @@
 {
   "name": "Cuenco Algarrobo 8cm",
-  "description": "Cuenco Algarrobo 8cm disponible en LewoskiShop.",
-  "longDescription": "Cuenco Algarrobo 8cm disponible en LewoskiShop.\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
+  "description": "Cuenco Algarrobo 8cm",
   "price": 1500,
-  "category": "Accesorios",
+  "category": "Envases",
   "brand": "LewoskiShop",
   "grupo": "ambos",
   "images": [
-    "/images/products/cuenco-algarrobo-8cm-1.webp"
+    "/images/products/cuenco-algarrobo-8cm.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "stock": 25,
   "tags": []
 }

@@ -1,16 +1,14 @@
 {
   "name": "Vaso con tapa de madera",
   "description": "Copon Gourmet Rigolleau con tapa de madera",
-  "longDescription": "Copon Gourmet Rigolleau con tapa de madera\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
   "price": 3300,
   "category": "Envases",
   "brand": "LewoskiShop",
   "grupo": "ambos",
   "images": [
-    "/images/products/vaso-con-tapa-de-madera-1.webp"
+    "/images/products/vaso-con-tapa-de-madera.jpg"
   ],
   "featured": false,
-  "inStock": false,
-  "stock": 0,
+  "inStock": true,
   "tags": []
 }

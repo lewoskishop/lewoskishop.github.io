@@ -1,16 +1,14 @@
 {
   "name": "Molde Florero Liso",
-  "description": "Molde Florero Liso disponible en LewoskiShop.",
-  "longDescription": "Molde Florero Liso disponible en LewoskiShop.\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
-  "price": 11.87,
+  "description": "Molde Florero Liso",
+  "price": 11,
   "category": "Moldes",
   "brand": "LewoskiShop",
   "grupo": "ambos",
   "images": [
-    "/images/products/molde-florero-liso-1.webp"
+    "/images/products/molde-florero-liso.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "stock": 25,
   "tags": []
 }

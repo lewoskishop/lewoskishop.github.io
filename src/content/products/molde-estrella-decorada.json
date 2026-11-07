@@ -1,18 +1,14 @@
 {
   "name": "Molde estrella decorada",
   "description": "3 cm de profundidad, hermosos detalles.",
-  "longDescription": "3 cm de profundidad, hermosos detalles.\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
   "price": 6500,
   "category": "Moldes",
   "brand": "LewoskiShop",
   "grupo": "ambos",
   "images": [
-    "/images/products/molde-estrella-decorada-1.webp"
+    "/images/products/molde-estrella-decorada.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "stock": 25,
-  "tags": [
-    "novedad"
-  ]
+  "tags": []
 }

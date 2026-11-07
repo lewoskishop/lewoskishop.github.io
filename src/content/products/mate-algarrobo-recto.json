@@ -1,16 +1,14 @@
 {
   "name": "Mate Algarrobo recto",
-  "description": "Mate Algarrobo recto disponible en LewoskiShop.",
-  "longDescription": "Mate Algarrobo recto disponible en LewoskiShop.\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
+  "description": "Mate Algarrobo recto",
   "price": 3000,
-  "category": "Accesorios",
+  "category": "Envases",
   "brand": "LewoskiShop",
   "grupo": "ambos",
   "images": [
-    "/images/products/mate-algarrobo-recto-1.webp"
+    "/images/products/mate-algarrobo-recto.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "stock": 25,
   "tags": []
 }

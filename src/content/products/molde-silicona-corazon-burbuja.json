@@ -1,16 +1,14 @@
 {
   "name": "Molde Silicona Corazón burbuja",
-  "description": "Apto: yeso, cemento, resina\ncorazón bubble",
-  "longDescription": "Apto: yeso, cemento, resina\ncorazón bubble\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
+  "description": "Apto: yeso, cemento, resina corazón bubble",
   "price": 9000,
   "category": "Moldes",
   "brand": "LewoskiShop",
   "grupo": "ambos",
   "images": [
-    "/images/products/molde-silicona-corazon-burbuja-1.webp"
+    "/images/products/molde-silicona-corazon-burbuja.jpg"
   ],
   "featured": false,
-  "inStock": false,
-  "stock": 0,
+  "inStock": true,
   "tags": []
 }

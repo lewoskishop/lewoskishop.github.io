@@ -1,16 +1,14 @@
 {
   "name": "Molde Silicona Formas",
-  "description": "Apto para: Cera de Soja, Jabón, Yeso, Repostería, Walt Sachets.",
-  "longDescription": "Apto para: Cera de Soja, Jabón, Yeso, Repostería, Walt Sachets.\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
+  "description": "Apto: Cera, Cemento, Resina, Yeso",
   "price": 2500,
-  "category": "Moldes",
+  "category": "Ceras",
   "brand": "LewoskiShop",
-  "grupo": "ambos",
+  "grupo": "velas",
   "images": [
-    "/images/products/molde-silicona-formas-1.webp"
+    "/images/products/molde-silicona-formas.jpg"
   ],
   "featured": false,
-  "inStock": false,
-  "stock": 0,
+  "inStock": true,
   "tags": []
 }

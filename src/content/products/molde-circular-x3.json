@@ -1,16 +1,14 @@
 {
   "name": "Molde Circular x3",
-  "description": "Molde Circular x3 disponible en LewoskiShop.",
-  "longDescription": "Molde Circular x3 disponible en LewoskiShop.\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
-  "price": 7.5,
+  "description": "Molde Circular x3",
+  "price": 7,
   "category": "Moldes",
   "brand": "LewoskiShop",
   "grupo": "ambos",
   "images": [
-    "/images/products/molde-circular-x3-1.webp"
+    "/images/products/molde-circular-x3.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "stock": 25,
   "tags": []
 }

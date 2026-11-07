@@ -7,27 +7,27 @@ const entry = (id: string, data: object): ProductEntry =>
   ({ id, collection: 'products', data }) as unknown as ProductEntry;
 
 const entries = [
-  entry('dog-seco', {
-    name: 'Agility Adulto',
-    brand: 'Agility',
+  entry('vela-soja', {
+    name: 'Cera de soja',
+    brand: 'LewoskiShop',
     grupo: 'velas',
-    category: 'Alimentos Secos',
+    category: 'Ceras',
     price: 10000,
     tags: [],
   }),
-  entry('cat-snack', {
-    name: 'Excellent Gato',
-    brand: 'Excellent',
+  entry('jabon-gli', {
+    name: 'Glicerina',
+    brand: 'LewoskiShop',
     grupo: 'jabones',
-    category: 'Snacks',
+    category: 'Jabones y Cosmética',
     price: 5000,
     tags: [],
   }),
-  entry('ambos-cama', {
-    name: 'Cama Grande',
-    brand: 'Patitas',
+  entry('ambos-molde', {
+    name: 'Molde silicona',
+    brand: 'LewoskiShop',
     grupo: 'ambos',
-    category: 'Camas',
+    category: 'Moldes',
     price: 8000,
     tags: [],
   }),
@@ -44,10 +44,10 @@ describe('COLLECTIONS', () => {
 
 describe('NAV', () => {
   it('marca los items de grupo para poder completarlos con el catálogo', () => {
-    const perros = NAV.find((item) => item.href === '/perros');
-    const gatos = NAV.find((item) => item.href === '/gatos');
-    expect(perros?.grupo).toBe('velas');
-    expect(gatos?.grupo).toBe('jabones');
+    const velas = NAV.find((item) => item.href === '/velas');
+    const jabones = NAV.find((item) => item.href === '/jabones');
+    expect(velas?.grupo).toBe('velas');
+    expect(jabones?.grupo).toBe('jabones');
   });
 
   it('no lleva categorías escritas a mano (se arman con el catálogo)', () => {
@@ -60,17 +60,17 @@ describe('NAV', () => {
 describe('navWithCatalog', () => {
   const nav = navWithCatalog(entries, NAV);
 
-  it('los sub-links de cada grupo usan las categorías de esa grupo', () => {
-    const perros = nav.find((item) => item.grupo === 'velas');
-    const gatos = nav.find((item) => item.grupo === 'jabones');
+  it('los sub-links de cada grupo usan las categorías de ese grupo', () => {
+    const velas = nav.find((item) => item.grupo === 'velas');
+    const jabones = nav.find((item) => item.grupo === 'jabones');
 
-    expect(perros?.children).toEqual([
-      { label: 'Alimentos Secos', href: '/productos/?grupo=perro&cat=alimentos-secos' },
-      { label: 'Camas', href: '/productos/?grupo=perro&cat=camas' },
+    expect(velas?.children).toEqual([
+      { label: 'Ceras', href: '/productos/?grupo=velas&cat=ceras' },
+      { label: 'Moldes', href: '/productos/?grupo=velas&cat=moldes' },
     ]);
-    expect(gatos?.children).toEqual([
-      { label: 'Camas', href: '/productos/?grupo=gato&cat=camas' },
-      { label: 'Snacks', href: '/productos/?grupo=gato&cat=snacks' },
+    expect(jabones?.children).toEqual([
+      { label: 'Jabones y Cosmética', href: '/productos/?grupo=jabones&cat=jabones-y-cosmetica' },
+      { label: 'Moldes', href: '/productos/?grupo=jabones&cat=moldes' },
     ]);
   });
 
@@ -86,61 +86,50 @@ describe('navWithCatalog', () => {
   });
 
   it('una categoría nueva del panel aparece sola en el menú', () => {
-    const conHigiene = [
+    const conEnvases = [
       ...entries,
-      entry('perro-higiene', {
-        name: 'Shampoo',
-        brand: 'Clean',
+      entry('vela-envase', {
+        name: 'Frasco',
+        brand: 'LewoskiShop',
         grupo: 'velas',
-        category: 'Higiene',
+        category: 'Envases',
         price: 3000,
         tags: [],
       }),
     ];
 
-    const perros = navWithCatalog(conHigiene, NAV).find((item) => item.grupo === 'velas');
-    expect(perros?.children?.map((c) => c.label)).toContain('Higiene');
+    const velas = navWithCatalog(conEnvases, NAV).find((item) => item.grupo === 'velas');
+    expect(velas?.children?.map((c) => c.label)).toContain('Envases');
   });
 
-  it('si una grupo no tiene categorías, el item queda sin desplegable', () => {
-    const soloGatos = [
-      entry('cat-seco', {
-        name: 'Excellent Gato',
-        brand: 'Excellent',
+  it('si un grupo no tiene categorías, el item queda sin desplegable', () => {
+    const soloJabones = [
+      entry('jabon-gli', {
+        name: 'Glicerina',
+        brand: 'LewoskiShop',
         grupo: 'jabones',
-        category: 'Alimentos Secos',
+        category: 'Jabones y Cosmética',
         price: 5000,
         tags: [],
       }),
     ];
 
-    const perros = navWithCatalog(soloGatos, NAV).find((item) => item.grupo === 'velas');
-    expect(perros?.children).toBeUndefined();
+    const velas = navWithCatalog(soloJabones, NAV).find((item) => item.grupo === 'velas');
+    expect(velas?.children).toBeUndefined();
   });
 });
 
 describe('buildNav', () => {
-  it('oculta las colecciones vacías', () => {
-    const sinOfertas = [
-      entry('dog-seco', {
-        name: 'Agility Adulto',
-        brand: 'Agility',
-        grupo: 'velas',
-        category: 'Alimentos Secos',
-        price: 10000,
-        tags: [],
-      }),
-    ];
-
-    const labels = buildNav(sinOfertas).map((item) => item.label);
-    expect(labels).toContain('Perros');
-    expect(labels).not.toContain('Liquidación');
+  it('arma el menú con las categorías reales del catálogo', () => {
+    const nav = buildNav(entries);
+    expect(nav.map((item) => item.label)).toEqual(['Inicio', 'Velas', 'Jabones', 'Categorías']);
+    expect(nav.find((i) => i.grupo === 'velas')?.children?.length).toBeGreaterThan(0);
   });
 });
 
 describe('slugify', () => {
   it('deja los slugs en minúsculas y sin acentos', () => {
-    expect(slugify('Alimentos Húmedos')).toBe('alimentos-humedos');
-    expect(slugify('Pro Quality')).toBe('pro-quality');
+    expect(slugify('Jabones y Cosmética')).toBe('jabones-y-cosmetica');
+    expect(slugify('LewoskiShop')).toBe('lewoskishop');
   });
 });

@@ -1,16 +1,14 @@
 {
   "name": "Molde Base Flor",
-  "description": "Molde Base Flor disponible en LewoskiShop.",
-  "longDescription": "Molde Base Flor disponible en LewoskiShop.\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
-  "price": 6.5,
+  "description": "Molde Base Flor",
+  "price": 6,
   "category": "Moldes",
   "brand": "LewoskiShop",
   "grupo": "ambos",
   "images": [
-    "/images/products/molde-base-flor-1.webp"
+    "/images/products/molde-base-flor.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "stock": 25,
   "tags": []
 }

@@ -1,16 +1,14 @@
 {
   "name": "Cuenco Algarrobo 12 cm",
-  "description": "Cuenco Algarrobo 12 cm disponible en LewoskiShop.",
-  "longDescription": "Cuenco Algarrobo 12 cm disponible en LewoskiShop.\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
+  "description": "Cuenco Algarrobo 12 cm",
   "price": 2500,
-  "category": "Accesorios",
+  "category": "Envases",
   "brand": "LewoskiShop",
   "grupo": "ambos",
   "images": [
-    "/images/products/cuenco-algarrobo-12-cm-1.webp"
+    "/images/products/cuenco-algarrobo-12-cm.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "stock": 25,
   "tags": []
 }

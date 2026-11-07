@@ -1,16 +1,14 @@
 {
   "name": "Molde Flor de Loto",
-  "description": "Molde Flor de Loto disponible en LewoskiShop.",
-  "longDescription": "Molde Flor de Loto disponible en LewoskiShop.\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
+  "description": "Molde Flor de Loto",
   "price": 12,
   "category": "Moldes",
   "brand": "LewoskiShop",
   "grupo": "ambos",
   "images": [
-    "/images/products/molde-flor-de-loto-1.webp"
+    "/images/products/molde-flor-de-loto.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "stock": 25,
   "tags": []
 }

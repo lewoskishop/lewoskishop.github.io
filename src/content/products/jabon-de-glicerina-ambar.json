@@ -1,16 +1,14 @@
 {
   "name": "Jabón de glicerina ámbar",
   "description": "pieza 1 kilo-",
-  "longDescription": "pieza 1 kilo-\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
   "price": 12400,
   "category": "Jabones y Cosmética",
   "brand": "LewoskiShop",
   "grupo": "jabones",
   "images": [
-    "/images/products/jabon-de-glicerina-ambar-1.webp"
+    "/images/products/jabon-de-glicerina-ambar.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "stock": 25,
   "tags": []
 }

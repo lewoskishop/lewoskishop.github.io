@@ -1,16 +1,14 @@
 {
   "name": "Aceite de coco RBD 100ml",
   "description": "Aceite de coco RBD 100ml",
-  "longDescription": "Aceite de coco RBD 100ml\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
   "price": 3500,
-  "category": "Jabones y Cosmética",
+  "category": "Materias Primas",
   "brand": "LewoskiShop",
-  "grupo": "jabones",
+  "grupo": "ambos",
   "images": [
-    "/images/products/aceite-de-coco-rbd-100ml-1.webp"
+    "/images/products/aceite-de-coco-rbd-100ml.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "stock": 25,
   "tags": []
 }

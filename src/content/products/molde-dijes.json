@@ -1,16 +1,14 @@
 {
   "name": "molde Dijes",
-  "description": "molde Dijes disponible en LewoskiShop.",
-  "longDescription": "molde Dijes disponible en LewoskiShop.\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
-  "price": 3.5,
+  "description": "molde Dijes",
+  "price": 3,
   "category": "Moldes",
   "brand": "LewoskiShop",
   "grupo": "ambos",
   "images": [
-    "/images/products/molde-dijes-1.webp"
+    "/images/products/molde-dijes.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "stock": 25,
   "tags": []
 }

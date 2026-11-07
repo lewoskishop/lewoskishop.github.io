@@ -1,16 +1,14 @@
 {
   "name": "Molde Maceta Hexagonal con ventanita",
-  "description": "Molde Maceta Hexagonal con ventanita disponible en LewoskiShop.",
-  "longDescription": "Molde Maceta Hexagonal con ventanita disponible en LewoskiShop.\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
+  "description": "Molde Maceta Hexagonal con ventanita",
   "price": 12,
   "category": "Moldes",
   "brand": "LewoskiShop",
   "grupo": "ambos",
   "images": [
-    "/images/products/molde-maceta-hexagonal-con-ventanita-1.webp"
+    "/images/products/molde-maceta-hexagonal-con-ventanita.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "stock": 25,
   "tags": []
 }

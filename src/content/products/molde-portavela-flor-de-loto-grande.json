@@ -1,16 +1,14 @@
 {
   "name": "Molde Portavela Flor de loto grande",
   "description": "pieza 17x17 cm. Molde Termoformado.",
-  "longDescription": "pieza 17x17 cm. Molde Termoformado.\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
   "price": 8000,
   "category": "Moldes",
   "brand": "LewoskiShop",
-  "grupo": "velas",
+  "grupo": "ambos",
   "images": [
-    "/images/products/molde-portavela-flor-de-loto-grande-1.webp"
+    "/images/products/molde-portavela-flor-de-loto-grande.jpg"
   ],
   "featured": false,
-  "inStock": false,
-  "stock": 0,
+  "inStock": true,
   "tags": []
 }

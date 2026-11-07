@@ -1,16 +1,14 @@
 {
   "name": "Molde cuenco facetado 2",
-  "description": "Molde cuenco facetado 2 disponible en LewoskiShop.",
-  "longDescription": "Molde cuenco facetado 2 disponible en LewoskiShop.\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
-  "price": 6.99,
+  "description": "Molde cuenco facetado 2",
+  "price": 6,
   "category": "Moldes",
   "brand": "LewoskiShop",
   "grupo": "ambos",
   "images": [
-    "/images/products/molde-cuenco-facetado-2-1.webp"
+    "/images/products/molde-cuenco-facetado-2.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "stock": 25,
   "tags": []
 }

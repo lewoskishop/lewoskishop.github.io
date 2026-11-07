@@ -1,16 +1,14 @@
 {
   "name": "Molde Nido chico",
-  "description": "Molde Nido chico disponible en LewoskiShop.",
-  "longDescription": "Molde Nido chico disponible en LewoskiShop.\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
+  "description": "Molde Nido chico",
   "price": 8,
   "category": "Moldes",
   "brand": "LewoskiShop",
   "grupo": "ambos",
   "images": [
-    "/images/products/molde-nido-chico-1.webp"
+    "/images/products/molde-nido-chico.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "stock": 25,
   "tags": []
 }

@@ -1,16 +1,14 @@
 {
   "name": "Aceite de almendras dulces 250ml",
   "description": "Aceite de almendras dulces 250ml",
-  "longDescription": "Aceite de almendras dulces 250ml\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
   "price": 11000,
-  "category": "Jabones y Cosmética",
+  "category": "Materias Primas",
   "brand": "LewoskiShop",
-  "grupo": "jabones",
+  "grupo": "ambos",
   "images": [
-    "/images/products/aceite-de-almendras-dulces-250ml-1.webp"
+    "/images/products/aceite-de-almendras-dulces-250ml.jpg"
   ],
-  "featured": true,
+  "featured": false,
   "inStock": true,
-  "stock": 25,
   "tags": []
 }

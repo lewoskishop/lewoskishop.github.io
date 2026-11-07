@@ -1,16 +1,14 @@
 {
   "name": "Frascos De Vidrio Amanecer 250 cc con tapa",
   "description": "Frascos De Vidrio Amanecer 250 cc con tapa",
-  "longDescription": "Frascos De Vidrio Amanecer 250 cc con tapa\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
   "price": 800,
   "category": "Envases",
   "brand": "LewoskiShop",
   "grupo": "ambos",
   "images": [
-    "/images/products/frascos-de-vidrio-amanecer-250-cc-con-tapa-1.webp"
+    "/images/products/frascos-de-vidrio-amanecer-250-cc-con-tapa.jpg"
   ],
   "featured": false,
-  "inStock": false,
-  "stock": 0,
+  "inStock": true,
   "tags": []
 }

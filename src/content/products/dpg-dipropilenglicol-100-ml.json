@@ -1,18 +1,14 @@
 {
   "name": "DPG (Dipropilenglicol) 100 ml",
-  "description": "DPG (Dipropilenglicol) 100 ml disponible en LewoskiShop.",
-  "longDescription": "DPG (Dipropilenglicol) 100 ml disponible en LewoskiShop.\n\n- Producto disponible en LewoskiShop.\n- Consultá stock y colores o aromas disponibles al confirmar el pedido por WhatsApp.\n- Hacemos envíos a todo el país y retiro en Mendoza.",
+  "description": "DPG (Dipropilenglicol) 100 ml",
   "price": 3000,
   "category": "Materias Primas",
   "brand": "LewoskiShop",
   "grupo": "ambos",
   "images": [
-    "/images/products/dpg-dipropilenglicol-100-ml-1.webp"
+    "/images/products/dpg-dipropilenglicol-100-ml.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "stock": 25,
-  "tags": [
-    "novedad"
-  ]
+  "tags": []
 }
