@@ -139,9 +139,20 @@ collections:
 
       - label: Categoría
         name: category
-        widget: string
-        default: General
-        hint: "Ej: Ceras, Pabilos, Moldes, Esencias, Envases, Herramientas, Jabones y Cosmética"
+        widget: select
+        options:
+          - { label: Accesorios, value: Accesorios }
+          - { label: Ceras, value: Ceras }
+          - { label: Colorantes, value: Colorantes }
+          - { label: Envases, value: Envases }
+          - { label: Esencias, value: Esencias }
+          - { label: Herramientas, value: Herramientas }
+          - { label: Jabones y Cosmética, value: "Jabones y Cosmética" }
+          - { label: Kits, value: Kits }
+          - { label: Materias Primas, value: Materias Primas }
+          - { label: Moldes, value: Moldes }
+          - { label: Pabilos, value: Pabilos }
+        hint: "Seleccioná la categoría del producto (igual que Grupo)."
 
       - label: Marca
         name: brand
