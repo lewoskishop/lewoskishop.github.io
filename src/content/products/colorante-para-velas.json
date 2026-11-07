@@ -7,7 +7,8 @@
   "brand": "LewoskiShop",
   "grupo": "ambos",
   "images": [
-    "/images/products/colorante-para-velas.jpg"
+    "/images/products/colorante-para-velas-1.png",
+    "/images/products/colorante-para-velas-2.png"
   ],
   "featured": false,
   "inStock": true,

@@ -6,7 +6,9 @@
   "brand": "LewoskiShop",
   "grupo": "velas",
   "images": [
-    "/images/products/cera-de-soja-bpf-reficen.jpg"
+    "/images/products/cera-de-soja-bpf-reficen-1.jpg",
+    "/images/products/cera-de-soja-bpf-reficen-2.png",
+    "/images/products/cera-de-soja-bpf-reficen-3.png"
   ],
   "featured": false,
   "inStock": true,
