@@ -54,10 +54,12 @@
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    overflow-x: clip;
   }
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
+    overflow-x: clip;
   }
 
   /* Títulos con la tipografía de la marca */
