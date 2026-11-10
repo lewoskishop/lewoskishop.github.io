@@ -92,8 +92,12 @@ const searchIndex = products.map((p) => ({
           <div class="group relative">
             <a
               href={item.href}
-              class="flex items-center gap-1 px-3.5 py-3 text-sm font-semibold text-foreground transition-colors hover:text-brand-secondary"
+              class:list={[
+                'flex items-center gap-1.5 px-3.5 py-3 text-sm font-semibold transition-colors hover:text-brand-secondary',
+                item.icon ? 'text-brand-secondary' : 'text-foreground',
+              ]}
             >
+              {item.icon && <span aria-hidden="true">{item.icon}</span>}
               {item.label}
               {item.children && (
                 <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 text-muted transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6" /></svg>
@@ -153,8 +157,11 @@ const searchIndex = products.map((p) => ({
         nav.map((item) =>
           item.children ? (
             <details class="group border-b border-border">
-              <summary class="flex cursor-pointer list-none items-center justify-between px-3 py-3.5 text-sm font-semibold">
-                {item.label}
+              <summary class:list={['flex cursor-pointer list-none items-center justify-between px-3 py-3.5 text-sm font-semibold', item.icon && 'text-brand-secondary']}>
+                <span class="inline-flex items-center gap-2">
+                  {item.icon && <span aria-hidden="true">{item.icon}</span>}
+                  {item.label}
+                </span>
                 <svg viewBox="0 0 24 24" class="h-4 w-4 text-muted transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6" /></svg>
               </summary>
               <div class="pb-2">
@@ -169,8 +176,8 @@ const searchIndex = products.map((p) => ({
               </div>
             </details>
           ) : (
-            <a href={item.href} class="block border-b border-border px-3 py-3.5 text-sm font-semibold hover:text-brand-secondary">
-              {item.label}
+            <a href={item.href} class:list={['block border-b border-border px-3 py-3.5 text-sm font-semibold hover:text-brand-secondary', item.icon && 'text-brand-secondary']}>
+              {item.icon && <span class="mr-2" aria-hidden="true">{item.icon}</span>}{item.label}
             </a>
           ),
         )

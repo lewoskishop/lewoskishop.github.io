@@ -8,6 +8,8 @@ export interface NavLink {
 export interface NavItem {
   label: string;
   href: string;
+  /** Icono/emoji opcional para destacar el ítem en la barra de navegación. */
+  icon?: string;
   /**
    * Grupo del item. Si está definido, sus sub-links se arman con las
    * categorías que el catálogo tiene para ese grupo (ver navWithCatalog).
@@ -61,6 +63,7 @@ export const COLLECTIONS: CollectionDef[] = [
  */
 export const NAV: NavItem[] = [
   { label: 'Inicio', href: '/' },
+  { label: 'Especial Navidad', href: '/productos/', icon: '🎄' },
   {
     label: 'Velas',
     href: '/velas',
