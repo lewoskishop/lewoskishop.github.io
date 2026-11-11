@@ -1,7 +1,7 @@
 {
   "name": "Alcohol Neutro 5 lt",
   "description": "Ideal para preparación en difusores, Home spray, Brumas, Body splash.",
-  "price": 23750,
+  "price": 30000,
   "category": "Materias Primas",
   "brand": "LewoskiShop",
   "grupo": "ambos",
@@ -9,6 +9,5 @@
     "/images/products/alcohol-neutro-5-lt-1.jpg"
   ],
   "featured": false,
-  "inStock": true,
-  "tags": []
+  "inStock": true
 }
