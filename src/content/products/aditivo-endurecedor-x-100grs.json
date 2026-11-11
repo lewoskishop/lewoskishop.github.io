@@ -1,7 +1,7 @@
 {
   "name": "Aditivo Endurecedor x 100grs",
   "description": "Aumenta la firmeza de tus velas de soja. Este aditivo 100% natural logra acabados más lisos, mejora el desmolde y la retención de aromas.",
-  "price": 3300,
+  "price": 4000,
   "category": "Materias Primas",
   "brand": "LewoskiShop",
   "grupo": "ambos",
@@ -9,6 +9,5 @@
     "/images/products/aditivo-endurecedor-x-100grs-1.jpg"
   ],
   "featured": false,
-  "inStock": true,
-  "tags": []
+  "inStock": true
 }
