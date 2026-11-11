@@ -1,7 +1,7 @@
 {
   "name": "Cera de Abeja x unidad",
   "description": "Lámina de cera de abeja 100% pura y natural estampada(80grs aproximadamente)",
-  "price": 2000,
+  "price": 3000,
   "category": "Ceras",
   "brand": "LewoskiShop",
   "grupo": "velas",
@@ -9,6 +9,5 @@
     "/images/products/cera-de-abeja-x-unidad-1.jpg"
   ],
   "featured": false,
-  "inStock": true,
-  "tags": []
+  "inStock": true
 }
