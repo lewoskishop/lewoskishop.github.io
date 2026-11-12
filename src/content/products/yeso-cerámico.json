@@ -1,0 +1,12 @@
+{
+  "name": "YESO Cerámico",
+  "description": "Yeso cerámico 4kg.",
+  "price": 10000,
+  "category": "yeso",
+  "brand": "Lewoski",
+  "images": [
+    "/images/uploads/139.jpg"
+  ],
+  "featured": false,
+  "inStock": true
+}
