@@ -2,14 +2,15 @@
   "name": "Molde moños",
   "description": "Molde moños",
   "price": 4500,
-  "category": "Mas moldes",
+  "categories": [
+    "Mas moldes",
+    "Molde Yeso, Resina, Concreto"
+  ],
   "brand": "LewoskiShop",
   "images": [
-    "/images/products/molde-monos-1.jpg"
+    "/images/uploads/718.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "categories": [
-    "Mas moldes"
-  ]
+  "category": "Mas moldes"
 }
