@@ -2,14 +2,15 @@
   "name": "Mini suculenta",
   "description": "Medidas en la foto",
   "price": 5000,
-  "category": "Mas moldes",
+  "categories": [
+    "Mas moldes",
+    "Moldes Flores"
+  ],
   "brand": "LewoskiShop",
   "images": [
     "/images/products/mini-suculenta-1.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "categories": [
-    "Mas moldes"
-  ]
+  "category": "Mas moldes"
 }
