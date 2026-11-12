@@ -2,12 +2,11 @@
   "name": "mini copon",
   "description": "mini copon",
   "price": 3500,
-  "category": "General",
+  "category": "Envases",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/mini-copon-1.jpg"
   ],
   "featured": false,
-  "inStock": true,
-  "tags": []
+  "inStock": true
 }
