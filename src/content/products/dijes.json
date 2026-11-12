@@ -2,14 +2,14 @@
   "name": "Dijes",
   "description": "Dijes",
   "price": 3500,
-  "category": "Mas moldes",
+  "categories": [
+    "Mas moldes"
+  ],
   "brand": "LewoskiShop",
   "images": [
-    "/images/products/dijes-1.jpg"
+    "/images/uploads/711.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "categories": [
-    "Mas moldes"
-  ]
+  "category": "Mas moldes"
 }
