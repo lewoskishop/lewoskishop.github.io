@@ -1,0 +1,14 @@
+{
+  "name": "Molde moños",
+  "description": "Molde moños",
+  "price": 4500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-monos-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

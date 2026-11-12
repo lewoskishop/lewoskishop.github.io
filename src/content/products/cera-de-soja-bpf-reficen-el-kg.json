@@ -1,0 +1,14 @@
+{
+  "name": "Cera de soja BPF REFICEN el kg",
+  "description": "Cera de soja BPF REFICEN el kg",
+  "price": 12000,
+  "category": "Ceras",
+  "brand": "LewoskiShop",
+  "grupo": "velas",
+  "images": [
+    "/images/products/cera-de-soja-bpf-reficen-el-kg-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

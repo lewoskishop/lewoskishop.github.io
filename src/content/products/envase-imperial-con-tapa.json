@@ -1,0 +1,14 @@
+{
+  "name": "envase imperial con tapa",
+  "description": "envase imperial con tapa",
+  "price": 3000,
+  "category": "Envases",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/envase-imperial-con-tapa-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

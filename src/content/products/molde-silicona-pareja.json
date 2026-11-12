@@ -1,10 +1,10 @@
 {
-  "name": "Molde Silicona Pareja",
-  "description": "Apto: Cera, Cemento, Resina, Yeso",
-  "price": 9500,
-  "category": "Ceras",
+  "name": "molde silicona pareja",
+  "description": "molde silicona pareja",
+  "price": 10500,
+  "category": "Moldes",
   "brand": "LewoskiShop",
-  "grupo": "velas",
+  "grupo": "ambos",
   "images": [
     "/images/products/molde-silicona-pareja-1.jpg"
   ],

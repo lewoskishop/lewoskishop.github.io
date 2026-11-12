@@ -1,0 +1,14 @@
+{
+  "name": "molde buda recibiendo",
+  "description": "molde buda recibiendo",
+  "price": 6500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-buda-recibiendo-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

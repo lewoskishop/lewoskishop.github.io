@@ -1,0 +1,14 @@
+{
+  "name": "Set de estecas",
+  "description": "Set de estecas",
+  "price": 7500,
+  "category": "General",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/set-de-estecas-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

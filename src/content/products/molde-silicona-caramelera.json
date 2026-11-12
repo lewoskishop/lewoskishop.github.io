@@ -1,0 +1,14 @@
+{
+  "name": "Molde silicona caramelera",
+  "description": "Molde silicona caramelera",
+  "price": 10500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-silicona-caramelera-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

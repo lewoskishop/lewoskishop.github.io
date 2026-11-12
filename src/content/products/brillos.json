@@ -1,0 +1,14 @@
+{
+  "name": "Brillos",
+  "description": "5gr",
+  "price": 600,
+  "category": "Accesorios",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/brillos-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

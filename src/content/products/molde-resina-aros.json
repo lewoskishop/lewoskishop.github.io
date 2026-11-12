@@ -1,0 +1,14 @@
+{
+  "name": "Molde resina aros",
+  "description": "Molde resina aros",
+  "price": 5000,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-resina-aros-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Molde suculentas varias",
+  "description": "Molde suculentas varias",
+  "price": 12500,
+  "category": "Accesorios",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-suculentas-varias-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

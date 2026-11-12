@@ -1,0 +1,14 @@
+{
+  "name": "molde gajos mandarina",
+  "description": "molde gajos mandarina",
+  "price": 5500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-gajos-mandarina-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

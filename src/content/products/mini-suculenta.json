@@ -1,0 +1,14 @@
+{
+  "name": "Mini suculenta",
+  "description": "Medidas en la foto",
+  "price": 5000,
+  "category": "General",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/mini-suculenta-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

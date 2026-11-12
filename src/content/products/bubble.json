@@ -1,0 +1,14 @@
+{
+  "name": "Bubble",
+  "description": "Bubble",
+  "price": 10500,
+  "category": "General",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/bubble-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

@@ -1,0 +1,14 @@
+{
+  "name": "molde suculenta redonda",
+  "description": "molde suculenta redonda",
+  "price": 6500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-suculenta-redonda-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

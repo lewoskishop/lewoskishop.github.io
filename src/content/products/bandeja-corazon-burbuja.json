@@ -1,0 +1,14 @@
+{
+  "name": "Bandeja corazon burbuja",
+  "description": "Bandeja corazon burbuja",
+  "price": 9000,
+  "category": "General",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/bandeja-corazon-burbuja-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

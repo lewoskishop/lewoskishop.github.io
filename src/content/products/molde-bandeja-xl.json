@@ -1,0 +1,14 @@
+{
+  "name": "molde bandeja XL",
+  "description": "molde bandeja XL",
+  "price": 21500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-bandeja-xl-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

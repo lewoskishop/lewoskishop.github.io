@@ -1,0 +1,14 @@
+{
+  "name": "molde Winnie the Pooh",
+  "description": "molde Winnie the Pooh",
+  "price": 7000,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-winnie-the-pooh-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

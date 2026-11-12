@@ -1,0 +1,14 @@
+{
+  "name": "ojalillos para tags dorados x 20",
+  "description": "ojalillos para tags dorados x 20",
+  "price": 1500,
+  "category": "Pabilos",
+  "brand": "LewoskiShop",
+  "grupo": "velas",
+  "images": [
+    "/images/products/ojalillos-para-tags-dorados-x-20-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

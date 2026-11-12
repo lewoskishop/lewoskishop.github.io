@@ -1,0 +1,14 @@
+{
+  "name": "molde florero grande",
+  "description": "molde florero grande",
+  "price": 21000,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-florero-grande-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

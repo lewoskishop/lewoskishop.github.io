@@ -1,0 +1,14 @@
+{
+  "name": "molde vela abstracta",
+  "description": "molde vela abstracta",
+  "price": 10500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-vela-abstracta-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

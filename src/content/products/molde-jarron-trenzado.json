@@ -1,0 +1,14 @@
+{
+  "name": "molde jarrón trenzado",
+  "description": "molde jarrón trenzado",
+  "price": 12500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-jarron-trenzado-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

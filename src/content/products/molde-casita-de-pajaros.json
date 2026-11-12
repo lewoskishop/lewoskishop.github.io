@@ -1,0 +1,14 @@
+{
+  "name": "molde casita de pájaros",
+  "description": "molde casita de pájaros",
+  "price": 8500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-casita-de-pajaros-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

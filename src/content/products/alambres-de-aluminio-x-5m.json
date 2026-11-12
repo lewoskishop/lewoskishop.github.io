@@ -1,0 +1,14 @@
+{
+  "name": "Alambres de aluminio x 5m",
+  "description": "Alambres de aluminio x 5m",
+  "price": 1800,
+  "category": "Accesorios",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/alambres-de-aluminio-x-5m-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

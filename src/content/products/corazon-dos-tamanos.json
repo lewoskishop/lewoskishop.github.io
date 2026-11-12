@@ -1,0 +1,14 @@
+{
+  "name": "Corazón dos tamaños",
+  "description": "Medidas en la foto",
+  "price": 7000,
+  "category": "General",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/corazon-dos-tamanos-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

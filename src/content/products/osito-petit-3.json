@@ -1,0 +1,14 @@
+{
+  "name": "Osito petit 3",
+  "description": "Osito petit 3",
+  "price": 6500,
+  "category": "General",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/osito-petit-3-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

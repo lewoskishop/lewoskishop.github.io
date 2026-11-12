@@ -1,0 +1,14 @@
+{
+  "name": "molde popurri de flores",
+  "description": "molde popurri de flores",
+  "price": 5500,
+  "category": "Accesorios",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-popurri-de-flores-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

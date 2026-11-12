@@ -1,0 +1,14 @@
+{
+  "name": "Molde bombones estrellas",
+  "description": "Molde bombones estrellas",
+  "price": 4500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-bombones-estrellas-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

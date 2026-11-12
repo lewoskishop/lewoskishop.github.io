@@ -1,0 +1,14 @@
+{
+  "name": "molde mano de Fátima",
+  "description": "molde mano de Fátima",
+  "price": 8500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-mano-de-fatima-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

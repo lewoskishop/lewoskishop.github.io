@@ -1,0 +1,14 @@
+{
+  "name": "MOLDE SUCULENTA",
+  "description": "MOLDE SUCULENTA",
+  "price": 5000,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-suculenta-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

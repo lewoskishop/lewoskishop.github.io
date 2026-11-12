@@ -1,0 +1,14 @@
+{
+  "name": "molde pino grande",
+  "description": "molde pino grande",
+  "price": 25000,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-pino-grande-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

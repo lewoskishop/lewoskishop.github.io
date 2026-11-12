@@ -1,0 +1,14 @@
+{
+  "name": "molde zorro petit",
+  "description": "molde zorro petit",
+  "price": 5500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-zorro-petit-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

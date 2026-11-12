@@ -1,0 +1,14 @@
+{
+  "name": "moldes Minnie x 4",
+  "description": "moldes Minnie x 4",
+  "price": 6500,
+  "category": "General",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/moldes-minnie-x-4-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

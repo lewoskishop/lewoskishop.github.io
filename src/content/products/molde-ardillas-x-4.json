@@ -1,0 +1,14 @@
+{
+  "name": "molde ardillas x 4",
+  "description": "molde ardillas x 4",
+  "price": 6500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-ardillas-x-4-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

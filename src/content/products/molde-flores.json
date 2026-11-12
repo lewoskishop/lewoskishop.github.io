@@ -1,0 +1,14 @@
+{
+  "name": "molde flores",
+  "description": "molde flores",
+  "price": 5500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-flores-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

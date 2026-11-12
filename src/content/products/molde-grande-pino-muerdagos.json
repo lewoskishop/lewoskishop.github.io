@@ -1,0 +1,14 @@
+{
+  "name": "molde grande pino muerdagos",
+  "description": "molde grande pino muerdagos",
+  "price": 18000,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-grande-pino-muerdagos-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

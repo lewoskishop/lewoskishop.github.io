@@ -1,0 +1,14 @@
+{
+  "name": "molde crisantemo chico",
+  "description": "molde crisantemo chico",
+  "price": 7000,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-crisantemo-chico-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

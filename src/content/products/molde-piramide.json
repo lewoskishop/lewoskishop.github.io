@@ -1,0 +1,14 @@
+{
+  "name": "Molde pirámide",
+  "description": "Molde pirámide",
+  "price": 4500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-piramide-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

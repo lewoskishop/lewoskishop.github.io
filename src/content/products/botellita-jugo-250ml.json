@@ -1,0 +1,14 @@
+{
+  "name": "Botellita jugo 250ml",
+  "description": "Botellita jugo 250ml",
+  "price": 800,
+  "category": "Envases",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/botellita-jugo-250ml-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

@@ -1,0 +1,14 @@
+{
+  "name": "molde monito",
+  "description": "molde monito",
+  "price": 7000,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-monito-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

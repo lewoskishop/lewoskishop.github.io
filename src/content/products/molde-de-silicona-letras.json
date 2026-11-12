@@ -1,0 +1,14 @@
+{
+  "name": "molde de silicona letras",
+  "description": "molde de silicona letras",
+  "price": 4500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-de-silicona-letras-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

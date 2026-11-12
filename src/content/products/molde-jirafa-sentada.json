@@ -1,0 +1,14 @@
+{
+  "name": "molde jirafa sentada",
+  "description": "molde jirafa sentada",
+  "price": 12000,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-jirafa-sentada-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

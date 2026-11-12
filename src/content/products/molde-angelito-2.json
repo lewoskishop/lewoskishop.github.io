@@ -1,0 +1,14 @@
+{
+  "name": "molde angelito 2",
+  "description": "molde angelito 2",
+  "price": 7000,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-angelito-2-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

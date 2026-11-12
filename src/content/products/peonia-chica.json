@@ -1,0 +1,14 @@
+{
+  "name": "Peonia chica",
+  "description": "Peonia chica",
+  "price": 8500,
+  "category": "General",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/peonia-chica-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Molde tulipán",
+  "description": "Molde tulipán",
+  "price": 7000,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-tulipan-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

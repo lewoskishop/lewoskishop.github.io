@@ -1,0 +1,14 @@
+{
+  "name": "Molde estrella doble",
+  "description": "Molde estrella doble",
+  "price": 4000,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-estrella-doble-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

@@ -1,0 +1,14 @@
+{
+  "name": "molde navideño",
+  "description": "molde navideño",
+  "price": 6500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-navideno-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

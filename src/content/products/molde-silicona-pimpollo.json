@@ -1,0 +1,14 @@
+{
+  "name": "molde silicona pimpollo",
+  "description": "molde silicona pimpollo",
+  "price": 6500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-silicona-pimpollo-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

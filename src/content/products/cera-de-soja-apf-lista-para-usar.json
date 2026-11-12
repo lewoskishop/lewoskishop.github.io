@@ -1,0 +1,14 @@
+{
+  "name": "cera de soja APF lista para usar",
+  "description": "cera de soja APF lista para usar",
+  "price": 19200,
+  "category": "Ceras",
+  "brand": "LewoskiShop",
+  "grupo": "velas",
+  "images": [
+    "/images/products/cera-de-soja-apf-lista-para-usar-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

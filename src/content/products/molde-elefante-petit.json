@@ -1,0 +1,14 @@
+{
+  "name": "molde elefante petit",
+  "description": "molde elefante petit",
+  "price": 5500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-elefante-petit-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

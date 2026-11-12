@@ -1,0 +1,14 @@
+{
+  "name": "molde navidad",
+  "description": "molde navidad",
+  "price": 5500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-navidad-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

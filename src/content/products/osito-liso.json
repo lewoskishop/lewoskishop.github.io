@@ -1,0 +1,14 @@
+{
+  "name": "Osito liso",
+  "description": "Medidas en la imagen",
+  "price": 6500,
+  "category": "General",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/osito-liso-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

@@ -1,0 +1,14 @@
+{
+  "name": "molde caramelos, moños y gomita",
+  "description": "molde caramelos, moños y gomita",
+  "price": 5500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-caramelos-monos-y-gomita-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

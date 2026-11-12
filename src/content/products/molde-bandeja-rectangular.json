@@ -1,0 +1,14 @@
+{
+  "name": "molde bandeja rectangular",
+  "description": "molde bandeja rectangular",
+  "price": 10500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-bandeja-rectangular-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

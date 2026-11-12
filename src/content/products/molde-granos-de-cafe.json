@@ -1,0 +1,14 @@
+{
+  "name": "molde granos de cafe",
+  "description": "molde granos de cafe",
+  "price": 5000,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-granos-de-cafe-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

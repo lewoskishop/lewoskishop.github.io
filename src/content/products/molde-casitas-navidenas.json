@@ -1,0 +1,14 @@
+{
+  "name": "molde casitas navideñas",
+  "description": "molde casitas navideñas",
+  "price": 7500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-casitas-navidenas-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

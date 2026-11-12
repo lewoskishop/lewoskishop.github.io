@@ -1,0 +1,14 @@
+{
+  "name": "molde jabón rectangular liso",
+  "description": "molde jabón rectangular liso",
+  "price": 6500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-jabon-rectangular-liso-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

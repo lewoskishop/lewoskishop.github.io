@@ -1,0 +1,14 @@
+{
+  "name": "molde ramo de tulipanes",
+  "description": "molde ramo de tulipanes",
+  "price": 14000,
+  "category": "Accesorios",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-ramo-de-tulipanes-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

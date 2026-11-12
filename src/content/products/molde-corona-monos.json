@@ -1,0 +1,14 @@
+{
+  "name": "molde corona moños",
+  "description": "molde corona moños",
+  "price": 7000,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-corona-monos-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

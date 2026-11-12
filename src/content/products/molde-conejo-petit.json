@@ -1,0 +1,14 @@
+{
+  "name": "molde conejo petit",
+  "description": "molde conejo petit",
+  "price": 1,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-conejo-petit-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

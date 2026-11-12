@@ -1,0 +1,14 @@
+{
+  "name": "molde jabones decorados",
+  "description": "molde jabones decorados",
+  "price": 9500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-jabones-decorados-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

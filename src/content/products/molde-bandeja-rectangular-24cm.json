@@ -1,0 +1,14 @@
+{
+  "name": "molde bandeja rectangular 24cm",
+  "description": "molde bandeja rectangular 24cm",
+  "price": 13500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-bandeja-rectangular-24cm-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

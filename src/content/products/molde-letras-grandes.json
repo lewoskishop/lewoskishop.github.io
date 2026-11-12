@@ -1,0 +1,14 @@
+{
+  "name": "molde letras grandes",
+  "description": "molde letras grandes",
+  "price": 12500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-letras-grandes-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

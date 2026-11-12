@@ -1,0 +1,14 @@
+{
+  "name": "molde copos de nieves",
+  "description": "molde copos de nieves",
+  "price": 9500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-copos-de-nieves-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

@@ -1,0 +1,14 @@
+{
+  "name": "molde vehiculos",
+  "description": "molde vehiculos",
+  "price": 9500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-vehiculos-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

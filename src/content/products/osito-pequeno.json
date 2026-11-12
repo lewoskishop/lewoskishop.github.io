@@ -1,0 +1,14 @@
+{
+  "name": "Osito pequeño",
+  "description": "Osito pequeño",
+  "price": 6500,
+  "category": "General",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/osito-pequeno-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

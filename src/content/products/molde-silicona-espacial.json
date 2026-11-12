@@ -1,0 +1,14 @@
+{
+  "name": "molde silicona espacial",
+  "description": "molde silicona espacial",
+  "price": 7500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-silicona-espacial-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

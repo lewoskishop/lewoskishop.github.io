@@ -1,0 +1,14 @@
+{
+  "name": "Caja explosiva",
+  "description": "Caja explosiva",
+  "price": 1500,
+  "category": "General",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/caja-explosiva-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

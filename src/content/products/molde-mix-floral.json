@@ -1,0 +1,14 @@
+{
+  "name": "molde mix floral",
+  "description": "molde mix floral",
+  "price": 4500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-mix-floral-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

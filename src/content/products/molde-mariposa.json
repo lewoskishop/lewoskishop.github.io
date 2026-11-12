@@ -1,0 +1,14 @@
+{
+  "name": "Molde Mariposa",
+  "description": "Molde Mariposa",
+  "price": 7500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-mariposa-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

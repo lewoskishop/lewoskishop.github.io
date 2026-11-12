@@ -1,0 +1,14 @@
+{
+  "name": "molde Virgen Guadalupe",
+  "description": "molde Virgen Guadalupe",
+  "price": 7000,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-virgen-guadalupe-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

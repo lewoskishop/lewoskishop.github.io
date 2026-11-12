@@ -1,0 +1,14 @@
+{
+  "name": "Molde grande dinosaurio",
+  "description": "Medidas en la imagen",
+  "price": 8500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-grande-dinosaurio-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

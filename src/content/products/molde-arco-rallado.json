@@ -1,0 +1,14 @@
+{
+  "name": "molde arco rallado",
+  "description": "molde arco rallado",
+  "price": 11000,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-arco-rallado-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

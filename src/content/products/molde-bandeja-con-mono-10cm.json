@@ -1,0 +1,14 @@
+{
+  "name": "Molde bandeja con moño 10cm",
+  "description": "Molde bandeja con moño 10cm",
+  "price": 9500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-bandeja-con-mono-10cm-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

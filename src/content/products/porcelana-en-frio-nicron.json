@@ -1,0 +1,14 @@
+{
+  "name": "Porcelana en Frío Nicron",
+  "description": "Porcelana en Frío Nicron",
+  "price": 6000,
+  "category": "General",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/porcelana-en-frio-nicron-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

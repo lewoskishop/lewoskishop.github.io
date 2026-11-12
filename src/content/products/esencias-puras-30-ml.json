@@ -1,14 +1,12 @@
 {
   "name": "Esencias puras 30 ml",
-  "description": "Más de 90 fragancias. Esencias puras de alta pureza, optimiza los resultados en tu productos. Aptas para: Velas aromáticas, Perfumería textil, Ambiental, Difuso",
-  "longDescription": "Más de 90 fragancias. Esencias puras de alta pureza, optimiza los resultados en tu productos. Aptas para: Velas aromáticas, Perfumería textil, Ambiental, Difusor, Jabones, Sahumerios, Hornillos, Cremas corporales.",
-  "price": 6000,
-  "category": "Esencias",
+  "description": "Esencias puras 30 ml",
+  "price": 8000,
+  "category": "Jabones y Cosmética",
   "brand": "LewoskiShop",
-  "grupo": "ambos",
+  "grupo": "jabones",
   "images": [
-    "/images/products/esencias-puras-30-ml-1.jpg",
-    "/images/products/esencias-puras-30-ml-2.jpeg"
+    "/images/products/esencias-puras-30-ml-1.jpg"
   ],
   "featured": false,
   "inStock": true,

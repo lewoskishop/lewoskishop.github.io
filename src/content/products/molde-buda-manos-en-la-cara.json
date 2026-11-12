@@ -1,0 +1,14 @@
+{
+  "name": "molde buda manos en la cara",
+  "description": "molde buda manos en la cara",
+  "price": 6500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-buda-manos-en-la-cara-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

@@ -1,0 +1,14 @@
+{
+  "name": "caramelera N54",
+  "description": "caramelera N54",
+  "price": 5000,
+  "category": "General",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/caramelera-n54-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

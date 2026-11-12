@@ -1,0 +1,14 @@
+{
+  "name": "Arandanos",
+  "description": "Arandanos",
+  "price": 5500,
+  "category": "General",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/arandanos-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

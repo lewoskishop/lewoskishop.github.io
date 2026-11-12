@@ -1,0 +1,14 @@
+{
+  "name": "envase Egeo 370",
+  "description": "envase Egeo 370",
+  "price": 3000,
+  "category": "Envases",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/envase-egeo-370-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

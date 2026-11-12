@@ -1,0 +1,14 @@
+{
+  "name": "Bandeja mediana",
+  "description": "Bandeja mediana",
+  "price": 10500,
+  "category": "General",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/bandeja-mediana-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

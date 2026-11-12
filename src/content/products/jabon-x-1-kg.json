@@ -1,0 +1,14 @@
+{
+  "name": "Jabón x 1 kg",
+  "description": "Jabón x 1 kg",
+  "price": 13600,
+  "category": "Jabones y Cosmética",
+  "brand": "LewoskiShop",
+  "grupo": "jabones",
+  "images": [
+    "/images/products/jabon-x-1-kg-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

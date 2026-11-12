@@ -1,0 +1,14 @@
+{
+  "name": "molde bandeja booble",
+  "description": "molde bandeja booble",
+  "price": 9500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-bandeja-booble-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

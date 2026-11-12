@@ -1,0 +1,14 @@
+{
+  "name": "Anchoero 100cc",
+  "description": "Las tapas varían según el stock (doradas,blancas o negras)",
+  "price": 800,
+  "category": "Envases",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/anchoero-100cc-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

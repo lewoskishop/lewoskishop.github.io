@@ -1,0 +1,14 @@
+{
+  "name": "molde corazón tulipanes",
+  "description": "molde corazón tulipanes",
+  "price": 7000,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-corazon-tulipanes-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

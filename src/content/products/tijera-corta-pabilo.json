@@ -1,13 +1,12 @@
 {
-  "name": "Tijera Corta Pabilo",
-  "description": "Su diseño de punta permite cortes precisos a la altura ideal.",
+  "name": "Tijera corta pabilo",
+  "description": "Tijera corta pabilo",
   "price": 13000,
   "category": "Pabilos",
   "brand": "LewoskiShop",
   "grupo": "velas",
   "images": [
-    "/images/products/tijera-corta-pabilo-1.jpg",
-    "/images/products/tijera-corta-pabilo-2.jpg"
+    "/images/products/tijera-corta-pabilo-1.jpg"
   ],
   "featured": false,
   "inStock": true,

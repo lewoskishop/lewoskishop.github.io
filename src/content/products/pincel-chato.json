@@ -1,0 +1,14 @@
+{
+  "name": "pincel chato",
+  "description": "pincel chato",
+  "price": 200,
+  "category": "General",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/pincel-chato-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

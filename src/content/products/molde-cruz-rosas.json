@@ -1,0 +1,14 @@
+{
+  "name": "molde cruz rosas",
+  "description": "molde cruz rosas",
+  "price": 10500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-cruz-rosas-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

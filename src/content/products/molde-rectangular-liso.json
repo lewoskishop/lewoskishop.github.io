@@ -1,0 +1,14 @@
+{
+  "name": "molde rectangular liso",
+  "description": "molde rectangular liso",
+  "price": 7500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-rectangular-liso-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

@@ -1,0 +1,14 @@
+{
+  "name": "hornitos ceramica",
+  "description": "hornitos ceramica",
+  "price": 5000,
+  "category": "Colorantes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/hornitos-ceramica-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

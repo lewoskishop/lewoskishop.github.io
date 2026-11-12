@@ -1,0 +1,14 @@
+{
+  "name": "molde mini galletas",
+  "description": "molde mini galletas",
+  "price": 4500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-mini-galletas-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

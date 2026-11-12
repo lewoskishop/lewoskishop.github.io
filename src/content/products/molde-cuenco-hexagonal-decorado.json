@@ -1,0 +1,14 @@
+{
+  "name": "molde cuenco hexagonal decorado",
+  "description": "molde cuenco hexagonal decorado",
+  "price": 12000,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-cuenco-hexagonal-decorado-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

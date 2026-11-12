@@ -1,0 +1,14 @@
+{
+  "name": "molde mujer medio rostro",
+  "description": "molde mujer medio rostro",
+  "price": 12500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-mujer-medio-rostro-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

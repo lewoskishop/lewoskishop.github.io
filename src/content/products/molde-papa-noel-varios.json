@@ -1,0 +1,14 @@
+{
+  "name": "molde papá Noel varios",
+  "description": "molde papá Noel varios",
+  "price": 6500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-papa-noel-varios-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

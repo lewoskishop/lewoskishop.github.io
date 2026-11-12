@@ -1,0 +1,14 @@
+{
+  "name": "Molde aros",
+  "description": "Molde aros",
+  "price": 5000,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-aros-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

@@ -1,0 +1,14 @@
+{
+  "name": "molde papá Noel",
+  "description": "molde papá Noel",
+  "price": 8500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-papa-noel-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

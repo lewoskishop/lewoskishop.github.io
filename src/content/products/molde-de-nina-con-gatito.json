@@ -1,0 +1,14 @@
+{
+  "name": "molde de niña con gatito",
+  "description": "molde de niña con gatito",
+  "price": 13500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-de-nina-con-gatito-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Molde llamador",
+  "description": "Medidas en la foto",
+  "price": 8500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-llamador-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

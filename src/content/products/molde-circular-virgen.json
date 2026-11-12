@@ -1,0 +1,14 @@
+{
+  "name": "molde circular Virgen",
+  "description": "molde circular Virgen",
+  "price": 9500,
+  "category": "Moldes",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/molde-circular-virgen-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

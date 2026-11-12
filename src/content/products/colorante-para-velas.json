@@ -1,14 +1,12 @@
 {
-  "name": "Colorante para Velas",
-  "description": "Variedad de colores. Rojo, salmón, violeta, naranja, negro, turquesa, verde, azul, marrón, amarillo, magenta, rosado, blanco, verde fluor, Rosa fluor, naranja f",
-  "longDescription": "Variedad de colores. Rojo, salmón, violeta, naranja, negro, turquesa, verde, azul, marrón, amarillo, magenta, rosado, blanco, verde fluor, Rosa fluor, naranja fluor y salmón fluor",
-  "price": 4500,
+  "name": "Colorante para velas",
+  "description": "colores\nMarrón, rojo, verde, rosado, amarillo, azúl, violeta, cereza, turquesa, negro, blanco",
+  "price": 5500,
   "category": "Colorantes",
   "brand": "LewoskiShop",
   "grupo": "ambos",
   "images": [
-    "/images/products/colorante-para-velas-1.png",
-    "/images/products/colorante-para-velas-2.png"
+    "/images/products/colorante-para-velas-1.jpg"
   ],
   "featured": false,
   "inStock": true,

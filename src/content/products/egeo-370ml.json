@@ -1,0 +1,14 @@
+{
+  "name": "Egeo 370ml",
+  "description": "Egeo 370ml",
+  "price": 3000,
+  "category": "General",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/egeo-370ml-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}

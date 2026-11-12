@@ -1,0 +1,14 @@
+{
+  "name": "Potes para cargar pinturas",
+  "description": "Potes para cargar pinturas",
+  "price": 600,
+  "category": "Envases",
+  "brand": "LewoskiShop",
+  "grupo": "ambos",
+  "images": [
+    "/images/products/potes-para-cargar-pinturas-1.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "tags": []
+}
