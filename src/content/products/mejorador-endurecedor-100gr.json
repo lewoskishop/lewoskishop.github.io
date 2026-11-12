@@ -2,12 +2,11 @@
   "name": "Mejorador/Endurecedor 100gr",
   "description": "Mejorador/Endurecedor 100gr",
   "price": 3600,
-  "category": "Materias Primas",
+  "category": "Velas",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/mejorador-endurecedor-100gr-1.jpg"
   ],
   "featured": false,
-  "inStock": true,
-  "tags": []
+  "inStock": true
 }
