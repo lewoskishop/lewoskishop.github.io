@@ -2,12 +2,11 @@
   "name": "molde panda x 4",
   "description": "molde panda x 4",
   "price": 6500,
-  "category": "Moldes",
+  "category": "Animales",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/molde-panda-x-4-1.jpg"
   ],
   "featured": false,
-  "inStock": true,
-  "tags": []
+  "inStock": true
 }
