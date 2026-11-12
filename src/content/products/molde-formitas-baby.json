@@ -2,14 +2,14 @@
   "name": "molde formitas BABY",
   "description": "molde formitas BABY",
   "price": 6500,
-  "category": "Mas moldes",
+  "categories": [
+    "Mas moldes"
+  ],
   "brand": "LewoskiShop",
   "images": [
-    "/images/products/molde-formitas-baby-1.jpg"
+    "/images/uploads/251.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "categories": [
-    "Mas moldes"
-  ]
+  "category": "Mas moldes"
 }
