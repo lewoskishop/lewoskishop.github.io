@@ -2,12 +2,11 @@
   "name": "Pabilo algodón x metro",
   "description": "N°12, N° 18 y N° 27",
   "price": 700,
-  "category": "Ceras",
+  "category": "Velas",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/pabilo-algodon-x-metro-1.jpg"
   ],
   "featured": false,
-  "inStock": true,
-  "tags": []
+  "inStock": true
 }
