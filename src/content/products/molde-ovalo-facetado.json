@@ -2,12 +2,11 @@
   "name": "molde ovalo facetado",
   "description": "molde ovalo facetado",
   "price": 7500,
-  "category": "Moldes",
+  "category": "Moldes p/yeso, resina, concreto",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/molde-ovalo-facetado-1.jpg"
   ],
   "featured": false,
-  "inStock": true,
-  "tags": []
+  "inStock": true
 }
