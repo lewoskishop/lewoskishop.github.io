@@ -2,12 +2,11 @@
   "name": "molde jirafa GRANDE",
   "description": "molde jirafa GRANDE",
   "price": 7000,
-  "category": "Moldes",
+  "category": "Animales",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/molde-jirafa-grande-2-1.jpg"
   ],
   "featured": false,
-  "inStock": true,
-  "tags": []
+  "inStock": true
 }
