@@ -2,14 +2,14 @@
   "name": "Bubble",
   "description": "Bubble",
   "price": 10500,
-  "category": "Mas moldes",
+  "categories": [
+    "Mas moldes"
+  ],
   "brand": "LewoskiShop",
   "images": [
-    "/images/products/bubble-1.jpg"
+    "/images/uploads/709.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "categories": [
-    "Mas moldes"
-  ]
+  "category": "Mas moldes"
 }
