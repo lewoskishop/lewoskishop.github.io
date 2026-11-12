@@ -2,12 +2,11 @@
   "name": "latitas",
   "description": "latitas",
   "price": 2700,
-  "category": "General",
+  "category": "Envases",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/latitas-1.jpg"
   ],
   "featured": false,
-  "inStock": true,
-  "tags": []
+  "inStock": true
 }
