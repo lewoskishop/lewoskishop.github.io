@@ -2,14 +2,15 @@
   "name": "MOLDE SUCULENTA",
   "description": "MOLDE SUCULENTA",
   "price": 5000,
-  "category": "Mas moldes",
+  "categories": [
+    "Mas moldes",
+    "Moldes Flores"
+  ],
   "brand": "LewoskiShop",
   "images": [
     "/images/products/molde-suculenta-1.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "categories": [
-    "Mas moldes"
-  ]
+  "category": "Mas moldes"
 }
