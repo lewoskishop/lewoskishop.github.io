@@ -2,15 +2,15 @@
   "name": "Pipetas Pasteur 3ml",
   "description": "Pipetas Pasteur 3ml",
   "price": 200,
-  "category": "Herramientas",
+  "categories": [
+    "Herramientas",
+    "Aromas"
+  ],
   "brand": "LewoskiShop",
   "images": [
     "/images/products/pipetas-pasteur-3ml-1.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "tags": [],
-  "categories": [
-    "Herramientas"
-  ]
+  "category": "Herramientas"
 }
