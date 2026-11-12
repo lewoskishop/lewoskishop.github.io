@@ -2,12 +2,11 @@
   "name": "Esencias puras 30 ml",
   "description": "Esencias puras 30 ml",
   "price": 8000,
-  "category": "Jabones y Cosmética",
+  "category": "Aromas",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/esencias-puras-30-ml-1.jpg"
   ],
   "featured": false,
-  "inStock": true,
-  "tags": []
+  "inStock": true
 }
