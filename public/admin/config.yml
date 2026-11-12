@@ -145,10 +145,9 @@ collections:
           - { label: Ceras, value: Ceras }
           - { label: Colorantes, value: Colorantes }
           - { label: Envases, value: Envases }
-          - { label: Esencias, value: Esencias }
+          - { label: General, value: General }
           - { label: Herramientas, value: Herramientas }
-          - { label: Jabones y Cosmética, value: "Jabones y Cosmética" }
-          - { label: Kits, value: Kits }
+          - { label: Jabones y Cosmética, value: Jabones y Cosmética }
           - { label: Materias Primas, value: Materias Primas }
           - { label: Moldes, value: Moldes }
           - { label: Navidad, value: Navidad }
