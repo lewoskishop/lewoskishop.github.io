@@ -2,12 +2,11 @@
   "name": "moldes silicona caracoles",
   "description": "moldes silicona caracoles",
   "price": 4500,
-  "category": "General",
+  "category": "Animales",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/moldes-silicona-caracoles-1.jpg"
   ],
   "featured": false,
-  "inStock": true,
-  "tags": []
+  "inStock": true
 }
