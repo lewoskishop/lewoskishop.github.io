@@ -2,7 +2,7 @@
   "name": "Molde silicona Calavera grande",
   "description": "Calavera grande",
   "price": 7500,
-  "category": "Molde Yeso",
+  "category": "Molde Yeso, Resina, Concreto",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/calavera-grande-1.jpg"
@@ -10,6 +10,6 @@
   "featured": false,
   "inStock": true,
   "categories": [
-    "Molde Yeso"
+    "Molde Yeso, Resina, Concreto"
   ]
 }

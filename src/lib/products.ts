@@ -66,65 +66,15 @@ export function navWithCollections(entries: ProductEntry[], nav: NavItem[]): Nav
 }
 
 /**
- * Menú final del sitio: Inicio + categorías (orden preferido) ajustadas a las encontradas.
+ * Menú final del sitio: solo Inicio, Navidad y Categorías.
  */
-const EXCLUDED_NAV_CATEGORIES = new Set([
-  'ceras',
-  'cera',
-  'colorantes',
-  'colorante',
-  'pabilos',
-  'pabilo',
-  'general',
-  'materias-primas',
-  'materia-prima',
-  'moldes',
-  'mas-moldes',
-  'jabones',
-  'jabon',
-  'cosmetica',
-  'cosmetic',
-  'jabones-y-cosmetica',
-]);
-
 export function buildNav(entries: ProductEntry[]): NavItem[] {
-  const cats = buildTaxonomy(entries.map(toTaxable), 'category').filter(
-    (c) => !EXCLUDED_NAV_CATEGORIES.has(c.slug) && !EXCLUDED_NAV_CATEGORIES.has(slugify(c.name)),
-  );
-  const bySlug = new Map(cats.map((c) => [c.slug, c]));
-
-  const preferred: Array<{ slugs: string[]; label: string; icon?: string }> = [
-    { slugs: ['navidad'], label: 'Navidad', icon: '🎄' },
-    { slugs: ['cosmetica-y-jabones', 'cosmética-y-jabones'], label: 'Cosmética y Jabones' },
-    { slugs: ['moldes-animales', 'moldes-anim', 'animales'], label: 'Moldes Anim.' },
-    { slugs: ['moldes-flores', 'moldes-flor', 'flores'], label: 'Moldes Flor' },
-    { slugs: ['molde-yeso', 'moldes-yeso', 'yeso', 'yesos', 'moldes-p-yeso-resina-concreto'], label: 'Molde Yeso' },
-    { slugs: ['envases', 'envases-varios'], label: 'Envases' },
-    { slugs: ['herramientas'], label: 'Herramientas' },
-    { slugs: ['decoracion', 'deco'], label: 'Deco' },
-  ];
-
-  const used = new Set<string>();
-  const categoryItems: NavItem[] = [];
-
-  for (const p of preferred) {
-    const match = p.slugs.map((s) => bySlug.get(s)).find(Boolean);
-    if (!match) continue;
-    used.add(match.slug);
-    categoryItems.push({
-      label: p.label,
-      href: `/productos/?cat=${match.slug}`,
-      ...(p.icon ? { icon: p.icon } : {}),
-    });
-  }
-  for (const c of cats) {
-    if (used.has(c.slug)) continue;
-    categoryItems.push({ label: c.name, href: `/productos/?cat=${c.slug}` });
-  }
+  const cats = buildTaxonomy(entries.map(toTaxable), 'category');
+  const navidad = cats.find((c) => c.slug === 'navidad');
 
   const nav: NavItem[] = [
     { label: 'Inicio', href: '/' },
-    ...categoryItems,
+    ...(navidad ? [{ label: 'Navidad', href: '/productos/?cat=navidad', icon: '🎄' }] : []),
     { label: 'Categorías', href: '/categorias' },
   ];
   return navWithCollections(entries, nav);
