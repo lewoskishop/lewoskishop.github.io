@@ -2,12 +2,11 @@
   "name": "Bandeja corazon burbuja",
   "description": "Bandeja corazon burbuja",
   "price": 9000,
-  "category": "General",
+  "category": "Moldes p/yeso, resina, concreto",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/bandeja-corazon-burbuja-1.jpg"
   ],
   "featured": false,
-  "inStock": true,
-  "tags": []
+  "inStock": true
 }
