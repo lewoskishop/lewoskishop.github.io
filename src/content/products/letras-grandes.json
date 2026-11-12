@@ -2,12 +2,11 @@
   "name": "Letras grandes",
   "description": "Letras grandes",
   "price": 13500,
-  "category": "General",
+  "category": "Mas moldes",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/letras-grandes-1.jpg"
   ],
   "featured": false,
-  "inStock": true,
-  "tags": []
+  "inStock": true
 }
