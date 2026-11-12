@@ -2,12 +2,11 @@
   "name": "Molde silicona jengibre",
   "description": "Molde silicona jengibre",
   "price": 7500,
-  "category": "Moldes",
+  "category": "Navidad",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/molde-silicona-jengibre-1.jpg"
   ],
   "featured": false,
-  "inStock": true,
-  "tags": []
+  "inStock": true
 }
