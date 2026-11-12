@@ -2,12 +2,11 @@
   "name": "Molde flor loto",
   "description": "Molde flor loto",
   "price": 7500,
-  "category": "Moldes",
+  "category": "Flores",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/molde-flor-loto-1.jpg"
   ],
   "featured": false,
-  "inStock": true,
-  "tags": []
+  "inStock": true
 }
