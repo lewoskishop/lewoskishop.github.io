@@ -1,0 +1,14 @@
+{
+  "name": "Molde Navideño",
+  "description": "Mix navideño",
+  "price": 6500,
+  "categories": [
+    "Navidad"
+  ],
+  "brand": "LewoskiShop",
+  "images": [
+    "/images/uploads/702.jpg"
+  ],
+  "featured": false,
+  "inStock": true
+}
