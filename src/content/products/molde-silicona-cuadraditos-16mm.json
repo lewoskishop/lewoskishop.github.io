@@ -2,14 +2,15 @@
   "name": "Molde silicona cuadraditos 16mm",
   "description": "Molde silicona cuadraditos 16mm",
   "price": 4000,
-  "category": "Mas moldes",
+  "categories": [
+    "Mas moldes",
+    "Molde Yeso, Resina, Concreto"
+  ],
   "brand": "LewoskiShop",
   "images": [
-    "/images/products/molde-silicona-cuadraditos-16mm-1.jpg"
+    "/images/uploads/719.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "categories": [
-    "Mas moldes"
-  ]
+  "category": "Mas moldes"
 }
