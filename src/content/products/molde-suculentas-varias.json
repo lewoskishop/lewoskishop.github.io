@@ -2,14 +2,15 @@
   "name": "Molde suculentas varias",
   "description": "Molde suculentas varias",
   "price": 12500,
-  "category": "Mas moldes",
+  "categories": [
+    "Mas moldes",
+    "Moldes Flores"
+  ],
   "brand": "LewoskiShop",
   "images": [
     "/images/products/molde-suculentas-varias-1.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "categories": [
-    "Mas moldes"
-  ]
+  "category": "Mas moldes"
 }
