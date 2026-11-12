@@ -2,15 +2,15 @@
   "name": "Envase Spray 250ml",
   "description": "Envase Spray 250ml",
   "price": 1900,
-  "category": "Envases",
+  "categories": [
+    "Envases",
+    "Aromas"
+  ],
   "brand": "LewoskiShop",
   "images": [
     "/images/products/envase-spray-250ml-1.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "tags": [],
-  "categories": [
-    "Envases"
-  ]
+  "category": "Envases"
 }
