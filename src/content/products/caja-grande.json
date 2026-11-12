@@ -2,12 +2,11 @@
   "name": "Caja grande",
   "description": "Caja grande",
   "price": 1500,
-  "category": "General",
+  "category": "Envases",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/caja-grande-1.jpg"
   ],
   "featured": false,
-  "inStock": true,
-  "tags": []
+  "inStock": true
 }
