@@ -2,7 +2,7 @@
   "name": "YESO Cerámico",
   "description": "Yeso cerámico 4kg.",
   "price": 10000,
-  "category": "yeso",
+  "category": "Molde Yeso",
   "brand": "Lewoski",
   "images": [
     "/images/uploads/139.jpg"
@@ -10,6 +10,6 @@
   "featured": false,
   "inStock": true,
   "categories": [
-    "yeso"
+    "Molde Yeso"
   ]
 }

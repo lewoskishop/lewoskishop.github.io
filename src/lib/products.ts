@@ -84,9 +84,7 @@ const EXCLUDED_NAV_CATEGORIES = new Set([
   'jabon',
   'cosmetica',
   'cosmetic',
-  'cosmetica-y-jabones',
   'jabones-y-cosmetica',
-  'cosmética-y-jabones',
 ]);
 
 export function buildNav(entries: ProductEntry[]): NavItem[] {
@@ -97,6 +95,7 @@ export function buildNav(entries: ProductEntry[]): NavItem[] {
 
   const preferred: Array<{ slugs: string[]; label: string; icon?: string }> = [
     { slugs: ['navidad'], label: 'Navidad', icon: '🎄' },
+    { slugs: ['cosmetica-y-jabones', 'cosmética-y-jabones'], label: 'Cosmética y Jabones' },
     { slugs: ['moldes-animales', 'moldes-anim', 'animales'], label: 'Moldes Anim.' },
     { slugs: ['moldes-flores', 'moldes-flor', 'flores'], label: 'Moldes Flor' },
     { slugs: ['molde-yeso', 'moldes-yeso', 'yeso', 'yesos', 'moldes-p-yeso-resina-concreto'], label: 'Molde Yeso' },

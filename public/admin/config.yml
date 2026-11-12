@@ -139,22 +139,14 @@ collections:
 
       - label: Categorías
         name: categories
-        widget: select
+        widget: relation
+        collection: categories
+        search_fields: [name]
+        value_field: name
+        display_fields: [name]
         multiple: true
-        options:
-          - { label: Accesorios, value: Accesorios }
-          - { label: Aromas, value: Aromas }
-          - { label: Cosmética y Jabones, value: "Cosmética y Jabones" }
-          - { label: Deco, value: Deco }
-          - { label: Envases, value: Envases }
-          - { label: Herramientas, value: Herramientas }
-          - { label: Mas moldes, value: Mas moldes }
-          - { label: Moldes Animales, value: Moldes Animales }
-          - { label: Moldes Flores, value: Moldes Flores }
-          - { label: Molde Yeso, value: Molde Yeso }
-          - { label: Navidad, value: Navidad }
-          - { label: Velas, value: Velas }
-        hint: "Seleccioná una o más categorías (se pueden tildar varias). No se muestran en el menú desplegable las categorías ocultas."
+        required: false
+        hint: "Seleccioná una o más categorías para este producto (se pueden tildar varias). Las categorías se administran en la sección 'Categorías'."
 
       - label: Marca
         name: brand
@@ -220,6 +212,41 @@ collections:
           - { label: Novedad, value: novedad }
           - { label: Liquidación, value: liquidacion }
         hint: "Definen si el producto aparece en las colecciones de la home."
+
+  # ==========================================================================
+  #  CATEGORÍAS (ABM)
+  # ==========================================================================
+  - name: categories
+    label: Categorías
+    label_singular: Categoría
+    folder: src/content/categories
+    create: true
+    delete: true
+    extension: json
+    format: json
+    identifier_field: name
+    summary: "{{name}} (orden {{order}}){{#if showInNav}} · visible{{/if}}"
+    sortable_fields: [order, name]
+    fields:
+      - label: Nombre
+        name: name
+        widget: string
+        hint: "Nombre de la categoría (ej: Navidad, Moldes Animales)."
+      - label: Slug
+        name: slug
+        widget: string
+        hint: "Identificador para URL/filtros (minúsculas, sin espacios). Ej: moldes-animales"
+      - label: Orden
+        name: order
+        widget: number
+        value_type: int
+        min: 0
+        default: 0
+      - label: Mostrar en menú
+        name: showInNav
+        widget: boolean
+        default: true
+        hint: "Control informativo; el menú principal usa el orden/configuración del sitio."
 
   # ==========================================================================
   #  PREGUNTAS FRECUENTES

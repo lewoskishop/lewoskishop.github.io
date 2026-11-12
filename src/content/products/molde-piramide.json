@@ -2,7 +2,7 @@
   "name": "Molde pirámide",
   "description": "Molde pirámide",
   "price": 4500,
-  "category": "Moldes p/yeso, resina, concreto",
+  "category": "Molde Yeso",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/molde-piramide-1.jpg"
@@ -10,6 +10,6 @@
   "featured": false,
   "inStock": true,
   "categories": [
-    "Moldes p/yeso, resina, concreto"
+    "Molde Yeso"
   ]
 }

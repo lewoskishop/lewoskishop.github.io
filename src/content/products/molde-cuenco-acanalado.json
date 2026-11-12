@@ -2,7 +2,7 @@
   "name": "molde cuenco acanalado",
   "description": "molde cuenco acanalado",
   "price": 8000,
-  "category": "Moldes p/yeso, resina, concreto",
+  "category": "Molde Yeso",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/molde-cuenco-acanalado-1.jpg"
@@ -10,6 +10,6 @@
   "featured": false,
   "inStock": true,
   "categories": [
-    "Moldes p/yeso, resina, concreto"
+    "Molde Yeso"
   ]
 }

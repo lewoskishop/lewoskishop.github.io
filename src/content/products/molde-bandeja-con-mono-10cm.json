@@ -2,7 +2,7 @@
   "name": "Molde bandeja con moño 10cm",
   "description": "Molde bandeja con moño 10cm",
   "price": 9500,
-  "category": "Moldes p/yeso, resina, concreto",
+  "category": "Molde Yeso",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/molde-bandeja-con-mono-10cm-1.jpg"
@@ -10,6 +10,6 @@
   "featured": false,
   "inStock": true,
   "categories": [
-    "Moldes p/yeso, resina, concreto"
+    "Molde Yeso"
   ]
 }

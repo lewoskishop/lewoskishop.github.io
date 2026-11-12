@@ -39,6 +39,19 @@ const faqs = defineCollection({
 });
 
 /**
+ * Categorías del catálogo (ABM desde /admin). Los productos guardan el nombre.
+ */
+const categories = defineCollection({
+  loader: glob({ pattern: '**/*.json', base: './src/content/categories' }),
+  schema: z.object({
+    name: z.string().min(1),
+    slug: z.string().min(1),
+    order: z.number().int().nonnegative().default(0),
+    showInNav: z.boolean().default(true),
+  }),
+});
+
+/**
  * El panel de administración (/admin) guarda los campos vacíos como "" o null
  * y las listas vacías como []. Los tratamos como "sin valor" antes de validar,
  * así un producto guardado desde el panel sigue siendo válido.
@@ -73,4 +86,4 @@ const products = defineCollection({
   schema: z.preprocess(pruneEmpty, productSchema),
 });
 
-export const collections = { products, faqs };
+export const collections = { products, faqs, categories };

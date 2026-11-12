@@ -2,7 +2,7 @@
   "name": "Colorante para velas",
   "description": "colores\nMarrón, rojo, verde, rosado, amarillo, azúl, violeta, cereza, turquesa, negro, blanco",
   "price": 5500,
-  "category": "velas",
+  "category": "Velas",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/colorante-para-velas-1.jpg"
@@ -10,6 +10,6 @@
   "featured": false,
   "inStock": true,
   "categories": [
-    "velas"
+    "Velas"
   ]
 }

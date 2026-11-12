@@ -2,7 +2,7 @@
   "name": "molde de niña con gatito",
   "description": "molde de niña con gatito",
   "price": 13500,
-  "category": "Moldes p/yeso, resina, concreto",
+  "category": "Molde Yeso",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/molde-de-nina-con-gatito-1.jpg"
@@ -10,6 +10,6 @@
   "featured": false,
   "inStock": true,
   "categories": [
-    "Moldes p/yeso, resina, concreto"
+    "Molde Yeso"
   ]
 }
