@@ -56,7 +56,7 @@ const COLLECTION_MAP = {
 };
 const CAT_RULES = [
   [/\bcera(s)?\b/i,'Ceras','velas'],[/\bpabilo|ojalillo|mecha\b/i,'Pabilos','velas'],
-  [/\bmolde\b/i,'Moldes','ambos'],[/\besencia|fragancia|aroma\b/i,'Esencias','ambos'],
+  [/\bnavid/i,'Navidad','ambos'],[/\bmolde\b/i,'Moldes','ambos'],[/\besencia|fragancia|aroma\b/i,'Esencias','ambos'],
   [/\bfrasco|envase|botella|vidrio|pote|tapa|difusor|botellita|petaca|anchoero|morronero/i,'Envases','ambos'],
   [/\bcolorante|pigmento|mica|glitter|brillo\b/i,'Colorantes','ambos'],
   [/\bjab[oó]n|glicerina|base de jabon|cosm[eé]tica|shampoo|manteca|aceite esencial\b/i,'Jabones y Cosmética','jabones'],
