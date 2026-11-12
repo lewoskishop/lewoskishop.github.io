@@ -94,8 +94,8 @@ collections:
     extension: json
     format: json
     identifier_field: name
-    summary: "{{name}} · {{category}} · ${{price}}"
-    sortable_fields: [name, price, category]
+    summary: "{{name}} · ${{price}}"
+    sortable_fields: [name, price]
     view_filters:
       - label: Destacados
         field: featured
