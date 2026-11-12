@@ -1,0 +1,15 @@
+{
+  "name": "Molde Circular Bandeja Grande",
+  "description": "Molde bandeja circular borde con rayas",
+  "price": 21000,
+  "categories": [
+    "Mas moldes",
+    "Molde Yeso, Resina, Concreto"
+  ],
+  "brand": "LewoskiShop",
+  "images": [
+    "/images/uploads/705.jpg"
+  ],
+  "featured": false,
+  "inStock": true
+}
