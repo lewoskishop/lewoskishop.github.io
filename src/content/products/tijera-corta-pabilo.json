@@ -2,12 +2,11 @@
   "name": "Tijera corta pabilo",
   "description": "Tijera corta pabilo",
   "price": 13000,
-  "category": "Pabilos",
+  "category": "Velas",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/tijera-corta-pabilo-1.jpg"
   ],
   "featured": false,
-  "inStock": true,
-  "tags": []
+  "inStock": true
 }
