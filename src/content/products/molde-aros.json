@@ -2,14 +2,14 @@
   "name": "Molde aros",
   "description": "Molde aros",
   "price": 5000,
-  "category": "Mas moldes",
+  "categories": [
+    "Mas moldes"
+  ],
   "brand": "LewoskiShop",
   "images": [
-    "/images/products/molde-aros-1.jpg"
+    "/images/uploads/716.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "categories": [
-    "Mas moldes"
-  ]
+  "category": "Mas moldes"
 }
