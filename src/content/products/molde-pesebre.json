@@ -2,12 +2,11 @@
   "name": "Molde pesebre",
   "description": "Molde pesebre",
   "price": 9500,
-  "category": "Moldes",
+  "category": "Navidad",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/molde-pesebre-1.jpg"
   ],
   "featured": false,
-  "inStock": true,
-  "tags": []
+  "inStock": true
 }
