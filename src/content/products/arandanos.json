@@ -2,14 +2,14 @@
   "name": "Arandanos",
   "description": "Arandanos",
   "price": 5500,
-  "category": "Mas moldes",
+  "categories": [
+    "Mas moldes"
+  ],
   "brand": "LewoskiShop",
   "images": [
-    "/images/products/arandanos-1.jpg"
+    "/images/uploads/715.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "categories": [
-    "Mas moldes"
-  ]
+  "category": "Mas moldes"
 }
