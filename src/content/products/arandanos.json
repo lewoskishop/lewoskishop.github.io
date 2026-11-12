@@ -2,12 +2,11 @@
   "name": "Arandanos",
   "description": "Arandanos",
   "price": 5500,
-  "category": "General",
+  "category": "Moldes",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/arandanos-1.jpg"
   ],
   "featured": false,
-  "inStock": true,
-  "tags": []
+  "inStock": true
 }
