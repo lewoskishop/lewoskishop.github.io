@@ -2,14 +2,15 @@
   "name": "molde mariposas x 6",
   "description": "molde mariposas x 6",
   "price": 9500,
-  "category": "Moldes Animales",
+  "categories": [
+    "Moldes Animales",
+    "Cosmética y Jabones"
+  ],
   "brand": "LewoskiShop",
   "images": [
     "/images/products/molde-mariposas-x-6-1.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "categories": [
-    "Moldes Animales"
-  ]
+  "category": "Moldes Animales"
 }
