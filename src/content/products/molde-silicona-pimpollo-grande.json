@@ -2,12 +2,11 @@
   "name": "MOLDE SILICONA PIMPOLLO GRANDE",
   "description": "MOLDE SILICONA PIMPOLLO GRANDE",
   "price": 13000,
-  "category": "Moldes",
+  "category": "Moldes Flores",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/molde-silicona-pimpollo-grande-1.jpg"
   ],
   "featured": false,
-  "inStock": true,
-  "tags": []
+  "inStock": true
 }
