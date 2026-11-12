@@ -2,14 +2,14 @@
   "name": "Reloj grande",
   "description": "Reloj grande",
   "price": 8000,
-  "category": "Molde Yeso, Resina, Concreto",
+  "categories": [
+    "Molde Yeso, Resina, Concreto"
+  ],
   "brand": "LewoskiShop",
   "images": [
-    "/images/products/reloj-grande-1.jpg"
+    "/images/uploads/721.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "categories": [
-    "Molde Yeso, Resina, Concreto"
-  ]
+  "category": "Molde Yeso, Resina, Concreto"
 }
