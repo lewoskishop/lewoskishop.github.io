@@ -40,36 +40,39 @@ function parsePrice(p){
 }
 
 const COLLECTION_MAP = {
-  'insumos para velas':      { category: 'Ceras', grupo: 'velas' },
-  'insumos aromas':          { category: 'Esencias', grupo: 'ambos' },
-  'insumos jabón':           { category: 'Jabones y Cosmética', grupo: 'jabones' },
-  'insumos jabon':           { category: 'Jabones y Cosmética', grupo: 'jabones' },
-  'cosmética':               { category: 'Jabones y Cosmética', grupo: 'jabones' },
-  'cosmetica':               { category: 'Jabones y Cosmética', grupo: 'jabones' },
-  'envases varios':          { category: 'Envases', grupo: 'ambos' },
-  'flores, brillos y decoración': { category: 'Accesorios', grupo: 'ambos' },
-  'flores, brillos y decoracion': { category: 'Accesorios', grupo: 'ambos' },
-  'flores':                  { category: 'Accesorios', grupo: 'ambos' },
-  'animales':                { category: 'Moldes', grupo: 'ambos' },
-  'navidad':                 { category: 'Navidad', grupo: 'ambos' },
-  'moldes p yeso/resina/concreto': { category: 'Moldes', grupo: 'ambos' },
+  'insumos para velas':      { category: 'VELAS' },
+  'insumos aromas':          { category: 'AROMAS' },
+  'insumos jabón':           { category: 'JABÓN' },
+  'insumos jabon':           { category: 'JABÓN' },
+  'cosmética':               { category: 'COSMÉTICA' },
+  'cosmetica':               { category: 'COSMÉTICA' },
+  'envases varios':          { category: 'ENVASES VARIOS' },
+  'flores, brillos y decoración': { category: 'DECORACIÓN' },
+  'flores, brillos y decoracion': { category: 'DECORACIÓN' },
+  'flores':                  { category: 'FLORES' },
+  'animales':                { category: 'ANIMALES' },
+  'navidad':                 { category: 'NAVIDAD' },
+  'moldes p yeso/resina/concreto': { category: 'MOLDES P YESO, RESINA, CONCRETO' },
 };
 const CAT_RULES = [
-  [/\bcera(s)?\b/i,'Ceras','velas'],[/\bpabilo|ojalillo|mecha\b/i,'Pabilos','velas'],
-  [/\bnavid/i,'Navidad','ambos'],[/\bmolde\b/i,'Moldes','ambos'],[/\besencia|fragancia|aroma\b/i,'Esencias','ambos'],
-  [/\bfrasco|envase|botella|vidrio|pote|tapa|difusor|botellita|petaca|anchoero|morronero/i,'Envases','ambos'],
-  [/\bcolorante|pigmento|mica|glitter|brillo\b/i,'Colorantes','ambos'],
-  [/\bjab[oó]n|glicerina|base de jabon|cosm[eé]tica|shampoo|manteca|aceite esencial\b/i,'Jabones y Cosmética','jabones'],
-  [/\bkit\b/i,'Kits','velas'],[/\bbalanza|term[oó]metro|tijera|cuchara|pipeta|varilla|aguja|apaga\b/i,'Herramientas','ambos'],
-  [/\baceite|alcohol|yeso|arcilla|aditivo|endurecedor|dpg|parafina|cera\b/i,'Materias Primas','ambos'],
-  [/\bcuenco|mate\b/i,'Accesorios','ambos'],
+  [/\bnavid/i,'NAVIDAD'],
+  [/\bcera(s)?\b|\bpabilo|ojalillo|mecha\b/i,'VELAS'],
+  [/\besencia|fragancia|aroma\b/i,'AROMAS'],
+  [/\bfrasco|envase|botella|vidrio|pote|tapa|difusor|botellita|petaca|anchoero|morronero/i,'ENVASES VARIOS'],
+  [/\bjab[oó]n|glicerina|base de jabon/i,'JABÓN'],
+  [/\bcosm[eé]tica|shampoo|manteca|aceite esencial\b/i,'COSMÉTICA'],
+  [/\bflor(es)?\b/i,'FLORES'],
+  [/\banimal(es)?\b/i,'ANIMALES'],
+  [/\byeso|resina|concreto\b/i,'MOLDES P YESO, RESINA, CONCRETO'],
+  [/\bmolde\b/i,'MAS MOLDES'],
+  [/\bcolorante|pigmento|mica|glitter|brillo|decor/i,'DECORACIÓN'],
 ];
 function infer(name, desc, collection){
   const key = (collection||'').trim().toLowerCase();
-  if (key && COLLECTION_MAP[key]) return COLLECTION_MAP[key];
+  if (key && COLLECTION_MAP[key]) return { ...COLLECTION_MAP[key] };
   const t = `${name||''} ${desc||''} ${collection||''}`;
-  for(const [re,c,g] of CAT_RULES) if(re.test(t)) return {category:c, grupo:g};
-  return {category:'General', grupo:'ambos'};
+  for(const [re,c] of CAT_RULES) if(re.test(t)) return {category:c};
+  return {category:'General'};
 }
 
 async function loadItems(){
@@ -129,7 +132,11 @@ async function syncCmsCategories(categories){
   const start = text.indexOf(marker);
   if(start < 0){ console.warn('  CMS: no se encontró el campo Categoría en config.yml'); return; }
   const after = text.indexOf('\n        options:', start);
-  if(after < 0){ console.warn('  CMS: no se encontró options de Categoría'); return; }
+  if(after < 0){
+    // Categoría es texto libre: nada que sincronizar en config.
+    console.log(`  CMS: categorías del catálogo (${list.length}): ${list.join(', ')}.`);
+    return;
+  }
   const hintIdx = text.indexOf('\n        hint:', after);
   if(hintIdx < 0){ console.warn('  CMS: no se encontró fin de options de Categoría'); return; }
   const optionsBlock = '\n        options:\n' + list.map(c => `          - { label: ${yamlVal(c)}, value: ${yamlVal(c)} }`).join('\n');
@@ -156,7 +163,7 @@ async function main(){
       const name = String(it.title || it.name || '').trim();
       const desc = (it.description == null ? '' : String(it.description)).trim();
       const collection = (Array.isArray(it.collections) && it.collections[0]) || it.collection || '';
-      const {category, grupo} = infer(name, desc, collection);
+      const {category} = infer(name, desc, collection);
       if(category) zipCategories.add(category);
       if(!name){ skip++; continue; }
       const id = String(it.id || slugify(name));
@@ -172,14 +179,13 @@ async function main(){
         price: price>0 ? price : 1,
         category,
         brand: 'LewoskiShop',
-        grupo,
         images: images.length ? images : [`/images/products/${slug}.jpg`],
         featured: false,
         inStock: true,
         tags: [],
       };
       if(!DRY) await fs.writeFile(path.join(PRODUCTS_DIR, `${slug}.json`), JSON.stringify(product,null,2)+'\n');
-      console.log(`${DRY?'[dry] ':''}${slug} - ${name} [${category}/${grupo}]`);
+      console.log(`${DRY?'[dry] ':''}${slug} - ${name} [${category}]`);
       ok++;
     }catch(e){ console.error('FAIL', it && (it.id||it.title), e.message); fail++; }
   }

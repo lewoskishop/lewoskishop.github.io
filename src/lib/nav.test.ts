@@ -1,37 +1,10 @@
 import { describe, it, expect } from 'vitest';
 import { COLLECTIONS, NAV } from './nav';
-import { slugify, slugifyCategory } from './catalog';
-import { navWithCatalog, buildNav, type ProductEntry } from './products';
+import { slugify } from './catalog';
+import { buildNav, type ProductEntry } from './products';
 
 const entry = (id: string, data: object): ProductEntry =>
   ({ id, collection: 'products', data }) as unknown as ProductEntry;
-
-const entries = [
-  entry('vela-soja', {
-    name: 'Cera de soja',
-    brand: 'LewoskiShop',
-    grupo: 'velas',
-    category: 'Ceras',
-    price: 10000,
-    tags: [],
-  }),
-  entry('jabon-gli', {
-    name: 'Glicerina',
-    brand: 'LewoskiShop',
-    grupo: 'jabones',
-    category: 'Jabones y Cosmética',
-    price: 5000,
-    tags: [],
-  }),
-  entry('ambos-molde', {
-    name: 'Molde silicona',
-    brand: 'LewoskiShop',
-    grupo: 'ambos',
-    category: 'Moldes',
-    price: 8000,
-    tags: [],
-  }),
-];
 
 describe('COLLECTIONS', () => {
   it('expone las tres colecciones esperadas con href coherente', () => {
@@ -43,87 +16,39 @@ describe('COLLECTIONS', () => {
 });
 
 describe('NAV', () => {
-  it('marca los items de grupo para poder completarlos con el catálogo', () => {
-    const velas = NAV.find((item) => item.href === '/velas');
-    const jabones = NAV.find((item) => item.href === '/jabones');
-    expect(velas?.grupo).toBe('velas');
-    expect(jabones?.grupo).toBe('jabones');
+  it('define el menú principal por categorías', () => {
+    expect(NAV.map((item) => item.label)).toEqual([
+      'Inicio',
+      'NAVIDAD',
+      'VELAS',
+      'JABONES',
+      'AROMAS',
+      'ENVASES VARIOS',
+      'JABÓN',
+      'DECORACIÓN',
+      'COSMÉTICA',
+      'FLORES',
+      'ANIMALES',
+      'MOLDES P YESO, RESINA, CONCRETO',
+      'MAS MOLDES',
+      'Categorías',
+    ]);
   });
 
-  it('no lleva categorías escritas a mano (se arman con el catálogo)', () => {
+  it('apunta a categorías o secciones sin depender de grupos', () => {
     for (const item of NAV) {
+      expect(item).not.toHaveProperty('grupo');
       expect(item.children).toBeUndefined();
     }
   });
 });
 
-describe('navWithCatalog', () => {
-  const nav = navWithCatalog(entries, NAV);
-
-  it('los sub-links de cada grupo usan las categorías de ese grupo', () => {
-    const velas = nav.find((item) => item.grupo === 'velas');
-    const jabones = nav.find((item) => item.grupo === 'jabones');
-
-    expect(velas?.children).toEqual([
-      { label: 'Ceras', href: '/productos/?grupo=velas&cat=ceras' },
-      { label: 'Moldes', href: '/productos/?grupo=velas&cat=moldes' },
-    ]);
-    expect(jabones?.children).toEqual([
-      { label: 'Jabones y Cosmética', href: '/productos/?grupo=jabones&cat=jabones-y-cosmetica' },
-      { label: 'Moldes', href: '/productos/?grupo=jabones&cat=moldes' },
-    ]);
-  });
-
-  it('el slug de cada sub-link es el canónico de la categoría', () => {
-    for (const item of nav) {
-      for (const child of item.children ?? []) {
-        const params = new URLSearchParams(child.href.split('?')[1]);
-        const cat = params.get('cat');
-        expect(cat).toBeTruthy();
-        expect(slugifyCategory(cat as string)).toBe(cat);
-      }
-    }
-  });
-
-  it('una categoría nueva del panel aparece sola en el menú', () => {
-    const conEnvases = [
-      ...entries,
-      entry('vela-envase', {
-        name: 'Frasco',
-        brand: 'LewoskiShop',
-        grupo: 'velas',
-        category: 'Envases',
-        price: 3000,
-        tags: [],
-      }),
-    ];
-
-    const velas = navWithCatalog(conEnvases, NAV).find((item) => item.grupo === 'velas');
-    expect(velas?.children?.map((c) => c.label)).toContain('Envases');
-  });
-
-  it('si un grupo no tiene categorías, el item queda sin desplegable', () => {
-    const soloJabones = [
-      entry('jabon-gli', {
-        name: 'Glicerina',
-        brand: 'LewoskiShop',
-        grupo: 'jabones',
-        category: 'Jabones y Cosmética',
-        price: 5000,
-        tags: [],
-      }),
-    ];
-
-    const velas = navWithCatalog(soloJabones, NAV).find((item) => item.grupo === 'velas');
-    expect(velas?.children).toBeUndefined();
-  });
-});
-
 describe('buildNav', () => {
-  it('arma el menú con las categorías reales del catálogo', () => {
-    const nav = buildNav(entries);
-    expect(nav.map((item) => item.label)).toEqual(['Inicio', 'Navidad', 'Velas', 'Jabones', 'Categorías']);
-    expect(nav.find((i) => i.grupo === 'velas')?.children?.length).toBeGreaterThan(0);
+  it('mantiene el menú principal', () => {
+    const nav = buildNav([] as ProductEntry[]);
+    expect(nav[0]?.label).toBe('Inicio');
+    expect(nav.some((i) => i.label === 'NAVIDAD')).toBe(true);
+    expect(nav.some((i) => i.label === 'Categorías')).toBe(true);
   });
 });
 

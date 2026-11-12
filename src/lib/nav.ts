@@ -10,11 +10,6 @@ export interface NavItem {
   href: string;
   /** Icono/emoji opcional para destacar el ítem en la barra de navegación. */
   icon?: string;
-  /**
-   * Grupo del item. Si está definido, sus sub-links se arman con las
-   * categorías que el catálogo tiene para ese grupo (ver navWithCatalog).
-   */
-  grupo?: 'velas' | 'jabones';
   children?: NavLink[];
 }
 
@@ -55,24 +50,21 @@ export const COLLECTIONS: CollectionDef[] = [
 ];
 
 /**
- * Menú principal.
- *
- * Los items de grupo ("Velas", "Jabones") no traen sub-links escritos: se
- * arman en runtime con las categorías que hay en el catálogo, así una
- * categoría nueva cargada desde el panel aparece sola en el menú.
+ * Menú principal basado en categorías (sin grupos).
  */
 export const NAV: NavItem[] = [
   { label: 'Inicio', href: '/' },
-  { label: 'Navidad', href: '/productos/?cat=navidad', icon: '🎄' },
-  {
-    label: 'Velas',
-    href: '/velas',
-    grupo: 'velas',
-  },
-  {
-    label: 'Jabones',
-    href: '/jabones',
-    grupo: 'jabones',
-  },
+  { label: 'NAVIDAD', href: '/productos/?cat=navidad', icon: '🎄' },
+  { label: 'VELAS', href: '/productos/?cat=velas' },
+  { label: 'JABONES', href: '/productos/?cat=jabones' },
+  { label: 'AROMAS', href: '/productos/?cat=aromas' },
+  { label: 'ENVASES VARIOS', href: '/productos/?cat=envases-varios' },
+  { label: 'JABÓN', href: '/productos/?cat=jabon' },
+  { label: 'DECORACIÓN', href: '/productos/?cat=decoracion' },
+  { label: 'COSMÉTICA', href: '/productos/?cat=cosmetica' },
+  { label: 'FLORES', href: '/productos/?cat=flores' },
+  { label: 'ANIMALES', href: '/productos/?cat=animales' },
+  { label: 'MOLDES P YESO, RESINA, CONCRETO', href: '/productos/?cat=moldes-p-yeso-resina-concreto' },
+  { label: 'MAS MOLDES', href: '/productos/?cat=mas-moldes' },
   { label: 'Categorías', href: '/categorias' },
 ];

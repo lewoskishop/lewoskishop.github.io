@@ -139,33 +139,13 @@ collections:
 
       - label: Categoría
         name: category
-        widget: select
-        options:
-          - { label: Accesorios, value: Accesorios }
-          - { label: Ceras, value: Ceras }
-          - { label: Colorantes, value: Colorantes }
-          - { label: Envases, value: Envases }
-          - { label: General, value: General }
-          - { label: Herramientas, value: Herramientas }
-          - { label: Jabones y Cosmética, value: Jabones y Cosmética }
-          - { label: Materias Primas, value: Materias Primas }
-          - { label: Moldes, value: Moldes }
-          - { label: Navidad, value: Navidad }
-          - { label: Pabilos, value: Pabilos }
-        hint: "Seleccioná la categoría del producto (igual que Grupo)."
+        widget: string
+        hint: "Categoría del producto (podés escribir una nueva o modificarla; el catálogo y el menú se actualizan según las categorías usadas)."
 
       - label: Marca
         name: brand
         widget: string
         hint: "Ej: LewoskiShop"
-
-      - label: Grupo
-        name: grupo
-        widget: select
-        options:
-          - { label: Velas, value: velas }
-          - { label: Jabones, value: jabones }
-          - { label: Velas y jabones, value: ambos }
 
       - label: Presentaciones / variantes
         name: variants

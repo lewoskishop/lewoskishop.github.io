@@ -36,8 +36,8 @@ export const productSchema = z
     category: z.string().default('General'),
     /** Marca del producto. */
     brand: z.string().min(1),
-    /** Especie destino. "ambos" aparece tanto en Perros como en Gatos. */
-    grupo: z.enum(['velas', 'jabones', 'ambos']),
+    /** (Deprecado) Grupo legado; el catálogo se organiza por categorías. */
+    grupo: z.enum(['velas', 'jabones', 'ambos']).optional(),
     /** Tipo de alimento: seco, húmedo o null (accesorios, snacks, camas, etc.). */
     foodType: z.enum(['seco', 'humido']).nullable().default(null),
     /** Kilos de regalo del producto (opcional). */

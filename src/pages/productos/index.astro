@@ -1,7 +1,6 @@
 ---
 // src/pages/productos/index.astro
-// Catálogo completo. Reusa ProductGrid, que trae los filtros por grupo,
-// categoría y búsqueda, y lee los query params del menú: ?grupo=velas&cat=ceras
+// Catálogo completo con filtros por categoría y búsqueda.
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProductGrid from '../../components/ProductGrid.astro';
@@ -13,6 +12,6 @@ import ProductGrid from '../../components/ProductGrid.astro';
 >
   <ProductGrid
     title="Todos los productos"
-    subtitle="Ceras, moldes, esencias, envases, jabones y mucho más. Filtrá por grupo o categoría."
+    subtitle="Ceras, moldes, esencias, envases, jabones y mucho más. Filtrá por categoría."
   />
 </BaseLayout>

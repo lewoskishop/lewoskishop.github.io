@@ -1,11 +1,11 @@
 import { describe, it, expect } from 'vitest';
-import { buildTaxonomy, categoriesForGroup, toTaxable } from './taxonomy';
+import { buildTaxonomy, toTaxable } from './taxonomy';
 
 const products = [
-  { category: 'Alimentos Secos', brand: 'Agility', grupo: 'velas' },
-  { category: 'Alimentos Secos', brand: 'Agility', grupo: 'jabones' },
-  { category: 'Alimentos Húmedos', brand: 'Excellent', grupo: 'jabones' },
-  { category: 'Camas', brand: 'Patitas', grupo: 'ambos' },
+  { category: 'Alimentos Secos', brand: 'Agility' },
+  { category: 'Alimentos Secos', brand: 'Agility' },
+  { category: 'Alimentos Húmedos', brand: 'Excellent' },
+  { category: 'Camas', brand: 'Patitas' },
 ];
 
 describe('buildTaxonomy', () => {
@@ -32,9 +32,9 @@ describe('buildTaxonomy', () => {
 
   it('une las variantes de escritura de una misma categoría', () => {
     const mezcladas = [
-      { category: 'Alimentos Secos', brand: 'Agility', grupo: 'velas' },
-      { category: 'alimentos secos', brand: 'Agility', grupo: 'velas' },
-      { category: 'ALIMENTOS SECOS', brand: 'Agility', grupo: 'velas' },
+      { category: 'Alimentos Secos', brand: 'Agility' },
+      { category: 'alimentos secos', brand: 'Agility' },
+      { category: 'ALIMENTOS SECOS', brand: 'Agility' },
     ];
 
     const categories = buildTaxonomy(mezcladas, 'category');
@@ -45,8 +45,8 @@ describe('buildTaxonomy', () => {
 
   it('muestra la forma más usada del nombre', () => {
     const mezcladas = [
-      { category: 'alimentos secos', brand: 'Agility', grupo: 'velas' },
-      { category: 'Alimentos Secos', brand: 'Agility', grupo: 'velas' },
+      { category: 'alimentos secos', brand: 'Agility' },
+      { category: 'Alimentos Secos', brand: 'Agility' },
     ];
 
     expect(buildTaxonomy(mezcladas, 'category')[0].name).toBe('Alimentos Secos');
@@ -54,40 +54,17 @@ describe('buildTaxonomy', () => {
 
   it('ignora las categorías vacías', () => {
     const conVacias = [
-      { category: '', brand: 'Agility', grupo: 'velas' },
-      { category: '   ', brand: 'Agility', grupo: 'velas' },
+      { category: '', brand: 'Agility' },
+      { category: '   ', brand: 'Agility' },
     ];
 
     expect(buildTaxonomy(conVacias, 'category')).toEqual([]);
   });
 });
 
-describe('categoriesForGroup', () => {
-  it('"ambos" cuenta como perro y como gato', () => {
-    expect(categoriesForGroup(products, 'velas').map((c) => c.slug)).toEqual([
-      'alimentos-secos',
-      'camas',
-    ]);
-    expect(categoriesForGroup(products, 'jabones').map((c) => c.slug)).toEqual([
-      'alimentos-humedos',
-      'alimentos-secos',
-      'camas',
-    ]);
-  });
-
-  it('una categoría nueva del panel aparece sin tocar el código', () => {
-    const conNueva = [
-      ...products,
-      { category: 'Higiene', brand: 'Clean', grupo: 'velas' },
-    ];
-
-    expect(categoriesForGroup(conNueva, 'velas').map((c) => c.slug)).toContain('higiene');
-  });
-});
-
 describe('toTaxable', () => {
   it('extrae lo que la taxonomía necesita de una entrada del catálogo', () => {
     const entry = { data: { category: 'Camas', brand: 'Patitas', grupo: 'ambos' } };
-    expect(toTaxable(entry)).toEqual({ category: 'Camas', brand: 'Patitas', grupo: 'ambos' });
+    expect(toTaxable(entry)).toEqual({ category: 'Camas', brand: 'Patitas' });
   });
 });

@@ -2,20 +2,13 @@ import { slugify } from './catalog';
 
 /**
  * Taxonomía del catálogo: categorías y marcas.
- *
- * Antes estas listas estaban escritas a mano en src/lib/nav.ts, así que una
- * categoría o marca nueva cargada desde el panel (/admin) no aparecía en los
- * filtros ni en las páginas de marca hasta tocar el código.
- *
- * Ahora se derivan del propio catálogo: lo que el panel carga es lo que el
- * sitio muestra.
+ * Se derivan del propio catálogo (lo que se carga es lo que se muestra).
  */
 
 /** Datos mínimos de un producto para poder agruparlo. */
 export interface TaxableProduct {
   category: string;
   brand: string;
-  grupo: string;
 }
 
 /** Una categoría o marca del catálogo, con su slug y cuántos productos tiene. */
@@ -27,24 +20,16 @@ export interface TaxonomyEntry {
 
 /** Adapta una entrada de la colección de productos a los datos que necesita la taxonomía. */
 export function toTaxable(product: {
-  data: { category: string; brand: string; grupo: string };
+  data: { category: string; brand: string };
 }): TaxableProduct {
   return {
     category: product.data.category,
     brand: product.data.brand,
-    grupo: product.data.grupo,
   };
 }
 
 /**
  * Agrupa los productos por categoría o por marca.
- *
- * El slug es el canónico (minúsculas, sin acentos, con guiones), así que
- * "Alimentos Húmedos" y "alimentos humedos" caen en la misma entrada.
- * El nombre que se muestra es el que más se repite en el catálogo; a igual
- * cantidad gana la variante con mayúscula inicial, para que se vea prolijo.
- *
- * La lista viene ordenada alfabéticamente.
  */
 export function buildTaxonomy(
   products: TaxableProduct[],
@@ -71,20 +56,6 @@ export function buildTaxonomy(
       count: [...variants.values()].reduce((total, n) => total + n, 0),
     }))
     .sort((a, b) => a.name.localeCompare(b.name, 'es'));
-}
-
-/**
- * Categorías que tienen al menos un producto para la grupo indicada.
- * "ambos" cuenta como perro y como gato.
- */
-export function categoriesForGroup(
-  products: TaxableProduct[],
-  grupo: 'velas' | 'jabones',
-): TaxonomyEntry[] {
-  return buildTaxonomy(
-    products.filter((p) => p.grupo === grupo || p.grupo === 'ambos'),
-    'category',
-  );
 }
 
 /**

@@ -8,7 +8,7 @@ export interface CatalogProduct {
   id: string;
   name: string;
   brand: string;
-  grupo: Group;
+  grupo?: Group;
   category: string;
   foodType: FoodType | null;
   price: number;
@@ -55,7 +55,7 @@ export function normalize(value: string): string {
     .trim();
 }
 
-/** "ambos" cuenta como perro y como gato. */
+/** (Legado) Coincidencia por grupo. */
 export function matchesGroup(product: CatalogProduct, grupo: 'velas' | 'jabones'): boolean {
   return product.grupo === grupo || product.grupo === 'ambos';
 }

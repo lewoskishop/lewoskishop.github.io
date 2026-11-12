@@ -7,7 +7,7 @@ import {
   type CollectionSlug,
 } from './catalog';
 import { COLLECTIONS, NAV, type CollectionDef, type NavItem } from './nav';
-import { categoriesForGroup, toTaxable } from './taxonomy';
+import { toTaxable } from './taxonomy';
 
 export type ProductEntry = CollectionEntry<'products'>;
 
@@ -64,29 +64,8 @@ export function navWithCollections(entries: ProductEntry[], nav: NavItem[]): Nav
 }
 
 /**
- * Le pone a cada item de grupo los sub-links con las categorías que hay
- * para esa grupo en el catálogo. Si una grupo no tiene categorías, el
- * item queda como link simple (sin desplegable vacío).
- */
-export function navWithCatalog(entries: ProductEntry[], nav: NavItem[]): NavItem[] {
-  const taxonomy = entries.map(toTaxable);
-
-  return nav.map((item) => {
-    if (!item.grupo) return item;
-
-    const children = categoriesForGroup(taxonomy, item.grupo).map((category) => ({
-      label: category.name,
-      href: `/productos/?grupo=${item.grupo}&cat=${category.slug}`,
-    }));
-
-    return { ...item, children: children.length ? children : undefined };
-  });
-}
-
-/**
- * Menú final del sitio: con las categorías reales del catálogo y sin
- * colecciones vacías.
+ * Menú final del sitio (sin grupos), ocultando colecciones vacías.
  */
 export function buildNav(entries: ProductEntry[]): NavItem[] {
-  return navWithCollections(entries, navWithCatalog(entries, NAV));
+  return navWithCollections(entries, NAV);
 }
