@@ -8,6 +8,7 @@ import {
 } from './catalog';
 import { COLLECTIONS, NAV, type CollectionDef, type NavItem } from './nav';
 import { buildTaxonomy, toTaxable } from './taxonomy';
+import { slugify } from './catalog';
 
 export type ProductEntry = CollectionEntry<'products'>;
 
@@ -67,8 +68,24 @@ export function navWithCollections(entries: ProductEntry[], nav: NavItem[]): Nav
 /**
  * Menú final del sitio: Inicio + categorías (orden preferido) ajustadas a las encontradas.
  */
+const EXCLUDED_NAV_CATEGORIES = new Set([
+  'ceras',
+  'cera',
+  'colorantes',
+  'colorante',
+  'pabilos',
+  'pabilo',
+  'general',
+  'materias-primas',
+  'materia-prima',
+  'moldes',
+  'mas-moldes',
+]);
+
 export function buildNav(entries: ProductEntry[]): NavItem[] {
-  const cats = buildTaxonomy(entries.map(toTaxable), 'category');
+  const cats = buildTaxonomy(entries.map(toTaxable), 'category').filter(
+    (c) => !EXCLUDED_NAV_CATEGORIES.has(c.slug) && !EXCLUDED_NAV_CATEGORIES.has(slugify(c.name)),
+  );
   const bySlug = new Map(cats.map((c) => [c.slug, c]));
 
   const preferred: Array<{ slugs: string[]; label: string; icon?: string }> = [

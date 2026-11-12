@@ -143,17 +143,19 @@ collections:
         multiple: true
         options:
           - { label: Accesorios, value: Accesorios }
-          - { label: Ceras, value: Ceras }
-          - { label: Colorantes, value: Colorantes }
+          - { label: Aromas, value: Aromas }
+          - { label: Deco, value: Deco }
           - { label: Envases, value: Envases }
-          - { label: General, value: General }
           - { label: Herramientas, value: Herramientas }
-          - { label: Jabones y Cosmética, value: "Jabones y Cosmética" }
-          - { label: Materias Primas, value: Materias Primas }
-          - { label: Moldes, value: Moldes }
+          - { label: Jabones, value: Jabones }
+          - { label: Mas moldes, value: Mas moldes }
+          - { label: Moldes Animales, value: Moldes Animales }
+          - { label: Moldes Flores, value: Moldes Flores }
+          - { label: Molde Yeso, value: Molde Yeso }
           - { label: Navidad, value: Navidad }
-          - { label: Pabilos, value: Pabilos }
-        hint: "Seleccioná una o más categorías (se pueden tildar varias)."
+          - { label: Cosmetic, value: Cosmetic }
+          - { label: Velas, value: Velas }
+        hint: "Seleccioná una o más categorías (se pueden tildar varias). No se muestran en el menú desplegable las categorías ocultas."
 
       - label: Marca
         name: brand

@@ -32,11 +32,11 @@ describe('buildNav', () => {
     expect(nav[0]).toMatchObject({ label: 'Inicio', href: '/' });
     expect(nav[nav.length - 1]).toMatchObject({ label: 'Categorías', href: '/categorias' });
     const labels = nav.map((i) => i.label);
-    expect(labels).toContain('Moldes');
+    // Excluidas del menú desplegable: Moldes, Ceras, etc.
+    expect(labels).not.toContain('Moldes');
+    expect(labels).not.toContain('Ceras');
     expect(labels).toContain('Navidad');
-    expect(labels).toContain('Ceras');
     expect(nav.find((i) => i.label === 'Navidad')).toMatchObject({ href: '/productos/?cat=navidad', icon: '🎄' });
-    expect(nav.find((i) => i.label === 'Moldes')).toMatchObject({ href: '/productos/?cat=moldes' });
   });
 
   it('sin productos muestra solo Inicio y Categorías', () => {
