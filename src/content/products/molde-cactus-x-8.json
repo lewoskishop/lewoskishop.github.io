@@ -2,14 +2,15 @@
   "name": "Molde cactus x 8",
   "description": "Medidas en la foto",
   "price": 4500,
-  "category": "Mas moldes",
+  "categories": [
+    "Mas moldes",
+    "Moldes Flores"
+  ],
   "brand": "LewoskiShop",
   "images": [
     "/images/products/molde-cactus-x-8-1.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "categories": [
-    "Mas moldes"
-  ]
+  "category": "Mas moldes"
 }
