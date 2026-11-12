@@ -2,12 +2,11 @@
   "name": "Perrito con bufanda",
   "description": "Medidas en la foto",
   "price": 6000,
-  "category": "General",
+  "category": "Animales",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/perrito-con-bufanda-1.jpg"
   ],
   "featured": false,
-  "inStock": true,
-  "tags": []
+  "inStock": true
 }
