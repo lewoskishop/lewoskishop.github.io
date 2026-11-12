@@ -2,12 +2,11 @@
   "name": "Dinosaurios medianos",
   "description": "Dinosaurios medianos",
   "price": 6500,
-  "category": "General",
+  "category": "Animales",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/dinosaurios-medianos-1.jpg"
   ],
   "featured": false,
-  "inStock": true,
-  "tags": []
+  "inStock": true
 }
