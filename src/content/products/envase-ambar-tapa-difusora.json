@@ -2,15 +2,15 @@
   "name": "envase ámbar tapa difusora",
   "description": "envase ámbar tapa difusora",
   "price": 1700,
-  "category": "Envases",
+  "categories": [
+    "Envases",
+    "Aromas"
+  ],
   "brand": "LewoskiShop",
   "images": [
     "/images/products/envase-ambar-tapa-difusora-1.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "tags": [],
-  "categories": [
-    "Envases"
-  ]
+  "category": "Envases"
 }
