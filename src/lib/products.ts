@@ -20,6 +20,7 @@ export function toCatalogProduct(entry: ProductEntry): CatalogProduct {
     brand: data.brand,
     grupo: data.grupo,
     category: data.category,
+    categories: data.categories,
     foodType: data.foodType,
     price: data.price,
     compareAtPrice: data.compareAtPrice,
@@ -64,16 +65,42 @@ export function navWithCollections(entries: ProductEntry[], nav: NavItem[]): Nav
 }
 
 /**
- * Menú final del sitio: Inicio + categorías reales del catálogo + Categorías.
- * Así responde igual que el desplegable/listado de categorías.
+ * Menú final del sitio: Inicio + categorías (orden preferido) ajustadas a las encontradas.
  */
 export function buildNav(entries: ProductEntry[]): NavItem[] {
   const cats = buildTaxonomy(entries.map(toTaxable), 'category');
-  const categoryItems: NavItem[] = cats.map((c) => ({
-    label: c.name,
-    href: `/productos/?cat=${c.slug}`,
-    ...(c.slug === 'navidad' ? { icon: '🎄' } : {}),
-  }));
+  const bySlug = new Map(cats.map((c) => [c.slug, c]));
+
+  const preferred: Array<{ slugs: string[]; label: string; icon?: string }> = [
+    { slugs: ['navidad'], label: 'Navidad', icon: '🎄' },
+    { slugs: ['jabones', 'jabon', 'jabones-y-cosmetica'], label: 'Jabones' },
+    { slugs: ['moldes-animales', 'moldes-anim', 'animales'], label: 'Moldes Anim.' },
+    { slugs: ['moldes-flores', 'moldes-flor', 'flores'], label: 'Moldes Flor' },
+    { slugs: ['molde-yeso', 'moldes-yeso', 'yeso', 'yesos', 'moldes-p-yeso-resina-concreto'], label: 'Molde Yeso' },
+    { slugs: ['envases', 'envases-varios'], label: 'Envases' },
+    { slugs: ['herramientas'], label: 'Herramientas' },
+    { slugs: ['cosmetica', 'cosmetic'], label: 'Cosmetic' },
+    { slugs: ['decoracion', 'deco'], label: 'Deco' },
+  ];
+
+  const used = new Set<string>();
+  const categoryItems: NavItem[] = [];
+
+  for (const p of preferred) {
+    const match = p.slugs.map((s) => bySlug.get(s)).find(Boolean);
+    if (!match) continue;
+    used.add(match.slug);
+    categoryItems.push({
+      label: p.label,
+      href: `/productos/?cat=${match.slug}`,
+      ...(p.icon ? { icon: p.icon } : {}),
+    });
+  }
+  for (const c of cats) {
+    if (used.has(c.slug)) continue;
+    categoryItems.push({ label: c.name, href: `/productos/?cat=${c.slug}` });
+  }
+
   const nav: NavItem[] = [
     { label: 'Inicio', href: '/' },
     ...categoryItems,

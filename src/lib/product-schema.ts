@@ -32,8 +32,10 @@ export const productSchema = z
     price: z.number().positive(),
     /** Precio anterior tachado (opcional, para mostrar descuento). */
     compareAtPrice: z.number().positive().optional(),
-    /** Categoría principal (se usa para los filtros del catálogo). */
-    category: z.string().default('General'),
+    /** Categoría principal (legado). */
+    category: z.string().optional(),
+    /** Categorías del producto (permite múltiples). */
+    categories: z.array(z.string().min(1)).optional(),
     /** Marca del producto. */
     brand: z.string().min(1),
     /** (Deprecado) Grupo legado; el catálogo se organiza por categorías. */

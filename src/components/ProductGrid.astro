@@ -38,15 +38,17 @@ const usedCategories = buildTaxonomy(products.map(toTaxable), 'category');
 
   <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4" data-product-grid>
     {
-      products.map((product) => (
+      products.map((product) => {
+        const cats = (product.data.categories && product.data.categories.length ? product.data.categories : [product.data.category]).filter(Boolean) as string[];
+        return (
         <div
           data-product-item
-          data-category={slugifyCategory(product.data.category)}
-          data-text={normalize([product.data.name, product.data.category, ...product.data.tags].join(' '))}
+          data-categories={cats.map(slugifyCategory).join(',')}
+          data-text={normalize([product.data.name, ...cats, ...product.data.tags].join(' '))}
         >
           <ProductCard product={product} eager />
         </div>
-      ))
+      )})
     }
   </div>
 
@@ -86,7 +88,8 @@ const usedCategories = buildTaxonomy(products.map(toTaxable), 'category');
       const q = normalize(state.q);
       let visible = 0;
       items.forEach((item) => {
-        const okCategory = matchesCategory(item.dataset.category ?? '', state.category);
+        const cats = (item.dataset.categories || item.dataset.category || '').split(',').filter(Boolean);
+        const okCategory = !state.category || cats.some((c) => matchesCategory(c, state.category));
         const okQuery = !q || (item.dataset.text ?? '').includes(q);
         const show = okCategory && okQuery;
         item.classList.toggle('hidden', !show);

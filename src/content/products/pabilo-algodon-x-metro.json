@@ -8,5 +8,8 @@
     "/images/products/pabilo-algodon-x-metro-1.jpg"
   ],
   "featured": false,
-  "inStock": true
+  "inStock": true,
+  "categories": [
+    "Velas"
+  ]
 }

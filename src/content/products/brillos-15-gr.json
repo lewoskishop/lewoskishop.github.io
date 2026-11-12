@@ -2,11 +2,14 @@
   "name": "Brillos 15 gr",
   "description": "Brillos 15 gr",
   "price": 1000,
-  "category": "Decoración",
+  "category": "Deco",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/brillos-15-gr-1.jpg"
   ],
   "featured": false,
-  "inStock": true
+  "inStock": true,
+  "categories": [
+    "Deco"
+  ]
 }

@@ -8,5 +8,8 @@
     "/images/products/porcelana-en-frio-nicron-1.jpg"
   ],
   "featured": false,
-  "inStock": true
+  "inStock": true,
+  "categories": [
+    "Herramientas"
+  ]
 }

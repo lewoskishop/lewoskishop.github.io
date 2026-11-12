@@ -11,6 +11,7 @@ const searchIndex = products.map((p) => ({
   name: p.data.name,
   brand: p.data.brand,
   category: p.data.category,
+  categories: p.data.categories,
   foodType: p.data.foodType,
   price: p.data.price,
   compareAtPrice: p.data.compareAtPrice,
@@ -85,14 +86,14 @@ const searchIndex = products.map((p) => ({
   </div>
 
   <nav class="hidden border-t border-border lg:block" aria-label="Categorías">
-    <div class="container-page flex items-center gap-1">
+    <div class="container-page flex flex-wrap items-center gap-x-1 gap-y-0">
       {
         nav.map((item) => (
           <div class="group relative">
             <a
               href={item.href}
               class:list={[
-                'flex items-center gap-1.5 px-3.5 py-3 text-sm font-semibold transition-colors hover:text-brand-secondary',
+                'flex items-center gap-1 whitespace-nowrap px-2 py-2.5 text-[13px] font-semibold transition-colors hover:text-brand-secondary',
                 item.icon ? 'text-brand-secondary' : 'text-foreground',
               ]}
             >

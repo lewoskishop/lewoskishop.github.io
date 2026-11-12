@@ -137,10 +137,23 @@ collections:
         required: false
         hint: "Opcional. Si lo cargás, la etiqueta '-15% OFF' se calcula sola. Tiene que ser MAYOR que el precio."
 
-      - label: Categoría
-        name: category
-        widget: string
-        hint: "Categoría del producto (podés escribir una nueva o modificarla; el catálogo y el menú se actualizan según las categorías usadas)."
+      - label: Categorías
+        name: categories
+        widget: select
+        multiple: true
+        options:
+          - { label: Accesorios, value: Accesorios }
+          - { label: Ceras, value: Ceras }
+          - { label: Colorantes, value: Colorantes }
+          - { label: Envases, value: Envases }
+          - { label: General, value: General }
+          - { label: Herramientas, value: Herramientas }
+          - { label: Jabones y Cosmética, value: "Jabones y Cosmética" }
+          - { label: Materias Primas, value: Materias Primas }
+          - { label: Moldes, value: Moldes }
+          - { label: Navidad, value: Navidad }
+          - { label: Pabilos, value: Pabilos }
+        hint: "Seleccioná una o más categorías (se pueden tildar varias)."
 
       - label: Marca
         name: brand

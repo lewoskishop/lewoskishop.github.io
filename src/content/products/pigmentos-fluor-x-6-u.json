@@ -2,11 +2,14 @@
   "name": "Pigmentos fluor x 6 u.",
   "description": "Pigmentos fluor x 6 u.",
   "price": 3000,
-  "category": "Decoración",
+  "category": "Deco",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/pigmentos-fluor-x-6-u-1.jpg"
   ],
   "featured": false,
-  "inStock": true
+  "inStock": true,
+  "categories": [
+    "Deco"
+  ]
 }

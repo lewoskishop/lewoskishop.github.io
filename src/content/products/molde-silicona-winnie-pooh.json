@@ -8,5 +8,8 @@
     "/images/products/molde-silicona-winnie-pooh-1.jpg"
   ],
   "featured": false,
-  "inStock": true
+  "inStock": true,
+  "categories": [
+    "Moldes Animales"
+  ]
 }

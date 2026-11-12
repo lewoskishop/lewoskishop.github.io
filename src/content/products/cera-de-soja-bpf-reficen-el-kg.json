@@ -8,5 +8,8 @@
     "/images/products/cera-de-soja-bpf-reficen-el-kg-1.jpg"
   ],
   "featured": false,
-  "inStock": true
+  "inStock": true,
+  "categories": [
+    "Velas"
+  ]
 }

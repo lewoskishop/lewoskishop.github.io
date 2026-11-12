@@ -40,32 +40,32 @@ function parsePrice(p){
 }
 
 const COLLECTION_MAP = {
-  'insumos para velas':      { category: 'VELAS' },
-  'insumos aromas':          { category: 'AROMAS' },
-  'insumos jabón':           { category: 'JABÓN' },
-  'insumos jabon':           { category: 'JABÓN' },
-  'cosmética':               { category: 'COSMÉTICA' },
-  'cosmetica':               { category: 'COSMÉTICA' },
-  'envases varios':          { category: 'ENVASES VARIOS' },
-  'flores, brillos y decoración': { category: 'DECORACIÓN' },
-  'flores, brillos y decoracion': { category: 'DECORACIÓN' },
-  'flores':                  { category: 'FLORES' },
-  'animales':                { category: 'ANIMALES' },
-  'navidad':                 { category: 'NAVIDAD' },
-  'moldes p yeso/resina/concreto': { category: 'MOLDES P YESO, RESINA, CONCRETO' },
+  'insumos para velas':      { category: 'Velas' },
+  'insumos aromas':          { category: 'Aromas' },
+  'insumos jabón':           { category: 'Jabones' },
+  'insumos jabon':           { category: 'Jabones' },
+  'cosmética':               { category: 'Cosmetic' },
+  'cosmetica':               { category: 'Cosmetic' },
+  'envases varios':          { category: 'Envases' },
+  'flores, brillos y decoración': { category: 'Deco' },
+  'flores, brillos y decoracion': { category: 'Deco' },
+  'flores':                  { category: 'Moldes Flores' },
+  'animales':                { category: 'Moldes Animales' },
+  'navidad':                 { category: 'Navidad' },
+  'moldes p yeso/resina/concreto': { category: 'Molde Yeso' },
 };
 const CAT_RULES = [
-  [/\bnavid/i,'NAVIDAD'],
-  [/\bcera(s)?\b|\bpabilo|ojalillo|mecha\b/i,'VELAS'],
-  [/\besencia|fragancia|aroma\b/i,'AROMAS'],
-  [/\bfrasco|envase|botella|vidrio|pote|tapa|difusor|botellita|petaca|anchoero|morronero/i,'ENVASES VARIOS'],
-  [/\bjab[oó]n|glicerina|base de jabon/i,'JABÓN'],
-  [/\bcosm[eé]tica|shampoo|manteca|aceite esencial\b/i,'COSMÉTICA'],
-  [/\bflor(es)?\b/i,'FLORES'],
-  [/\banimal(es)?\b/i,'ANIMALES'],
-  [/\byeso|resina|concreto\b/i,'MOLDES P YESO, RESINA, CONCRETO'],
-  [/\bmolde\b/i,'MAS MOLDES'],
-  [/\bcolorante|pigmento|mica|glitter|brillo|decor/i,'DECORACIÓN'],
+  [/\bnavid/i,'Navidad'],
+  [/\bcera(s)?\b|\bpabilo|ojalillo|mecha\b/i,'Velas'],
+  [/\besencia|fragancia|aroma\b/i,'Aromas'],
+  [/\bfrasco|envase|botella|vidrio|pote|tapa|difusor|botellita|petaca|anchoero|morronero/i,'Envases'],
+  [/\bjab[oó]n|glicerina|base de jabon/i,'Jabones'],
+  [/\bcosm[eé]tica|shampoo|manteca|aceite esencial\b/i,'Cosmetic'],
+  [/\bflor(es)?\b/i,'Moldes Flores'],
+  [/\banimal(es)?\b/i,'Moldes Animales'],
+  [/\byeso|resina|concreto\b/i,'Molde Yeso'],
+  [/\bmolde\b/i,'Moldes'],
+  [/\bcolorante|pigmento|mica|glitter|brillo|decor/i,'Deco'],
 ];
 function infer(name, desc, collection){
   const key = (collection||'').trim().toLowerCase();
@@ -128,17 +128,17 @@ async function syncCmsCategories(categories){
   if(!list.length) return;
   let text;
   try{ text = await fs.readFile(CMS_CONFIG,'utf8'); }catch(e){ console.warn('  CMS: no se pudo leer config.yml:', e.message); return; }
-  const marker = '\n      - label: Categoría';
-  const start = text.indexOf(marker);
-  if(start < 0){ console.warn('  CMS: no se encontró el campo Categoría en config.yml'); return; }
+  const marker = '\n      - label: Categorías';
+  let start = text.indexOf(marker);
+  if(start < 0) start = text.indexOf('\n      - label: Categoría');
+  if(start < 0){ console.warn('  CMS: no se encontró el campo de categorías en config.yml'); return; }
   const after = text.indexOf('\n        options:', start);
   if(after < 0){
-    // Categoría es texto libre: nada que sincronizar en config.
     console.log(`  CMS: categorías del catálogo (${list.length}): ${list.join(', ')}.`);
     return;
   }
   const hintIdx = text.indexOf('\n        hint:', after);
-  if(hintIdx < 0){ console.warn('  CMS: no se encontró fin de options de Categoría'); return; }
+  if(hintIdx < 0){ console.warn('  CMS: no se encontró fin de options de categorías'); return; }
   const optionsBlock = '\n        options:\n' + list.map(c => `          - { label: ${yamlVal(c)}, value: ${yamlVal(c)} }`).join('\n');
   const next = text.slice(0, after) + optionsBlock + text.slice(hintIdx);
   if(next === text){ console.log(`  CMS: categorías ya alineadas (${list.length}).`); return; }
@@ -178,6 +178,7 @@ async function main(){
         ...(desc && desc.length>160 ? {longDescription: desc} : {}),
         price: price>0 ? price : 1,
         category,
+        categories: [category],
         brand: 'LewoskiShop',
         images: images.length ? images : [`/images/products/${slug}.jpg`],
         featured: false,

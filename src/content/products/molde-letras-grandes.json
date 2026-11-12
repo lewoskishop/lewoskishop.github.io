@@ -8,5 +8,8 @@
     "/images/products/molde-letras-grandes-1.jpg"
   ],
   "featured": false,
-  "inStock": true
+  "inStock": true,
+  "categories": [
+    "Mas moldes"
+  ]
 }

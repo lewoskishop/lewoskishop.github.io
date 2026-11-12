@@ -8,5 +8,8 @@
     "/images/products/molde-silicona-cuadraditos-16mm-1.jpg"
   ],
   "featured": false,
-  "inStock": true
+  "inStock": true,
+  "categories": [
+    "Mas moldes"
+  ]
 }

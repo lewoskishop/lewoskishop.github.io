@@ -8,5 +8,8 @@
     "/images/products/pincel-chato-1.jpg"
   ],
   "featured": false,
-  "inStock": true
+  "inStock": true,
+  "categories": [
+    "Herramientas"
+  ]
 }

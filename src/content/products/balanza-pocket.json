@@ -9,5 +9,8 @@
     "/images/products/balanza-pocket-1.jpg"
   ],
   "featured": false,
-  "inStock": true
+  "inStock": true,
+  "categories": [
+    "Herramientas"
+  ]
 }

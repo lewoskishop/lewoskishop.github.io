@@ -8,5 +8,8 @@
     "/images/products/molde-silicona-angelito-1.jpg"
   ],
   "featured": false,
-  "inStock": true
+  "inStock": true,
+  "categories": [
+    "Navidad"
+  ]
 }

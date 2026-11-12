@@ -8,5 +8,8 @@
     "/images/products/molde-angelito-2-1.jpg"
   ],
   "featured": false,
-  "inStock": true
+  "inStock": true,
+  "categories": [
+    "Navidad"
+  ]
 }

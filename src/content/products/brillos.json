@@ -2,11 +2,14 @@
   "name": "Brillos",
   "description": "5gr",
   "price": 600,
-  "category": "Decoración",
+  "category": "Deco",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/brillos-1.jpg"
   ],
   "featured": false,
-  "inStock": true
+  "inStock": true,
+  "categories": [
+    "Deco"
+  ]
 }

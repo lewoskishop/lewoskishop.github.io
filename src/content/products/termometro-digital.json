@@ -9,5 +9,8 @@
   ],
   "featured": false,
   "inStock": true,
-  "tags": []
+  "tags": [],
+  "categories": [
+    "Herramientas"
+  ]
 }

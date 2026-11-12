@@ -8,5 +8,8 @@
     "/images/products/alcohol-neutro-5-lt-1.jpg"
   ],
   "featured": false,
-  "inStock": true
+  "inStock": true,
+  "categories": [
+    "Aromas"
+  ]
 }

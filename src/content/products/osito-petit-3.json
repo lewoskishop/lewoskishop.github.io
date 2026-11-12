@@ -8,5 +8,8 @@
     "/images/products/osito-petit-3-1.jpg"
   ],
   "featured": false,
-  "inStock": true
+  "inStock": true,
+  "categories": [
+    "Moldes Animales"
+  ]
 }

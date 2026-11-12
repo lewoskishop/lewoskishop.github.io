@@ -8,5 +8,8 @@
     "/images/products/alambres-de-aluminio-x-5m-1.jpg"
   ],
   "featured": false,
-  "inStock": true
+  "inStock": true,
+  "categories": [
+    "Herramientas"
+  ]
 }

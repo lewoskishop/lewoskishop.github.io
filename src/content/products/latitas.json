@@ -8,5 +8,8 @@
     "/images/products/latitas-1.jpg"
   ],
   "featured": false,
-  "inStock": true
+  "inStock": true,
+  "categories": [
+    "Envases"
+  ]
 }

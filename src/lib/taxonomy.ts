@@ -7,7 +7,8 @@ import { slugify } from './catalog';
 
 /** Datos mínimos de un producto para poder agruparlo. */
 export interface TaxableProduct {
-  category: string;
+  category?: string;
+  categories?: string[];
   brand: string;
 }
 
@@ -18,12 +19,19 @@ export interface TaxonomyEntry {
   count: number;
 }
 
+function productCategories(product: TaxableProduct): string[] {
+  if (Array.isArray(product.categories) && product.categories.length) return product.categories;
+  if (product.category) return [product.category];
+  return [];
+}
+
 /** Adapta una entrada de la colección de productos a los datos que necesita la taxonomía. */
 export function toTaxable(product: {
-  data: { category: string; brand: string };
+  data: { category?: string; categories?: string[]; brand: string };
 }): TaxableProduct {
   return {
     category: product.data.category,
+    categories: product.data.categories,
     brand: product.data.brand,
   };
 }
@@ -38,15 +46,18 @@ export function buildTaxonomy(
   const groups = new Map<string, Map<string, number>>();
 
   for (const product of products) {
-    const name = (product[key] ?? '').trim();
-    if (!name) continue;
+    const names = key === 'category' ? productCategories(product) : [product.brand ?? ''];
+    for (const raw of names) {
+      const name = (raw ?? '').trim();
+      if (!name) continue;
 
-    const slug = slugify(name);
-    if (!slug) continue;
+      const slug = slugify(name);
+      if (!slug) continue;
 
-    const variants = groups.get(slug) ?? new Map<string, number>();
-    variants.set(name, (variants.get(name) ?? 0) + 1);
-    groups.set(slug, variants);
+      const variants = groups.get(slug) ?? new Map<string, number>();
+      variants.set(name, (variants.get(name) ?? 0) + 1);
+      groups.set(slug, variants);
+    }
   }
 
   return [...groups.entries()]

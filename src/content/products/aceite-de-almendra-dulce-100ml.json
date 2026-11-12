@@ -9,5 +9,8 @@
     "/images/products/aceite-de-almendra-dulce-100ml-1.jpg"
   ],
   "featured": false,
-  "inStock": true
+  "inStock": true,
+  "categories": [
+    "Jabones"
+  ]
 }

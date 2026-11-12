@@ -8,5 +8,8 @@
     "/images/uploads/139.jpg"
   ],
   "featured": false,
-  "inStock": true
+  "inStock": true,
+  "categories": [
+    "yeso"
+  ]
 }

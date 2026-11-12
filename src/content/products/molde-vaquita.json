@@ -8,5 +8,8 @@
     "/images/products/molde-vaquita-1.jpg"
   ],
   "featured": false,
-  "inStock": true
+  "inStock": true,
+  "categories": [
+    "Moldes Animales"
+  ]
 }

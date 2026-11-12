@@ -9,7 +9,8 @@ export interface CatalogProduct {
   name: string;
   brand: string;
   grupo?: Group;
-  category: string;
+  category?: string;
+  categories?: string[];
   foodType: FoodType | null;
   price: number;
   compareAtPrice?: number;
@@ -40,10 +41,18 @@ export function slugifyCategory(value: string): string {
   return slugify(value);
 }
 
-/** Compara una categoría (slug o etiqueta) contra un filtro, normalizando ambos lados. */
-export function matchesCategory(value: string, filter: string): boolean {
+/** Obtiene todas las categorías de un producto (compatibilidad con category/categorías). */
+export function getProductCategories(product: Pick<CatalogProduct, 'category' | 'categories'>): string[] {
+  if (Array.isArray(product.categories) && product.categories.length) return product.categories;
+  if (product.category) return [product.category];
+  return ['General'];
+}
+
+/** Compara categorías (slug o etiqueta) contra un filtro, normalizando ambos lados. */
+export function matchesCategory(value: string | string[], filter: string): boolean {
   if (!filter) return true;
-  return slugifyCategory(value) === slugifyCategory(filter);
+  const list = Array.isArray(value) ? value : [value];
+  return list.some((v) => slugifyCategory(v) === slugifyCategory(filter));
 }
 
 /** Minúsculas y sin acentos, para comparar y buscar. */
@@ -61,7 +70,7 @@ export function matchesGroup(product: CatalogProduct, grupo: 'velas' | 'jabones'
 }
 
 function haystack(product: CatalogProduct): string {
-  return normalize([product.name, product.brand, product.category, ...product.tags].join(' '));
+  return normalize([product.name, product.brand, ...getProductCategories(product), ...product.tags].join(' '));
 }
 
 function matchesText(product: CatalogProduct, q: string): boolean {
@@ -70,7 +79,7 @@ function matchesText(product: CatalogProduct, q: string): boolean {
 
 export function matchesFilters(product: CatalogProduct, filters: CatalogFilters): boolean {
   if (filters.grupo && !matchesGroup(product, filters.grupo)) return false;
-  if (filters.category && slugify(product.category) !== filters.category) return false;
+  if (filters.category && !matchesCategory(getProductCategories(product), filters.category)) return false;
   if (filters.brand && slugify(product.brand) !== filters.brand) return false;
   if (filters.foodType && product.foodType !== filters.foodType) return false;
   if (filters.promoKg && !(product.bonusKg && product.bonusKg > 0)) return false;

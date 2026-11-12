@@ -8,5 +8,8 @@
     "/images/products/molde-caramelos-monos-y-gomita-1.jpg"
   ],
   "featured": false,
-  "inStock": true
+  "inStock": true,
+  "categories": [
+    "Mas moldes"
+  ]
 }

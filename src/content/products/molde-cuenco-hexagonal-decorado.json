@@ -8,5 +8,8 @@
     "/images/products/molde-cuenco-hexagonal-decorado-1.jpg"
   ],
   "featured": false,
-  "inStock": true
+  "inStock": true,
+  "categories": [
+    "Moldes p/yeso, resina, concreto"
+  ]
 }

@@ -8,5 +8,8 @@
     "/images/products/molde-x-5-unidades-1.jpg"
   ],
   "featured": false,
-  "inStock": true
+  "inStock": true,
+  "categories": [
+    "Navidad"
+  ]
 }
