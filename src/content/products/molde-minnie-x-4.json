@@ -2,12 +2,11 @@
   "name": "molde Minnie x 4",
   "description": "molde Minnie x 4",
   "price": 6500,
-  "category": "Moldes",
+  "category": "Mas moldes",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/molde-minnie-x-4-1.jpg"
   ],
   "featured": false,
-  "inStock": true,
-  "tags": []
+  "inStock": true
 }
