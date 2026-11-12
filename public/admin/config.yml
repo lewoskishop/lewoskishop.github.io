@@ -225,7 +225,7 @@ collections:
     extension: json
     format: json
     identifier_field: name
-    summary: "{{name}} (orden {{order}}){{#if showInNav}} · visible{{/if}}"
+    summary: "{{name}} (orden {{order}})"
     sortable_fields: [order, name]
     fields:
       - label: Nombre
