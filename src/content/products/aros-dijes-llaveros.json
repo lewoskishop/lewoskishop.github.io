@@ -2,14 +2,15 @@
   "name": "Aros dijes llaveros",
   "description": "Aros dijes llaveros",
   "price": 5500,
-  "category": "Mas moldes",
+  "categories": [
+    "Mas moldes"
+  ],
   "brand": "LewoskiShop",
   "images": [
-    "/images/products/aros-dijes-llaveros-1.jpg"
+    "/images/products/aros-dijes-llaveros-1.jpg",
+    "/images/uploads/710.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "categories": [
-    "Mas moldes"
-  ]
+  "category": "Mas moldes"
 }
