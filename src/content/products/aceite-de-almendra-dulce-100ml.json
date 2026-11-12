@@ -3,7 +3,7 @@
   "description": "Usos y beneficios del aceite de almendras dulces\n*Gran aliado contra el acné\n*Es antiinflamatorio.\n*Mejora dermatitis, irritaciones y psoriasis.\n*Trata erupcion",
   "longDescription": "Usos y beneficios del aceite de almendras dulces\n*Gran aliado contra el acné\n*Es antiinflamatorio.\n*Mejora dermatitis, irritaciones y psoriasis.\n*Trata erupciones cutáneas de los bebés.\n*Elimina y disminuye manchas y arrugas.\n*Difumina marcas y cicatrices.\n*Reduce las estrías.\n*Como desmaquillante.",
   "price": 6500,
-  "category": "Jabones",
+  "category": "Cosmética y Jabones",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/aceite-de-almendra-dulce-100ml-1.jpg"
@@ -11,6 +11,6 @@
   "featured": false,
   "inStock": true,
   "categories": [
-    "Jabones"
+    "Cosmética y Jabones"
   ]
 }

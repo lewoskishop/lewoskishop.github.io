@@ -80,6 +80,13 @@ const EXCLUDED_NAV_CATEGORIES = new Set([
   'materia-prima',
   'moldes',
   'mas-moldes',
+  'jabones',
+  'jabon',
+  'cosmetica',
+  'cosmetic',
+  'cosmetica-y-jabones',
+  'jabones-y-cosmetica',
+  'cosmética-y-jabones',
 ]);
 
 export function buildNav(entries: ProductEntry[]): NavItem[] {
@@ -90,13 +97,11 @@ export function buildNav(entries: ProductEntry[]): NavItem[] {
 
   const preferred: Array<{ slugs: string[]; label: string; icon?: string }> = [
     { slugs: ['navidad'], label: 'Navidad', icon: '🎄' },
-    { slugs: ['jabones', 'jabon', 'jabones-y-cosmetica'], label: 'Jabones' },
     { slugs: ['moldes-animales', 'moldes-anim', 'animales'], label: 'Moldes Anim.' },
     { slugs: ['moldes-flores', 'moldes-flor', 'flores'], label: 'Moldes Flor' },
     { slugs: ['molde-yeso', 'moldes-yeso', 'yeso', 'yesos', 'moldes-p-yeso-resina-concreto'], label: 'Molde Yeso' },
     { slugs: ['envases', 'envases-varios'], label: 'Envases' },
     { slugs: ['herramientas'], label: 'Herramientas' },
-    { slugs: ['cosmetica', 'cosmetic'], label: 'Cosmetic' },
     { slugs: ['decoracion', 'deco'], label: 'Deco' },
   ];
 

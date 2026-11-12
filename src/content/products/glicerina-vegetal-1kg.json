@@ -2,7 +2,7 @@
   "name": "glicerina vegetal 1kg",
   "description": "glicerina vegetal 1kg",
   "price": 15000,
-  "category": "Cosmetic",
+  "category": "Cosmética y Jabones",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/glicerina-vegetal-1kg-1.jpg"
@@ -10,6 +10,6 @@
   "featured": false,
   "inStock": true,
   "categories": [
-    "Cosmetic"
+    "Cosmética y Jabones"
   ]
 }

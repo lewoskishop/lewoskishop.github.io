@@ -2,7 +2,7 @@
   "name": "molde silicona rectangular hexfoliante",
   "description": "molde silicona rectangular hexfoliante",
   "price": 8500,
-  "category": "Jabones",
+  "category": "Cosmética y Jabones",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/molde-silicona-rectangular-hexfoliante-1.jpg"
@@ -10,6 +10,6 @@
   "featured": false,
   "inStock": true,
   "categories": [
-    "Jabones"
+    "Cosmética y Jabones"
   ]
 }

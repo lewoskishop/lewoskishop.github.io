@@ -2,7 +2,7 @@
   "name": "Jabón blanco de glicerina",
   "description": "Jabón blanco de glicerina",
   "price": 14500,
-  "category": "Jabones",
+  "category": "Cosmética y Jabones",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/jabon-blanco-de-glicerina-1.jpg"
@@ -10,6 +10,6 @@
   "featured": false,
   "inStock": true,
   "categories": [
-    "Jabones"
+    "Cosmética y Jabones"
   ]
 }

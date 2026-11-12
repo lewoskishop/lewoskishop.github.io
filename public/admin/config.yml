@@ -144,16 +144,15 @@ collections:
         options:
           - { label: Accesorios, value: Accesorios }
           - { label: Aromas, value: Aromas }
+          - { label: Cosmética y Jabones, value: "Cosmética y Jabones" }
           - { label: Deco, value: Deco }
           - { label: Envases, value: Envases }
           - { label: Herramientas, value: Herramientas }
-          - { label: Jabones, value: Jabones }
           - { label: Mas moldes, value: Mas moldes }
           - { label: Moldes Animales, value: Moldes Animales }
           - { label: Moldes Flores, value: Moldes Flores }
           - { label: Molde Yeso, value: Molde Yeso }
           - { label: Navidad, value: Navidad }
-          - { label: Cosmetic, value: Cosmetic }
           - { label: Velas, value: Velas }
         hint: "Seleccioná una o más categorías (se pueden tildar varias). No se muestran en el menú desplegable las categorías ocultas."
 
