@@ -2,14 +2,15 @@
   "name": "molde suculenta redonda",
   "description": "molde suculenta redonda",
   "price": 6500,
-  "category": "Mas moldes",
+  "categories": [
+    "Mas moldes",
+    "Moldes Flores"
+  ],
   "brand": "LewoskiShop",
   "images": [
     "/images/products/molde-suculenta-redonda-1.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "categories": [
-    "Mas moldes"
-  ]
+  "category": "Mas moldes"
 }
