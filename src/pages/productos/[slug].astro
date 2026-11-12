@@ -12,24 +12,30 @@ import ImageGallery from '../../components/ImageGallery.astro';
 import ProductCard from '../../components/ProductCard.astro';
 import { formatPrice } from '../../lib/format';
 import { hasVariants, resolveVariant } from '../../lib/variants';
+import { slugify } from '../../lib/catalog';
 
 export async function getStaticPaths() {
   const all = await getCollection('products');
   const sorted = [...all].sort((a, b) => a.data.name.localeCompare(b.data.name, 'es'));
+  const catsOf = (data: { category?: string; categories?: string[] }) =>
+    Array.isArray(data.categories) && data.categories.length ? data.categories : data.category ? [data.category] : ['General'];
 
-  return sorted.map((product) => ({
-    params: { slug: product.id },
-    props: {
-      product,
-      related: sorted
-        .filter(
-          (p) =>
-            p.id !== product.id &&
-            (p.data.brand === product.data.brand || p.data.category === product.data.category),
-        )
-        .slice(0, 4),
-    },
-  }));
+  return sorted.map((product) => {
+    const cats = new Set(catsOf(product.data));
+    return {
+      params: { slug: product.id },
+      props: {
+        product,
+        related: sorted
+          .filter((p) => {
+            if (p.id === product.id) return false;
+            if (p.data.brand === product.data.brand) return true;
+            return catsOf(p.data).some((c) => cats.has(c));
+          })
+          .slice(0, 4),
+      },
+    };
+  });
 }
 
 interface Props {
@@ -55,7 +61,8 @@ const discount = Math.max(
 const bonusKg = Math.max(0, ...resolved.map((v) => v.bonusKg));
 const outOfStock = !resolved.some((v) => v.inStock);
 
-const categoryHref = `/productos/?cat=${encodeURIComponent(data.category.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-'))}`;
+const primaryCategory = (Array.isArray(data.categories) && data.categories.length ? data.categories[0] : data.category) || 'General';
+const categoryHref = `/productos/?cat=${encodeURIComponent(slugify(primaryCategory))}`;
 const tagLabels: Record<string, string> = { 'top-ventas': 'Más vendido', novedad: 'Novedad' };
 ---
 
@@ -66,7 +73,7 @@ const tagLabels: Record<string, string> = { 'top-ventas': 'Más vendido', noveda
       <span>/</span>
       <a href="/productos/" class="hover:text-foreground">Productos</a>
       <span>/</span>
-      <a href={categoryHref} class="hover:text-foreground">{data.category}</a>
+      <a href={categoryHref} class="hover:text-foreground">{primaryCategory}</a>
       <span>/</span>
       <span class="text-foreground">{data.name}</span>
     </nav>
@@ -91,7 +98,7 @@ const tagLabels: Record<string, string> = { 'top-ventas': 'Más vendido', noveda
 
       <!-- ============ DATOS ============ -->
       <div>
-        <p class="text-xs font-semibold uppercase tracking-wide text-brand-secondary">{data.category}</p>
+        <p class="text-xs font-semibold uppercase tracking-wide text-brand-secondary">{primaryCategory}</p>
         <h1 class="mt-1 text-3xl font-extrabold tracking-tight sm:text-4xl">{data.name}</h1>
 
         <div class="mt-4 flex flex-wrap items-baseline gap-3">
