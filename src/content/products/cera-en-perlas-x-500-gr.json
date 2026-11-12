@@ -2,12 +2,11 @@
   "name": "Cera en Perlas x 500 gr",
   "description": "Cera en Perlas x 500 gr",
   "price": 15000,
-  "category": "Ceras",
+  "category": "Velas",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/cera-en-perlas-x-500-gr-1.jpg"
   ],
   "featured": false,
-  "inStock": true,
-  "tags": []
+  "inStock": true
 }
