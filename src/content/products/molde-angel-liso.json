@@ -2,12 +2,11 @@
   "name": "molde angel liso",
   "description": "molde angel liso",
   "price": 8000,
-  "category": "Moldes",
+  "category": "Navidad",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/molde-angel-liso-1.jpg"
   ],
   "featured": false,
-  "inStock": true,
-  "tags": []
+  "inStock": true
 }
