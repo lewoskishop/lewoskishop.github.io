@@ -2,12 +2,11 @@
   "name": "molde hojas nervaduras",
   "description": "molde hojas nervaduras",
   "price": 7000,
-  "category": "Moldes",
+  "category": "Flores",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/molde-hojas-nervaduras-1.jpg"
   ],
   "featured": false,
-  "inStock": true,
-  "tags": []
+  "inStock": true
 }
