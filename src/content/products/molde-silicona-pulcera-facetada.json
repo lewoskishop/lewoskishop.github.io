@@ -2,14 +2,14 @@
   "name": "Molde silicona pulcera facetada",
   "description": "Molde silicona pulcera facetada",
   "price": 4500,
-  "category": "Molde Yeso, Resina, Concreto",
+  "categories": [
+    "Molde Yeso, Resina, Concreto"
+  ],
   "brand": "LewoskiShop",
   "images": [
-    "/images/products/molde-silicona-pulcera-facetada-1.jpg"
+    "/images/uploads/720.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "categories": [
-    "Molde Yeso, Resina, Concreto"
-  ]
+  "category": "Molde Yeso, Resina, Concreto"
 }
