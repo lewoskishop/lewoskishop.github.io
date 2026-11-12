@@ -2,12 +2,11 @@
   "name": "Osito liso",
   "description": "Medidas en la imagen",
   "price": 6500,
-  "category": "General",
+  "category": "Animales",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/osito-liso-1.jpg"
   ],
   "featured": false,
-  "inStock": true,
-  "tags": []
+  "inStock": true
 }
