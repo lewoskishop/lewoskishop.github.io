@@ -2,14 +2,14 @@
   "name": "Molde silicona Alitas de angel",
   "description": "Medidas en la foto",
   "price": 1800,
-  "category": "Navidad",
+  "categories": [
+    "Navidad"
+  ],
   "brand": "LewoskiShop",
   "images": [
-    "/images/products/molde-silicona-alitas-de-angel-1.jpg"
+    "/images/uploads/713.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "categories": [
-    "Navidad"
-  ]
+  "category": "Navidad"
 }
