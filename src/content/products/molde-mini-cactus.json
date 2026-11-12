@@ -2,12 +2,11 @@
   "name": "Molde mini cactus",
   "description": "Molde mini cactus",
   "price": 9500,
-  "category": "Moldes",
+  "category": "Mas moldes",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/molde-mini-cactus-1.jpg"
   ],
   "featured": false,
-  "inStock": true,
-  "tags": []
+  "inStock": true
 }
