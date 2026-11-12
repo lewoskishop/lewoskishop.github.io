@@ -2,12 +2,11 @@
   "name": "molde abecedario",
   "description": "molde abecedario",
   "price": 5000,
-  "category": "Moldes",
+  "category": "Mas moldes",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/molde-abecedario-1.jpg"
   ],
   "featured": false,
-  "inStock": true,
-  "tags": []
+  "inStock": true
 }
