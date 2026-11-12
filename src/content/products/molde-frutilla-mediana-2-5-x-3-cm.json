@@ -2,12 +2,11 @@
   "name": "molde frutilla mediana 2,5 x 3 cm",
   "description": "molde frutilla mediana 2,5 x 3 cm",
   "price": 8500,
-  "category": "Moldes",
+  "category": "Mas moldes",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/molde-frutilla-mediana-2-5-x-3-cm-1.jpg"
   ],
   "featured": false,
-  "inStock": true,
-  "tags": []
+  "inStock": true
 }
