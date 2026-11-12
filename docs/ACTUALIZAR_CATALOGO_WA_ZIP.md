@@ -83,29 +83,31 @@ unzip -o catalog-gabi-lewoski.zip -d /tmp/opencode/catalog-gabi-lewoski
 
 ```bash
 # Ver qué haría, sin escribir nada (recomendado primero)
-./scripts/actualizar-catalogo-wa-zip.sh [RUTA_EXTRAIDA] --mode merge --dry-run
+./scripts/actualizar-catalogo-wa-zip.sh [RUTA_EXTRAIDA] --dry-run
 
-# Importar conservando productos existentes (agrega los nuevos; omite slugs ya presentes)
-./scripts/actualizar-catalogo-wa-zip.sh [RUTA_EXTRAIDA] --mode merge --build
+# Sincronizar la tienda con el ZIP (actualiza/crea según el ZIP, oculta los ausentes) y buildear
+./scripts/actualizar-catalogo-wa-zip.sh [RUTA_EXTRAIDA] --build
 
-# Dejar la tienda EXACTAMENTE como el ZIP (reemplaza todo el catálogo)
-./scripts/actualizar-catalogo-wa-zip.sh [RUTA_EXTRAIDA] --mode replace --build
-
-# Igualar al ZIP, buildear y publicar automáticamente (commit + push)
-./scripts/actualizar-catalogo-wa-zip.sh [RUTA_EXTRAIDA] --mode replace --build \
+# Sincronizar, buildear y publicar automáticamente (commit + push)
+./scripts/actualizar-catalogo-wa-zip.sh [RUTA_EXTRAIDA] --build \
   --push --git-user TU_USUARIO --git-token "$GITHUB_TOKEN"
 ```
+
+> `--mode merge|replace` se acepta por compatibilidad; el resultado es siempre la sincronización conforme al ZIP (sin borrar productos ausentes).
 
 ### Parámetros
 
 - `[RUTA_EXTRAIDA]` (opcional): carpeta que contiene `items.json`/`items.csv` e
   `images/`.  
   **Por defecto:** `/tmp/opencode/catalog-gabi-lewoski/catalog-gabi-lewoski`
-- `--mode merge|replace` (default `merge`)
-  - `merge`: mantiene los productos actuales y agrega los del ZIP cuyo *slug* no
-    exista (no borra ni sobreescribe los existentes).
-  - `replace`: elimina `src/content/products/*.json` y genera el catálogo completo
-    desde el ZIP.
+- `--mode merge|replace` (default `merge`, aceptado por compatibilidad): el script
+  **siempre sincroniza conforme al ZIP**:
+  - crea/actualiza los productos del ZIP para que queden igual a lo publicado en el
+    catálogo (nombre, descripción, precio, categoría, imágenes, disponibilidad),
+  - los productos que **no estén en el ZIP no se borran**: se marcan como ocultos
+    (`inStock: false`) para conservarlos por si vuelven a publicarse,
+  - sincroniza las categorías del CMS (`public/admin/config.yml`) con las del ZIP
+    (agrega, reemplaza y elimina las que no correspondan).
 - `--dry-run`: no escribe archivos ni copia imágenes; solo reporta.
 - `--build`: ejecuta `npm run build` al finalizar (ignorado en `--dry-run`).
 - `--push`: tras importar (y buildear, si aplica), hace `git add` de
@@ -157,8 +159,10 @@ node scripts/import-catalog-wa-zip.mjs --src /ruta/extraida --mode merge [--dry-
 - **Compatibilidad de categorías (CMS):** al finalizar (si no es `--dry-run`), sincroniza
   las opciones de “Categoría” en `public/admin/config.yml` con las categorías derivadas
   del archivo ZIP (agrega nuevas, reemplaza y elimina las que no estén), para que el
-  catálogo y el CMS queden conformes al ZIP. Con `--mode replace`, el conjunto de
-  productos y categorías queda igualado al ZIP.
+  catálogo y el CMS queden conformes al ZIP.
+- **Productos ausentes en el ZIP:** no se eliminan; se preservan y se marcan como ocultos
+  (`inStock: false`). Si vuelven a aparecer en el ZIP, se actualizan y se vuelven a mostrar
+  (`inStock: true`).
 
 ### Mapeo de colecciones conocido
 
@@ -237,7 +241,7 @@ git push origin main
   catálogo de WhatsApp hay que volver a exportar/descomprimir y ejecutar el script.
 - No requiere credenciales ni acceso a la API de WhatsApp; opera 100% local sobre
   los archivos descomprimidos.
-- `--mode merge` **no actualiza** productos cuyo slug ya existe (solo agrega
-  faltantes). Para refrescar todo con el contenido del ZIP, usar `--mode replace`.
+- Los productos ausentes en el ZIP **no se eliminan**: se conservan y se ocultan
+  (`inStock: false`), para poder reactivarlos cuando vuelvan a publicarse.
 - Si faltara alguna imagen referenciada, se informa por consola y el producto se
   genera con un path de imagen fallback; conviene revisar esos casos.

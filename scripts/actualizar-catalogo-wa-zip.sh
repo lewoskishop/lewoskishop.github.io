@@ -11,7 +11,7 @@
 #   ./scripts/actualizar-catalogo-wa-zip.sh --mode replace --build --push --git-user lewoskishop --git-token "$GITHUB_TOKEN"
 #
 # Por defecto: usa /tmp/opencode/catalog-gabi-lewoski/catalog-gabi-lewoski, modo merge.
-#   --mode merge|replace   merge: conserva existentes (omite slugs presentes). replace: regenera desde el ZIP.
+#   --mode merge|replace   (compatibilidad) sincroniza al ZIP: actualiza/crea según el ZIP y oculta (inStock=false) los que no estén, sin borrarlos.
 #   --dry-run              no escribe archivos
 #   --build                ejecuta npm run build al finalizar (si no es dry-run)
 #   --push                 commitea y pushea los cambios del catálogo y CMS (ignorado en dry-run)

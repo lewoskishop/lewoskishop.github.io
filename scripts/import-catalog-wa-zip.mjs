@@ -3,8 +3,13 @@
  * Importa/actualiza el catálogo del sitio desde un export de WhatsApp (ZIP descomprimido).
  * Espera en --src una carpeta con items.json (o items.csv) y un subdirectorio images/.
  *
+ * Comportamiento: actualiza/crea los productos del ZIP para que queden igual al catálogo
+ * (categorías, precios, imágenes, stock) y oculta (inStock=false) los que no estén en el ZIP,
+ * sin borrarlos. Sincroniza las categorías del CMS (public/admin/config.yml) al ZIP.
+ *
  * Uso:
  *   node scripts/import-catalog-wa-zip.mjs --src /ruta/catalog-gabi-lewoski [--mode merge|replace] [--dry-run]
+ *   (--mode se acepta por compatibilidad; el comportamiento es siempre de sincronización al ZIP)
  */
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -135,20 +140,17 @@ async function syncCmsCategories(categories){
 }
 
 async function main(){
-  if(!['merge','replace'].includes(MODE)) throw new Error('--mode merge|replace');
+  // --mode se acepta por compatibilidad; siempre sincroniza al ZIP y oculta los ausentes.
   const items = await loadItems();
   console.log(`Fuente: ${SRC} | productos: ${items.length} | modo: ${MODE}${DRY?' | DRY-RUN':''}`);
   if(!items.length){ console.log('Nada para importar.'); return; }
 
   if(!DRY){ await fs.mkdir(PRODUCTS_DIR,{recursive:true}); await fs.mkdir(IMAGES_DIR,{recursive:true}); }
-  if(MODE==='replace' && !DRY){
-    for(const f of (await fs.readdir(PRODUCTS_DIR)).filter(f=>f.endsWith('.json'))) await fs.unlink(path.join(PRODUCTS_DIR,f));
-    console.log('Productos existentes eliminados.');
-  }
-  const existing = new Set((await fs.readdir(PRODUCTS_DIR).catch(()=>[])).filter(f=>f.endsWith('.json')).map(f=>f.replace(/\.json$/,'')));
 
-  let ok=0, skip=0, fail=0;
+  let ok=0, skip=0, fail=0, hidden=0;
   const zipCategories = new Set();
+  const zipSlugs = new Set();
+
   for(const it of items){
     try{
       const name = String(it.title || it.name || '').trim();
@@ -159,7 +161,7 @@ async function main(){
       if(!name){ skip++; continue; }
       const id = String(it.id || slugify(name));
       const slug = slugify(id) || slugify(name);
-      if(MODE==='merge' && existing.has(slug)){ skip++; continue; }
+      zipSlugs.add(slug);
       const price = parsePrice(it.price_text ?? it.price);
       const refs = Array.isArray(it.images) && it.images.length ? it.images : (it.image ? [it.image] : []);
       const images = await copyImages(slug, refs);
@@ -181,8 +183,25 @@ async function main(){
       ok++;
     }catch(e){ console.error('FAIL', it && (it.id||it.title), e.message); fail++; }
   }
+
+  // Productos que no están en el ZIP: no se borran, se ocultan (inStock=false)
+  const productFiles = (await fs.readdir(PRODUCTS_DIR).catch(()=>[])).filter(f=>f.endsWith('.json'));
+  for(const f of productFiles){
+    const slug = f.replace(/\.json$/,'');
+    if(zipSlugs.has(slug)) continue;
+    try{
+      const p = path.join(PRODUCTS_DIR, f);
+      const data = JSON.parse(await fs.readFile(p,'utf8'));
+      if(data.inStock === false){ hidden++; continue; }
+      data.inStock = false;
+      if(!DRY) await fs.writeFile(p, JSON.stringify(data,null,2)+'\n');
+      console.log(`${DRY?'[dry] ':''}oculto: ${slug}`);
+      hidden++;
+    }catch(e){ console.warn(`  no se pudo ocultar ${slug}: ${e.message}`); }
+  }
+
   await syncCmsCategories([...zipCategories]);
-  console.log(`\nListo. escritos=${ok} omitidos=${skip} fallos=${fail}${DRY?' (dry-run)':''}`);
+  console.log(`\nListo. escritos/actualizados=${ok} omitidos=${skip} ocultos=${hidden} fallos=${fail}${DRY?' (dry-run)':''}`);
   console.log('Sugerido: npm run build');
 }
 main().catch(e=>{ console.error(e.message||e); process.exit(1); });
