@@ -63,7 +63,7 @@ export const COLLECTIONS: CollectionDef[] = [
  */
 export const NAV: NavItem[] = [
   { label: 'Inicio', href: '/' },
-  { label: 'Especial Navidad', href: '/productos/', icon: '🎄' },
+  { label: 'Navidad', href: '/productos/', icon: '🎄' },
   {
     label: 'Velas',
     href: '/velas',

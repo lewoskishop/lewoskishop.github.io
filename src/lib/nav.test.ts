@@ -122,7 +122,7 @@ describe('navWithCatalog', () => {
 describe('buildNav', () => {
   it('arma el menú con las categorías reales del catálogo', () => {
     const nav = buildNav(entries);
-    expect(nav.map((item) => item.label)).toEqual(['Inicio', 'Especial Navidad', 'Velas', 'Jabones', 'Categorías']);
+    expect(nav.map((item) => item.label)).toEqual(['Inicio', 'Navidad', 'Velas', 'Jabones', 'Categorías']);
     expect(nav.find((i) => i.grupo === 'velas')?.children?.length).toBeGreaterThan(0);
   });
 });
