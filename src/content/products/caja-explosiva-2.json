@@ -2,12 +2,11 @@
   "name": "Caja explosiva 2",
   "description": "Caja explosiva 2",
   "price": 1500,
-  "category": "General",
+  "category": "Envases",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/caja-explosiva-2-1.jpg"
   ],
   "featured": false,
-  "inStock": true,
-  "tags": []
+  "inStock": true
 }
