@@ -151,6 +151,7 @@ collections:
           - { label: Kits, value: Kits }
           - { label: Materias Primas, value: Materias Primas }
           - { label: Moldes, value: Moldes }
+          - { label: Navidad, value: Navidad }
           - { label: Pabilos, value: Pabilos }
         hint: "Seleccioná la categoría del producto (igual que Grupo)."
 

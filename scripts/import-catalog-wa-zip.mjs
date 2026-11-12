@@ -14,6 +14,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const PRODUCTS_DIR = path.join(ROOT, 'src/content/products');
 const IMAGES_DIR = path.join(ROOT, 'public/images/products');
+const CMS_CONFIG = path.join(ROOT, 'public/admin/config.yml');
 
 function arg(name, def){ const i=process.argv.indexOf(`--${name}`); return i>=0 && process.argv[i+1] ? process.argv[i+1] : def; }
 const has = (n)=>process.argv.includes(`--${n}`);
@@ -45,7 +46,7 @@ const COLLECTION_MAP = {
   'flores, brillos y decoracion': { category: 'Accesorios', grupo: 'ambos' },
   'flores':                  { category: 'Accesorios', grupo: 'ambos' },
   'animales':                { category: 'Moldes', grupo: 'ambos' },
-  'navidad':                 { category: 'Moldes', grupo: 'ambos' },
+  'navidad':                 { category: 'Navidad', grupo: 'ambos' },
   'moldes p yeso/resina/concreto': { category: 'Moldes', grupo: 'ambos' },
 };
 const CAT_RULES = [
@@ -110,6 +111,29 @@ async function copyImages(slug, refs){
   return out;
 }
 
+function yamlVal(v){
+  return /[:#{}\[\],&*?|<>=!%@`"'\n]/.test(v) || v !== v.trim() ? JSON.stringify(v) : v;
+}
+
+async function syncCmsCategories(categories){
+  const list = [...new Set(categories.filter(Boolean))].sort((a,b)=>a.localeCompare(b,'es'));
+  if(!list.length) return;
+  let text;
+  try{ text = await fs.readFile(CMS_CONFIG,'utf8'); }catch(e){ console.warn('  CMS: no se pudo leer config.yml:', e.message); return; }
+  const marker = '\n      - label: Categoría';
+  const start = text.indexOf(marker);
+  if(start < 0){ console.warn('  CMS: no se encontró el campo Categoría en config.yml'); return; }
+  const after = text.indexOf('\n        options:', start);
+  if(after < 0){ console.warn('  CMS: no se encontró options de Categoría'); return; }
+  const hintIdx = text.indexOf('\n        hint:', after);
+  if(hintIdx < 0){ console.warn('  CMS: no se encontró fin de options de Categoría'); return; }
+  const optionsBlock = '\n        options:\n' + list.map(c => `          - { label: ${yamlVal(c)}, value: ${yamlVal(c)} }`).join('\n');
+  const next = text.slice(0, after) + optionsBlock + text.slice(hintIdx);
+  if(next === text){ console.log(`  CMS: categorías ya alineadas (${list.length}).`); return; }
+  if(!DRY) await fs.writeFile(CMS_CONFIG, next);
+  console.log(`${DRY?'[dry] ':''}CMS: categorías sincronizadas (${list.join(', ')}).`);
+}
+
 async function main(){
   if(!['merge','replace'].includes(MODE)) throw new Error('--mode merge|replace');
   const items = await loadItems();
@@ -124,16 +148,18 @@ async function main(){
   const existing = new Set((await fs.readdir(PRODUCTS_DIR).catch(()=>[])).filter(f=>f.endsWith('.json')).map(f=>f.replace(/\.json$/,'')));
 
   let ok=0, skip=0, fail=0;
+  const zipCategories = new Set();
   for(const it of items){
     try{
       const name = String(it.title || it.name || '').trim();
+      const desc = (it.description == null ? '' : String(it.description)).trim();
+      const collection = (Array.isArray(it.collections) && it.collections[0]) || it.collection || '';
+      const {category, grupo} = infer(name, desc, collection);
+      if(category) zipCategories.add(category);
       if(!name){ skip++; continue; }
       const id = String(it.id || slugify(name));
       const slug = slugify(id) || slugify(name);
       if(MODE==='merge' && existing.has(slug)){ skip++; continue; }
-      const desc = (it.description == null ? '' : String(it.description)).trim();
-      const collection = (Array.isArray(it.collections) && it.collections[0]) || it.collection || '';
-      const {category, grupo} = infer(name, desc, collection);
       const price = parsePrice(it.price_text ?? it.price);
       const refs = Array.isArray(it.images) && it.images.length ? it.images : (it.image ? [it.image] : []);
       const images = await copyImages(slug, refs);
@@ -155,6 +181,7 @@ async function main(){
       ok++;
     }catch(e){ console.error('FAIL', it && (it.id||it.title), e.message); fail++; }
   }
+  await syncCmsCategories([...zipCategories]);
   console.log(`\nListo. escritos=${ok} omitidos=${skip} fallos=${fail}${DRY?' (dry-run)':''}`);
   console.log('Sugerido: npm run build');
 }

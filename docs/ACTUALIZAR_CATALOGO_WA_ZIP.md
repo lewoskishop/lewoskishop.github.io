@@ -90,6 +90,10 @@ unzip -o catalog-gabi-lewoski.zip -d /tmp/opencode/catalog-gabi-lewoski
 
 # Dejar la tienda EXACTAMENTE como el ZIP (reemplaza todo el catálogo)
 ./scripts/actualizar-catalogo-wa-zip.sh [RUTA_EXTRAIDA] --mode replace --build
+
+# Igualar al ZIP, buildear y publicar automáticamente (commit + push)
+./scripts/actualizar-catalogo-wa-zip.sh [RUTA_EXTRAIDA] --mode replace --build \
+  --push --git-user TU_USUARIO --git-token "$GITHUB_TOKEN"
 ```
 
 ### Parámetros
@@ -104,7 +108,26 @@ unzip -o catalog-gabi-lewoski.zip -d /tmp/opencode/catalog-gabi-lewoski
     desde el ZIP.
 - `--dry-run`: no escribe archivos ni copia imágenes; solo reporta.
 - `--build`: ejecuta `npm run build` al finalizar (ignorado en `--dry-run`).
+- `--push`: tras importar (y buildear, si aplica), hace `git add` de
+  `src/content/products`, `public/images/products` y `public/admin/config.yml`, crea un commit y pushea.
+  Se ignora en `--dry-run`. Si no hay cambios, no commitea ni pushea.
+- `--git-user USER`: usuario git/HTTPS para el push (o variable `GIT_USER`). Se
+  usa como usuario de autenticación HTTPS; si no se indica y hay token, se usa
+  `x-access-token`.
+- `--git-token TOKEN`: token/PAT para autenticar el push (o `GIT_TOKEN` /
+  `GITHUB_TOKEN`). **No se imprime en logs**. Si se provee, habilita `--push`.
+- `--git-email EMAIL`: email para el autor del commit (o `GIT_EMAIL`).
+- `--git-name NAME`: nombre para el autor del commit (o `GIT_NAME`; por defecto
+  `--git-user` o `LewoskiShop Bot`).
+- `--commit-message MSG`: mensaje del commit (default:
+  `"Actualiza catálogo desde export WhatsApp (ZIP)"`).
+- `--remote REMOTE`: remote a pushear (default: `origin`).
+- `--branch BRANCH`: rama destino (default: rama actual).
 - `-h|--help`: muestra ayuda.
+
+> **Seguridad:** no pegues el token en comandos que queden en historial si podés
+> evitarlo; preferí pasarlo por variable de entorno (`GIT_TOKEN`/`GITHUB_TOKEN` o
+> `--git-token "$GITHUB_TOKEN"`). Revocá/rotá tokens expuestos.
 
 También puede invocarse el importador directo:
 
@@ -131,6 +154,11 @@ node scripts/import-catalog-wa-zip.mjs --src /ruta/extraida --mode merge [--dry-
   colección de WhatsApp (mapeo conocido) y, si no hay match, por reglas sobre el
   nombre/descripción (ceras, moldes, esencias, envases, pabilos, cosmética, etc.),
   con fallback a `General/ambos`.
+- **Compatibilidad de categorías (CMS):** al finalizar (si no es `--dry-run`), sincroniza
+  las opciones de “Categoría” en `public/admin/config.yml` con las categorías derivadas
+  del archivo ZIP (agrega nuevas, reemplaza y elimina las que no estén), para que el
+  catálogo y el CMS queden conformes al ZIP. Con `--mode replace`, el conjunto de
+  productos y categorías queda igualado al ZIP.
 
 ### Mapeo de colecciones conocido
 
@@ -144,7 +172,7 @@ node scripts/import-catalog-wa-zip.mjs --src /ruta/extraida --mode merge [--dry-
 | Flores, brillos y decoración | Accesorios | ambos |
 | Flores | Accesorios | ambos |
 | Animales | Moldes | ambos |
-| Navidad | Moldes | ambos |
+| Navidad | Navidad | ambos |
 | Moldes P Yeso/resina/concreto | Moldes | ambos |
 
 > La inferencia es heurística: tras importar conviene revisar productos en
@@ -177,8 +205,20 @@ Para dejar la tienda exactamente con ese catálogo:
 
 ## 7. Publicar los cambios
 
-La importación modifica archivos del repo (productos e imágenes) pero **no
-commitea ni publica**. Para desplegar en GitHub Pages:
+### Automático (recomendado)
+
+El script puede commitear y pushear los cambios del catálogo pasando usuario y token:
+
+```bash
+export GITHUB_TOKEN="tu_token"
+./scripts/actualizar-catalogo-wa-zip.sh [RUTA_EXTRAIDA] --mode replace --build \
+  --push --git-user tu_usuario --git-email tu@email
+```
+
+(Equivalente: `--git-token "$GITHUB_TOKEN"` o `GIT_TOKEN=...`; si hay token, el push se habilita).
+Esto agrega `src/content/products`, `public/images/products` y `public/admin/config.yml`, crea el commit y hace `git push` a la rama actual (o `--branch`) del `--remote` indicado. Si no hay cambios, no hace nada.
+
+### Manual
 
 ```bash
 git add -A
