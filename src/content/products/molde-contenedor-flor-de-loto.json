@@ -2,12 +2,11 @@
   "name": "Molde contenedor flor de loto",
   "description": "Molde contenedor flor de loto",
   "price": 7500,
-  "category": "Moldes",
+  "category": "Moldes p/yeso, resina, concreto",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/molde-contenedor-flor-de-loto-1.jpg"
   ],
   "featured": false,
-  "inStock": true,
-  "tags": []
+  "inStock": true
 }
