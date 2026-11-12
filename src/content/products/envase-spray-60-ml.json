@@ -1,0 +1,15 @@
+{
+  "name": "envase spray 60 ml",
+  "description": "envase spray 60 ml ámbar",
+  "price": 1500,
+  "categories": [
+    "Envases",
+    "Aromas"
+  ],
+  "brand": "Lewoski",
+  "images": [
+    "/images/uploads/585.jpg"
+  ],
+  "featured": false,
+  "inStock": true
+}
