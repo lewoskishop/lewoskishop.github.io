@@ -78,7 +78,7 @@ const tagLabels: Record<string, string> = { 'top-ventas': 'Más vendido', noveda
       <span class="text-foreground">{data.name}</span>
     </nav>
 
-    <div class="grid gap-8 lg:grid-cols-2 lg:gap-12" data-detail>
+    <div class:list={["grid gap-8 lg:grid-cols-2 lg:gap-12", outOfStock && "opacity-60"]} data-detail>
       <!-- ============ GALERÍA ============ -->
       <div>
         <div class="mb-3 flex flex-wrap items-center gap-2">

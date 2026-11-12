@@ -17,6 +17,7 @@ const resolved = multiVariant
   ? data.variants!.map((_, i) => resolveVariant(base, i))
   : [resolveVariant(base)];
 const active = resolved.find((v) => v.inStock) ?? resolved[0];
+const allOutOfStock = !resolved.some((v) => v.inStock);
 
 function stockState(stock: number): 'out' | 'low' | 'ok' {
   if (stock <= 0) return 'out';
@@ -26,10 +27,14 @@ function stockState(stock: number): 'out' | 'low' | 'ok' {
 ---
 
 <article
-  class="card group flex flex-col overflow-hidden transition-shadow hover:shadow-md"
+  class:list={[
+    'card group flex flex-col overflow-hidden transition-shadow hover:shadow-md',
+    allOutOfStock && 'opacity-60',
+  ]}
   data-card
   data-variant-count={resolved.length}
   data-name={data.name}
+  data-all-out={String(allOutOfStock)}
 >
   <a href={href} class="relative block aspect-square overflow-hidden bg-muted-bg">
     <img
