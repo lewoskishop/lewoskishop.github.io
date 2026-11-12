@@ -7,7 +7,7 @@ import {
   type CollectionSlug,
 } from './catalog';
 import { COLLECTIONS, NAV, type CollectionDef, type NavItem } from './nav';
-import { toTaxable } from './taxonomy';
+import { buildTaxonomy, toTaxable } from './taxonomy';
 
 export type ProductEntry = CollectionEntry<'products'>;
 
@@ -64,8 +64,20 @@ export function navWithCollections(entries: ProductEntry[], nav: NavItem[]): Nav
 }
 
 /**
- * Menú final del sitio (sin grupos), ocultando colecciones vacías.
+ * Menú final del sitio: Inicio + categorías reales del catálogo + Categorías.
+ * Así responde igual que el desplegable/listado de categorías.
  */
 export function buildNav(entries: ProductEntry[]): NavItem[] {
-  return navWithCollections(entries, NAV);
+  const cats = buildTaxonomy(entries.map(toTaxable), 'category');
+  const categoryItems: NavItem[] = cats.map((c) => ({
+    label: c.name,
+    href: `/productos/?cat=${c.slug}`,
+    ...(c.slug === 'navidad' ? { icon: '🎄' } : {}),
+  }));
+  const nav: NavItem[] = [
+    { label: 'Inicio', href: '/' },
+    ...categoryItems,
+    { label: 'Categorías', href: '/categorias' },
+  ];
+  return navWithCollections(entries, nav);
 }

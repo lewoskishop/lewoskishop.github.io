@@ -50,21 +50,9 @@ export const COLLECTIONS: CollectionDef[] = [
 ];
 
 /**
- * Menú principal basado en categorías (sin grupos).
+ * Menú base (el menú real se construye dinámicamente desde las categorías del catálogo).
  */
 export const NAV: NavItem[] = [
   { label: 'Inicio', href: '/' },
-  { label: 'NAVIDAD', href: '/productos/?cat=navidad', icon: '🎄' },
-  { label: 'VELAS', href: '/productos/?cat=velas' },
-  { label: 'JABONES', href: '/productos/?cat=jabones' },
-  { label: 'AROMAS', href: '/productos/?cat=aromas' },
-  { label: 'ENVASES VARIOS', href: '/productos/?cat=envases-varios' },
-  { label: 'JABÓN', href: '/productos/?cat=jabon' },
-  { label: 'DECORACIÓN', href: '/productos/?cat=decoracion' },
-  { label: 'COSMÉTICA', href: '/productos/?cat=cosmetica' },
-  { label: 'FLORES', href: '/productos/?cat=flores' },
-  { label: 'ANIMALES', href: '/productos/?cat=animales' },
-  { label: 'MOLDES P YESO, RESINA, CONCRETO', href: '/productos/?cat=moldes-p-yeso-resina-concreto' },
-  { label: 'MAS MOLDES', href: '/productos/?cat=mas-moldes' },
   { label: 'Categorías', href: '/categorias' },
 ];

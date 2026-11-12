@@ -16,39 +16,31 @@ describe('COLLECTIONS', () => {
 });
 
 describe('NAV', () => {
-  it('define el menú principal por categorías', () => {
-    expect(NAV.map((item) => item.label)).toEqual([
-      'Inicio',
-      'NAVIDAD',
-      'VELAS',
-      'JABONES',
-      'AROMAS',
-      'ENVASES VARIOS',
-      'JABÓN',
-      'DECORACIÓN',
-      'COSMÉTICA',
-      'FLORES',
-      'ANIMALES',
-      'MOLDES P YESO, RESINA, CONCRETO',
-      'MAS MOLDES',
-      'Categorías',
-    ]);
-  });
-
-  it('apunta a categorías o secciones sin depender de grupos', () => {
-    for (const item of NAV) {
-      expect(item).not.toHaveProperty('grupo');
-      expect(item.children).toBeUndefined();
-    }
+  it('define el menú base', () => {
+    expect(NAV.map((item) => item.label)).toEqual(['Inicio', 'Categorías']);
   });
 });
 
 describe('buildNav', () => {
-  it('mantiene el menú principal', () => {
-    const nav = buildNav([] as ProductEntry[]);
-    expect(nav[0]?.label).toBe('Inicio');
-    expect(nav.some((i) => i.label === 'NAVIDAD')).toBe(true);
-    expect(nav.some((i) => i.label === 'Categorías')).toBe(true);
+  it('arma el menú con las categorías reales del catálogo (como el desplegable)', () => {
+    const entries = [
+      entry('m1', { name: 'Molde', brand: 'X', category: 'Moldes', price: 1, tags: [] }),
+      entry('n1', { name: 'Adorno', brand: 'X', category: 'Navidad', price: 1, tags: [] }),
+      entry('c1', { name: 'Cera', brand: 'X', category: 'Ceras', price: 1, tags: [] }),
+    ];
+    const nav = buildNav(entries);
+    expect(nav[0]).toMatchObject({ label: 'Inicio', href: '/' });
+    expect(nav[nav.length - 1]).toMatchObject({ label: 'Categorías', href: '/categorias' });
+    const labels = nav.map((i) => i.label);
+    expect(labels).toContain('Moldes');
+    expect(labels).toContain('Navidad');
+    expect(labels).toContain('Ceras');
+    expect(nav.find((i) => i.label === 'Navidad')).toMatchObject({ href: '/productos/?cat=navidad', icon: '🎄' });
+    expect(nav.find((i) => i.label === 'Moldes')).toMatchObject({ href: '/productos/?cat=moldes' });
+  });
+
+  it('sin productos muestra solo Inicio y Categorías', () => {
+    expect(buildNav([] as ProductEntry[]).map((i) => i.label)).toEqual(['Inicio', 'Categorías']);
   });
 });
 
