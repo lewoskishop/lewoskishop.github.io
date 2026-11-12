@@ -2,14 +2,14 @@
   "name": "Cuerpos geométrico",
   "description": "Cuerpos geométrico",
   "price": 5000,
-  "category": "Mas moldes",
+  "categories": [
+    "Mas moldes"
+  ],
   "brand": "LewoskiShop",
   "images": [
-    "/images/products/cuerpos-geometrico-1.jpg"
+    "/images/uploads/717.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "categories": [
-    "Mas moldes"
-  ]
+  "category": "Mas moldes"
 }
