@@ -2,12 +2,11 @@
   "name": "molde silicona cuenco facetado",
   "description": "molde silicona cuenco facetado",
   "price": 9500,
-  "category": "Moldes",
+  "category": "Moldes p/yeso, resina, concreto",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/molde-silicona-cuenco-facetado-1.jpg"
   ],
   "featured": false,
-  "inStock": true,
-  "tags": []
+  "inStock": true
 }
