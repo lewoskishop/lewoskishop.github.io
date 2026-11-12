@@ -2,12 +2,11 @@
   "name": "molde reforzado flores",
   "description": "molde reforzado flores",
   "price": 9500,
-  "category": "Moldes",
+  "category": "Flores",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/molde-reforzado-flores-1.jpg"
   ],
   "featured": false,
-  "inStock": true,
-  "tags": []
+  "inStock": true
 }
