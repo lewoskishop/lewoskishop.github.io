@@ -2,12 +2,11 @@
   "name": "molde rosa abierta",
   "description": "molde rosa abierta",
   "price": 7000,
-  "category": "Moldes",
+  "category": "Flores",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/molde-rosa-abierta-1.jpg"
   ],
   "featured": false,
-  "inStock": true,
-  "tags": []
+  "inStock": true
 }
