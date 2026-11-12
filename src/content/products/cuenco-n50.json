@@ -2,12 +2,11 @@
   "name": "cuenco N50",
   "description": "cuenco N50",
   "price": 4500,
-  "category": "Accesorios",
+  "category": "Envases",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/cuenco-n50-1.jpg"
   ],
   "featured": false,
-  "inStock": true,
-  "tags": []
+  "inStock": true
 }
