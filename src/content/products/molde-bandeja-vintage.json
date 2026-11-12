@@ -2,12 +2,11 @@
   "name": "molde bandeja Vintage",
   "description": "molde bandeja Vintage",
   "price": 13500,
-  "category": "Moldes",
+  "category": "Moldes p/yeso, resina, concreto",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/molde-bandeja-vintage-1.jpg"
   ],
   "featured": false,
-  "inStock": true,
-  "tags": []
+  "inStock": true
 }
