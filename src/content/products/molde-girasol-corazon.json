@@ -2,12 +2,11 @@
   "name": "molde girasol corazón",
   "description": "molde girasol corazón",
   "price": 6000,
-  "category": "Moldes",
+  "category": "Flores",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/molde-girasol-corazon-1.jpg"
   ],
   "featured": false,
-  "inStock": true,
-  "tags": []
+  "inStock": true
 }
