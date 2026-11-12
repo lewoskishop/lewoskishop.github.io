@@ -2,12 +2,11 @@
   "name": "Corazón medio",
   "description": "Corazón medio",
   "price": 6500,
-  "category": "General",
+  "category": "Mas moldes",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/corazon-medio-1.jpg"
   ],
   "featured": false,
-  "inStock": true,
-  "tags": []
+  "inStock": true
 }
