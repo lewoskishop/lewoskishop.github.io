@@ -1,0 +1,14 @@
+{
+  "name": "Molde Florero",
+  "description": "Molde florero",
+  "price": 11000,
+  "categories": [
+    "Molde Yeso, Resina, Concreto"
+  ],
+  "brand": "LewoskiShop",
+  "images": [
+    "/images/uploads/412.jpg"
+  ],
+  "featured": false,
+  "inStock": true
+}
