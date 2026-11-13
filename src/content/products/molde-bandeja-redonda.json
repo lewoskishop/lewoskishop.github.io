@@ -1,0 +1,14 @@
+{
+  "name": "Molde Bandeja Redonda",
+  "description": "Molde silicona bandeja redonda. Bordes torzados.",
+  "price": 8000,
+  "categories": [
+    "Molde Yeso, Resina, Concreto"
+  ],
+  "brand": "LewoskiShop",
+  "images": [
+    "/images/uploads/704.jpg"
+  ],
+  "featured": false,
+  "inStock": true
+}
