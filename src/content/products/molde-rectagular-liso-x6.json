@@ -1,0 +1,15 @@
+{
+  "name": "Molde rectagular liso x6",
+  "description": "Molde rectagular liso x6",
+  "price": 7500,
+  "categories": [
+    "Cosmética y Jabones",
+    "Mas moldes"
+  ],
+  "brand": "LewoskiShop",
+  "images": [
+    "/images/uploads/567.jpg"
+  ],
+  "featured": false,
+  "inStock": true
+}
