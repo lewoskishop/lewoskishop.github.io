@@ -1,0 +1,14 @@
+{
+  "name": "Molde Cuenco con tapa",
+  "description": "Molde cuenco rayado con tapa",
+  "price": 8000,
+  "categories": [
+    "Molde Yeso, Resina, Concreto"
+  ],
+  "brand": "LewoskiShop",
+  "images": [
+    "/images/uploads/503.jpg"
+  ],
+  "featured": false,
+  "inStock": true
+}
