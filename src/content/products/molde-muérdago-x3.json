@@ -1,0 +1,14 @@
+{
+  "name": "Molde Muérdago x3",
+  "description": "molde silicona muerdagox3",
+  "price": 6500,
+  "categories": [
+    "Navidad"
+  ],
+  "brand": "LewoskiShop",
+  "images": [
+    "/images/uploads/42.jpg"
+  ],
+  "featured": false,
+  "inStock": true
+}
