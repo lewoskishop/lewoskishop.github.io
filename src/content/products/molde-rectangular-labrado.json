@@ -1,0 +1,15 @@
+{
+  "name": "Molde rectangular labrado",
+  "description": "molde rectangular x4 cavidades, 4 diseños",
+  "price": 7500,
+  "categories": [
+    "Cosmética y Jabones",
+    "Mas moldes"
+  ],
+  "brand": "LewoskiShop",
+  "images": [
+    "/images/uploads/369.jpg"
+  ],
+  "featured": false,
+  "inStock": true
+}
