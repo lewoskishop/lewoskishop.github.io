@@ -1,15 +1,15 @@
 {
-  "name": "caramelera con tapa 1",
+  "name": "Caramelera con tapa 1",
   "description": "caramelera con tapa 1",
   "price": 5000,
-  "category": "Envases",
+  "categories": [
+    "Envases"
+  ],
   "brand": "LewoskiShop",
   "images": [
     "/images/products/caramelera-con-tapa-1-1.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "categories": [
-    "Envases"
-  ]
+  "category": "Envases"
 }
