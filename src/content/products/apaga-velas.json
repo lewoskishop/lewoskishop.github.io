@@ -1,15 +1,16 @@
 {
-  "name": "apaga velas",
+  "name": "Apaga velas",
   "description": "apaga velas",
-  "price": 2500,
-  "category": "Herramientas",
+  "price": 3000,
+  "categories": [
+    "Herramientas",
+    "Velas"
+  ],
   "brand": "LewoskiShop",
   "images": [
     "/images/products/apaga-velas-1.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "categories": [
-    "Herramientas"
-  ]
+  "category": "Herramientas"
 }
