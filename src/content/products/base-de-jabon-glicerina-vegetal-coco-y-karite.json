@@ -1,15 +1,15 @@
 {
-  "name": "Base de jabón glicerina vegetal \"Coco y Karité\"",
+  "name": "Base de jabón glicerina vegetal \"Coco y Karité\" Adonay",
   "description": "Base de jabón glicerina vegetal \"Coco y Karité\"",
   "price": 20000,
-  "category": "Cosmética y Jabones",
+  "categories": [
+    "Cosmética y Jabones"
+  ],
   "brand": "LewoskiShop",
   "images": [
     "/images/products/base-de-jabon-glicerina-vegetal-coco-y-karite-1.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "categories": [
-    "Cosmética y Jabones"
-  ]
+  "category": "Cosmética y Jabones"
 }
