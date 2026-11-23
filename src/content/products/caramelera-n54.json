@@ -1,15 +1,15 @@
 {
-  "name": "caramelera N54",
+  "name": "Caramelera N54",
   "description": "caramelera N54",
   "price": 5000,
-  "category": "Envases",
+  "categories": [
+    "Envases"
+  ],
   "brand": "LewoskiShop",
   "images": [
     "/images/products/caramelera-n54-1.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "categories": [
-    "Envases"
-  ]
+  "category": "Envases"
 }
