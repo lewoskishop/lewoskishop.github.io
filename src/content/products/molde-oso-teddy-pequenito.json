@@ -1,15 +1,15 @@
 {
-  "name": "MOLDE OSO Teddy PEQUEÑITO",
+  "name": "Molde oso Teddy pequeñito",
   "description": "MOLDE OSO Teddy PEQUEÑITO",
   "price": 6500,
-  "category": "Moldes Animales",
+  "categories": [
+    "Moldes Animales"
+  ],
   "brand": "LewoskiShop",
   "images": [
     "/images/products/molde-oso-teddy-pequenito-1.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "categories": [
-    "Moldes Animales"
-  ]
+  "category": "Moldes Animales"
 }
