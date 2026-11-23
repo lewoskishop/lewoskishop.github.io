@@ -1,15 +1,15 @@
 {
-  "name": "bandeja corazón",
+  "name": "Molde bandeja corazón",
   "description": "bandeja corazón",
   "price": 12000,
-  "category": "Molde Yeso, Resina, Concreto",
+  "categories": [
+    "Molde Yeso, Resina, Concreto"
+  ],
   "brand": "LewoskiShop",
   "images": [
     "/images/products/bandeja-corazon-1.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "categories": [
-    "Molde Yeso, Resina, Concreto"
-  ]
+  "category": "Molde Yeso, Resina, Concreto"
 }
