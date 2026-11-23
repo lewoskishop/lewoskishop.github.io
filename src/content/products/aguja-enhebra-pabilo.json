@@ -1,15 +1,15 @@
 {
   "name": "aguja enhebra pabilo",
   "description": "aguja enhebra pabilo",
-  "price": 3500,
-  "category": "Velas",
+  "price": 3000,
+  "categories": [
+    "Velas"
+  ],
   "brand": "LewoskiShop",
   "images": [
     "/images/products/aguja-enhebra-pabilo-1.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "categories": [
-    "Velas"
-  ]
+  "category": "Velas"
 }
