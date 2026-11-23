@@ -1,15 +1,15 @@
 {
-  "name": "Barra de jabón cristal",
+  "name": "Barra de glicerina vegetal cristal Adonay",
   "description": "Barra de jabón cristal",
   "price": 16000,
-  "category": "Cosmética y Jabones",
+  "categories": [
+    "Cosmética y Jabones"
+  ],
   "brand": "LewoskiShop",
   "images": [
     "/images/products/barra-de-jabon-cristal-1.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "categories": [
-    "Cosmética y Jabones"
-  ]
+  "category": "Cosmética y Jabones"
 }
