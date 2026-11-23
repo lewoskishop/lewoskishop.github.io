@@ -1,15 +1,15 @@
 {
-  "name": "hornitos ceramica",
+  "name": "hornitos cerámica",
   "description": "hornitos ceramica",
   "price": 5000,
-  "category": "Aromas",
+  "categories": [
+    "Aromas"
+  ],
   "brand": "LewoskiShop",
   "images": [
     "/images/products/hornitos-ceramica-1.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "categories": [
-    "Aromas"
-  ]
+  "category": "Aromas"
 }
