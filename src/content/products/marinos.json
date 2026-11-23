@@ -1,15 +1,15 @@
 {
-  "name": "Marinos",
+  "name": "Molde Marinos",
   "description": "Marinos",
   "price": 5500,
-  "category": "Moldes Animales",
+  "categories": [
+    "Moldes Animales"
+  ],
   "brand": "LewoskiShop",
   "images": [
     "/images/products/marinos-1.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "categories": [
-    "Moldes Animales"
-  ]
+  "category": "Moldes Animales"
 }
