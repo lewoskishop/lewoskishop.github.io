@@ -1,15 +1,15 @@
 {
-  "name": "Jabón x 1 kg",
-  "description": "Jabón x 1 kg",
+  "name": "Glicerina Ámbar Spa",
+  "description": "1kg",
   "price": 13600,
-  "category": "Cosmética y Jabones",
+  "categories": [
+    "Cosmética y Jabones"
+  ],
   "brand": "LewoskiShop",
   "images": [
     "/images/products/jabon-x-1-kg-1.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "categories": [
-    "Cosmética y Jabones"
-  ]
+  "category": "Cosmética y Jabones"
 }
