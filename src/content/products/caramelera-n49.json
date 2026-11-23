@@ -1,15 +1,15 @@
 {
-  "name": "caramelera N49",
+  "name": "Caramelera N49",
   "description": "caramelera N49",
   "price": 5000,
-  "category": "Envases",
+  "categories": [
+    "Envases"
+  ],
   "brand": "LewoskiShop",
   "images": [
     "/images/products/caramelera-n49-1.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "categories": [
-    "Envases"
-  ]
+  "category": "Envases"
 }
