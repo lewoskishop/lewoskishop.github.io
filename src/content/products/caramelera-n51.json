@@ -1,15 +1,15 @@
 {
-  "name": "caramelera N51",
+  "name": "Caramelera N51",
   "description": "caramelera N51",
   "price": 5500,
-  "category": "Envases",
+  "categories": [
+    "Envases"
+  ],
   "brand": "LewoskiShop",
   "images": [
     "/images/products/caramelera-n51-1.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "categories": [
-    "Envases"
-  ]
+  "category": "Envases"
 }
