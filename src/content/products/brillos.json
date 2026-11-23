@@ -1,15 +1,15 @@
 {
-  "name": "Brillos",
+  "name": "Brillos x 12",
   "description": "5gr",
-  "price": 600,
-  "category": "Deco",
+  "price": 6000,
+  "categories": [
+    "Deco"
+  ],
   "brand": "LewoskiShop",
   "images": [
     "/images/products/brillos-1.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "categories": [
-    "Deco"
-  ]
+  "category": "Deco"
 }
