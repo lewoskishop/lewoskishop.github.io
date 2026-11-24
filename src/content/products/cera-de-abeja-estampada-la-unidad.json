@@ -2,7 +2,7 @@
   "name": "Cera de abeja estampada (la unidad)",
   "description": "Cera de abeja estampada (la unidad)",
   "price": 3000,
-  "category": "Cosmética y Jabones",
+  "category": "Insumos Cosmética",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/cera-de-abeja-estampada-la-unidad-1.jpg"
@@ -10,6 +10,6 @@
   "featured": false,
   "inStock": true,
   "categories": [
-    "Cosmética y Jabones"
+    "Insumos Cosmética"
   ]
 }

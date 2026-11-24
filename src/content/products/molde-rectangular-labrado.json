@@ -3,7 +3,7 @@
   "description": "molde rectangular x4 cavidades, 4 diseños",
   "price": 7500,
   "categories": [
-    "Cosmética y Jabones",
+    "Insumos Cosmética",
     "Mas moldes"
   ],
   "brand": "LewoskiShop",
@@ -11,5 +11,6 @@
     "/images/uploads/369.jpg"
   ],
   "featured": false,
-  "inStock": true
+  "inStock": true,
+  "category": "Insumos Cosmética"
 }

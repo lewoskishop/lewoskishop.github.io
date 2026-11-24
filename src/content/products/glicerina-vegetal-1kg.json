@@ -3,7 +3,7 @@
   "description": "Glicerina vegetal  Adonay 1kg",
   "price": 15000,
   "categories": [
-    "Cosmética y Jabones"
+    "Insumos Cosmética"
   ],
   "brand": "LewoskiShop",
   "images": [
@@ -11,5 +11,5 @@
   ],
   "featured": false,
   "inStock": true,
-  "category": "Cosmética y Jabones"
+  "category": "Insumos Cosmética"
 }

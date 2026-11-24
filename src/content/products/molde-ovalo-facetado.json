@@ -3,7 +3,7 @@
   "description": "molde ovalo facetado",
   "price": 7500,
   "categories": [
-    "Cosmética y Jabones",
+    "Insumos Cosmética",
     "Mas moldes"
   ],
   "brand": "LewoskiShop",
@@ -12,5 +12,5 @@
   ],
   "featured": false,
   "inStock": true,
-  "category": "Molde Yeso, Resina, Concreto"
+  "category": "Insumos Cosmética"
 }
