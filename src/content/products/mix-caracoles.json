@@ -1,0 +1,16 @@
+{
+  "name": "Mix caracoles",
+  "description": "Mini caracoles varios",
+  "price": 3000,
+  "categories": [
+    "Brillos y demás",
+    "Insumos Velas",
+    "Insumos Yeso, Resina, Concreto"
+  ],
+  "brand": "Lewoskishop",
+  "images": [
+    "/images/uploads/1001341488.jpg"
+  ],
+  "featured": false,
+  "inStock": true
+}
