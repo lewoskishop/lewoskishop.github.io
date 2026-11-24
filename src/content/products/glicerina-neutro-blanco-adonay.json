@@ -1,0 +1,14 @@
+{
+  "name": "Glicerina neutro blanco Adonay",
+  "description": "Glicerina blanca por 1kg",
+  "price": 15000,
+  "categories": [
+    "Insumos Jabones"
+  ],
+  "brand": "Adonay",
+  "images": [
+    "/images/uploads/1001341491.jpg"
+  ],
+  "featured": false,
+  "inStock": true
+}
