@@ -2,14 +2,14 @@
   "name": "Colorante para jabón",
   "description": "30ml",
   "price": 4500,
-  "category": "Insumos Cosmética",
+  "categories": [
+    "Insumos Jabones"
+  ],
   "brand": "LewoskiShop",
   "images": [
     "/images/products/colorante-para-jabon-1.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "categories": [
-    "Insumos Cosmética"
-  ]
+  "category": "Insumos Cosmética"
 }
