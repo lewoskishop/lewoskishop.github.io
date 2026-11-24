@@ -1,0 +1,16 @@
+{
+  "name": "Brillos x 12 unid",
+  "description": "Brillos 6 colores 12 unidades",
+  "price": 6000,
+  "categories": [
+    "Brillos y demás"
+  ],
+  "brand": "Lewoskishop",
+  "images": [
+    "/images/uploads/1001341492.jpg"
+  ],
+  "featured": false,
+  "inStock": true,
+  "stock": 10,
+  "badge": "Brillos"
+}
