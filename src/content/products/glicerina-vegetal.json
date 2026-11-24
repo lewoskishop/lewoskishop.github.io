@@ -1,0 +1,14 @@
+{
+  "name": "Glicerina Vegetal",
+  "description": "Glicerina líquida 1kg",
+  "price": 6000,
+  "categories": [
+    "Insumos Jabones"
+  ],
+  "brand": "lewoskishop",
+  "images": [
+    "/images/uploads/596.jpg"
+  ],
+  "featured": false,
+  "inStock": true
+}
