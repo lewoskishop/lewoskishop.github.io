@@ -32,16 +32,18 @@ const slides = [
 
 const destacados = [
   {
-    image: '/images/promos/envios-hero.webp',
+    image: '/images/promos/marca-lewoski.webp',
     title: 'Envíos a todo el país',
     text: 'Coordinamos el despacho por WhatsApp',
     href: '/productos/',
+    imageClass: 'object-cover object-center',
   },
   {
     image: '/images/promos/especial-navidad.webp',
     title: 'Navidad',
     text: 'Insumos y kits para crear regalos artesanales únicos',
     href: '/productos/?cat=navidad',
+    imageClass: 'object-cover object-top',
   },
 ];
 ---
@@ -97,7 +99,7 @@ const destacados = [
         {
           destacados.map((card) => (
             <a href={card.href} class="group relative flex h-40 items-end overflow-hidden rounded-[var(--radius-lg)] lg:h-[202px]">
-              <img src={card.image} alt="" class="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105" width="1200" height="800" loading="lazy" />
+              <img src={card.image} alt="" class:list={["absolute inset-0 h-full w-full transition-transform duration-500 group-hover:scale-105", card.imageClass ?? 'object-cover object-top']} width="1200" height="800" loading="lazy" />
               <div class="absolute inset-0 bg-gradient-to-t from-foreground/80 to-transparent"></div>
               <div class="relative p-5">
                 <p class="text-base font-extrabold text-white">{card.title}</p>
