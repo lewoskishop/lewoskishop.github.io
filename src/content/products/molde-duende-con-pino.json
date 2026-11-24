@@ -1,0 +1,16 @@
+{
+  "name": "Molde duende con pino",
+  "description": "Molde duende",
+  "price": 9500,
+  "categories": [
+    "Insumos Jabones",
+    "Insumos Yeso, Resina, Concreto",
+    "Insumos Velas"
+  ],
+  "brand": "Lewoskishop",
+  "images": [
+    "/images/uploads/1001341493.jpg"
+  ],
+  "featured": false,
+  "inStock": true
+}
