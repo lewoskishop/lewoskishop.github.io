@@ -3,7 +3,7 @@
   "description": "cera de soja APF lista para usar",
   "price": 19200,
   "categories": [
-    "Velas"
+    "Insumos Velas"
   ],
   "brand": "LewoskiShop",
   "images": [
@@ -11,5 +11,5 @@
   ],
   "featured": false,
   "inStock": true,
-  "category": "Velas"
+  "category": "Insumos Velas"
 }

@@ -2,7 +2,7 @@
   "name": "Ojalillos x 30",
   "description": "Ojalillos x 30",
   "price": 1500,
-  "category": "Velas",
+  "category": "Insumos Velas",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/ojalillos-x-30-1.jpg"
@@ -10,6 +10,6 @@
   "featured": false,
   "inStock": true,
   "categories": [
-    "Velas"
+    "Insumos Velas"
   ]
 }

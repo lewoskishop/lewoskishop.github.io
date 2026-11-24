@@ -4,12 +4,13 @@
   "price": 1500,
   "categories": [
     "Envases",
-    "Aromas"
+    "Insumos Aromatizantes"
   ],
   "brand": "Lewoski",
   "images": [
     "/images/uploads/585.jpg"
   ],
   "featured": false,
-  "inStock": true
+  "inStock": true,
+  "category": "Envases"
 }

@@ -5,12 +5,13 @@
   "categories": [
     "Brillos y demás",
     "Insumos Velas",
-    "Insumos Yeso, Resina, Concreto"
+    "Insumos Yeso"
   ],
   "brand": "Lewoskishop",
   "images": [
     "/images/uploads/1001341488.jpg"
   ],
   "featured": false,
-  "inStock": true
+  "inStock": true,
+  "category": "Brillos y demás"
 }

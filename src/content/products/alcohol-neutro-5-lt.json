@@ -3,7 +3,7 @@
   "description": "Alcohol especialmente para preparación de difusores, home spray, brumas, body splash",
   "price": 30000,
   "categories": [
-    "Aromas"
+    "Insumos Aromatizantes"
   ],
   "brand": "LewoskiShop",
   "images": [
@@ -11,5 +11,5 @@
   ],
   "featured": false,
   "inStock": true,
-  "category": "Aromas"
+  "category": "Insumos Aromatizantes"
 }

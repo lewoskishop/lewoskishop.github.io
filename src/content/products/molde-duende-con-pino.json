@@ -4,7 +4,7 @@
   "price": 9500,
   "categories": [
     "Insumos Jabones",
-    "Insumos Yeso, Resina, Concreto",
+    "Insumos Yeso",
     "Insumos Velas"
   ],
   "brand": "Lewoskishop",
@@ -12,5 +12,6 @@
     "/images/uploads/1001341493.jpg"
   ],
   "featured": false,
-  "inStock": true
+  "inStock": true,
+  "category": "Insumos Jabones"
 }

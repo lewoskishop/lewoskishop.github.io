@@ -2,7 +2,7 @@
   "name": "Pabilo de madera 10gr",
   "description": "Pabilo de madera 10gr",
   "price": 1500,
-  "category": "Velas",
+  "category": "Insumos Velas",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/pabilo-de-madera-10gr-1.jpg"
@@ -10,6 +10,6 @@
   "featured": false,
   "inStock": true,
   "categories": [
-    "Velas"
+    "Insumos Velas"
   ]
 }

@@ -4,12 +4,13 @@
   "price": 12500,
   "categories": [
     "Molde Yeso, Resina, Concreto",
-    "Velas"
+    "Insumos Velas"
   ],
   "brand": "LewoskiShop",
   "images": [
     "/images/uploads/368.jpg"
   ],
   "featured": false,
-  "inStock": true
+  "inStock": true,
+  "category": "Molde Yeso, Resina, Concreto"
 }

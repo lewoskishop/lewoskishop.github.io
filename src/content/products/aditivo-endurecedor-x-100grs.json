@@ -3,7 +3,7 @@
   "description": "Aumenta la firmeza de tus velas de soja. Este aditivo 100% natural logra acabados más lisos, mejora el desmolde y la retención de aromas.",
   "price": 4000,
   "categories": [
-    "Velas"
+    "Insumos Velas"
   ],
   "brand": "LewoskiShop",
   "images": [
@@ -11,5 +11,5 @@
   ],
   "featured": false,
   "inStock": false,
-  "category": "Velas"
+  "category": "Insumos Velas"
 }

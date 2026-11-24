@@ -3,9 +3,9 @@
   "description": "Esencias puras 30 ml",
   "price": 8000,
   "categories": [
-    "Aromas",
+    "Insumos Aromatizantes",
     "Cosmética y Jabones",
-    "Velas"
+    "Insumos Velas"
   ],
   "brand": "LewoskiShop",
   "images": [
@@ -13,5 +13,5 @@
   ],
   "featured": false,
   "inStock": true,
-  "category": "Aromas"
+  "category": "Insumos Aromatizantes"
 }
