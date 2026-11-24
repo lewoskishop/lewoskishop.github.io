@@ -2,14 +2,14 @@
   "name": "molde jabón rectangular liso",
   "description": "molde jabón rectangular liso",
   "price": 6500,
-  "category": "Insumos Cosmética",
+  "categories": [
+    "Insumos Jabones"
+  ],
   "brand": "LewoskiShop",
   "images": [
     "/images/products/molde-jabon-rectangular-liso-1.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "categories": [
-    "Insumos Cosmética"
-  ]
+  "category": "Insumos Cosmética"
 }
