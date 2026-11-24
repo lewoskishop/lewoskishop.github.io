@@ -2,14 +2,14 @@
   "name": "Aceite de coco RBD 100ml",
   "description": "Aceite de coco RBD 100ml",
   "price": 3700,
-  "category": "Insumos Cosmética",
+  "categories": [
+    "Insumos Jabones"
+  ],
   "brand": "LewoskiShop",
   "images": [
     "/images/products/aceite-de-coco-rbd-100ml-1.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "categories": [
-    "Insumos Cosmética"
-  ]
+  "category": "Insumos Cosmética"
 }
