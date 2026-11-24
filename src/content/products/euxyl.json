@@ -1,0 +1,14 @@
+{
+  "name": "Euxyl",
+  "description": "conservante cosmético líquido de amplio espectro",
+  "price": 3000,
+  "categories": [
+    "Insumos Jabones"
+  ],
+  "brand": "LewiskyShop",
+  "images": [
+    "/images/uploads/330.jpg"
+  ],
+  "featured": false,
+  "inStock": true
+}
