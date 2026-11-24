@@ -1,0 +1,11 @@
+{
+  "name": "Ojalillo para tags plateados",
+  "description": "Ojalillos plateados",
+  "price": 1500,
+  "brand": "Lewoskishop",
+  "images": [
+    "/images/uploads/1001341487.jpg"
+  ],
+  "featured": false,
+  "inStock": true
+}
