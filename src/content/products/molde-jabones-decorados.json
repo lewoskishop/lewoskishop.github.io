@@ -2,14 +2,15 @@
   "name": "molde jabones decorados",
   "description": "molde jabones decorados",
   "price": 9500,
-  "category": "Insumos Cosmética",
+  "categories": [
+    "Insumos Jabones",
+    "Mas moldes"
+  ],
   "brand": "LewoskiShop",
   "images": [
     "/images/products/molde-jabones-decorados-1.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "categories": [
-    "Insumos Cosmética"
-  ]
+  "category": "Insumos Cosmética"
 }
