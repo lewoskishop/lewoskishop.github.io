@@ -1,6 +1,6 @@
 {
-  "name": "Insumos Difusores y Perfuminas",
-  "slug": "Difusores y perfuminas",
+  "name": "Insumos Difusores",
+  "slug": "Difusores",
   "order": 4,
-  "showInNav": false
+  "showInNav": true
 }
