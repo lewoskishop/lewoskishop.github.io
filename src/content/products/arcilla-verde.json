@@ -1,0 +1,14 @@
+{
+  "name": "Arcilla Verde",
+  "description": "Arcilla verde 250gr",
+  "price": 1500,
+  "categories": [
+    "Insumos Jabones"
+  ],
+  "brand": "lewoskishop",
+  "images": [
+    "/images/uploads/332.jpg"
+  ],
+  "featured": false,
+  "inStock": true
+}
