@@ -2,9 +2,6 @@
   "name": "hornitos cerámica",
   "description": "hornitos ceramica",
   "price": 5000,
-  "categories": [
-    "Insumos Aromatizantes"
-  ],
   "brand": "LewoskiShop",
   "images": [
     "/images/products/hornitos-ceramica-1.jpg"
