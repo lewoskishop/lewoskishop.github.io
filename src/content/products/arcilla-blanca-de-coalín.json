@@ -1,0 +1,14 @@
+{
+  "name": "Arcilla Blanca de Coalín",
+  "description": "arcilla blanca 250gr.",
+  "price": 4000,
+  "categories": [
+    "Insumos Jabones"
+  ],
+  "brand": "LewoskiShop",
+  "images": [
+    "/images/uploads/333.jpg"
+  ],
+  "featured": false,
+  "inStock": true
+}
