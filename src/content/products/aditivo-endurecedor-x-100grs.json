@@ -10,6 +10,6 @@
     "/images/products/aditivo-endurecedor-x-100grs-1.jpg"
   ],
   "featured": false,
-  "inStock": false,
+  "inStock": true,
   "category": "Insumos Velas"
 }
