@@ -2,14 +2,11 @@
   "name": "molde hojas nervaduras",
   "description": "molde hojas nervaduras",
   "price": 7000,
-  "category": "Insumos Cosmética",
   "brand": "LewoskiShop",
   "images": [
     "/images/products/molde-hojas-nervaduras-1.jpg"
   ],
   "featured": false,
   "inStock": true,
-  "categories": [
-    "Insumos Cosmética"
-  ]
+  "category": "Insumos Cosmética"
 }
