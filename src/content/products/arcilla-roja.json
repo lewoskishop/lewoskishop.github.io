@@ -1,0 +1,14 @@
+{
+  "name": "Arcilla Roja",
+  "description": "Arcilla Roja 250gr.",
+  "price": 1500,
+  "categories": [
+    "Insumos Jabones"
+  ],
+  "brand": "lewoskishop",
+  "images": [
+    "/images/uploads/331.jpg"
+  ],
+  "featured": false,
+  "inStock": true
+}
